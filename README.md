@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/lord/img/master/logo-slate.png" alt="Ardor API Documentation" width="226">
+  <img src="./source/images/logo.png" alt="Ardor API Documentation" width="226">
   <br>
-  <a href="https://travis-ci.org/lord/slate"><img src="https://travis-ci.org/lord/slate.svg?branch=master" alt="Build Status"></a>
 </p>
 
 <p align="center">Welcome the Ardor platform API documentation</p>
@@ -9,10 +8,10 @@
 Introduction
 ------------
 
+This repository holds the API documentation of [Ardor Blockchain Platform](https://www.ardorplatform.org/) and will be hosted on the Developers section.
 
-* **RTL Support** Full right-to-left layout for RTL languages such as Arabic, Persian (Farsi), Hebrew etc.
+Ardor is the first 3rd Generation blockchain platfrom which brings a smart innovative way to tackle many of the current blockchains problems seen today. Ardor vision is to bring an easy access to blockchain technology for everyone. This API documentation is specially targeted for developers, but non technical individuals can use explore the full potential potential of Ardor platform using its simple to use User Interface or Wallet that can be found [here](https://www.ardorplatform.org/).
 
-Getting started with Slate is super easy! Simply fork this repository and follow the instructions below. Or, if you'd like to check out what Slate is capable of, take a look at the [sample docs](http://lord.github.io/slate).
 
 How to get Started?
 ------------------------------
@@ -22,24 +21,18 @@ How to get Started?
 You're going to need:
 
  - **Linux or OS X** — Windows may work, but is unsupported.
- - **Ruby, version 2.3.1 or newer**
+ - **Ruby, version 2.3.1 or newer (but we recommend to stick with 2.3.* because of dependencies requesting versions less than 2.4.0)**
  - **Bundler** — If Ruby is already installed, but the `bundle` command doesn't work, just run `gem install bundler` in a terminal.
 
-### Getting Set Up
 
-1. Fork this repository on GitHub.
-2. Clone *your forked repository* (not our original one) to your hard drive with `git clone https://github.com/YOURUSERNAME/slate.git`
-3. `cd slate`
+### Getting Set Up
+1. Clone this repository from GitHub `git clone https://github.com/ArdorNxtCommunity/ardor-api.git`
+2. `cd slate`
 4. Initialize and start Slate. You can either do this locally, or with Vagrant:
 
 ```shell
-# either run this to run locally
 bundle install
 bundle exec middleman server
-
-# OR run this to run with vagrant
-vagrant up
-```
 
 You can now see the docs at http://localhost:4567. Whoa! That was fast!
 
