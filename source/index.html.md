@@ -7,10 +7,15 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - python
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='#'>Ardor API Documentation</a>
+  - <a href='https://www.ardornxt.group'>Documentation Powered by ArdorNxt Group</a>
 
+api-docs:
+  - asset-exchange.md
+  - data-cloud.md
+  
 includes:
+  - asset-exchange.md
   - errors
 
 search: true
@@ -23,6 +28,7 @@ Welcome to the Kittn API! You can use our API to access Kittn API endpoints, whi
 We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+
 
 # Authentication
 

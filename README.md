@@ -10,9 +10,9 @@ Introduction
 
 This repository holds the API documentation of [Ardor Blockchain Platform](https://www.ardorplatform.org/) and will be hosted on the Developers section.
 
-Ardor is the first 3rd Generation blockchain platfrom which brings a smart innovative way to tackle many of the current blockchains problems seen today. Ardor vision is to bring an easy access to blockchain technology for everyone. This API documentation is specially targeted for developers, but non technical individuals can use explore the full potential potential of Ardor platform using its simple to use User Interface or Wallet that can be found [here](https://www.ardorplatform.org/).
+Ardor is the first 3rd Generation blockchain platfrom which brings a smart innovative way to tackle many of the current blockchains problems seen today based on a combination of Parent-Childchain architecture, Lightweight Smart Contracts, Subnets, Prunable Blockchain and many other features in development roadmap.
 
-
+Ardor vision is to bring an easy access to blockchain technology for everyone. This API documentation is specially targeted for developers, but non technical individuals can use explore the full potential potential of Ardor platform using its simple to use User Interface or Wallet that can be found [here](https://www.ardorplatform.org/).
 How to get Started?
 ------------------------------
 
@@ -33,6 +33,7 @@ You're going to need:
 ```shell
 bundle install
 bundle exec middleman server
+```
 
 You can now see the docs at http://localhost:4567. Whoa! That was fast!
 
