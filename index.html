@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Ardor API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,9 +212,8 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="python">python</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,43 +221,78 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#kittens" class="toc-h1 toc-link" data-title="kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="get-all-kittens">Get All Kittens</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="get-a-specific-kitten">Get a Specific Kitten</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="delete-a-specific-kitten">Delete a Specific Kitten</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="accounts">Accounts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#account-information" class="toc-h2 toc-link" data-title="account-information">Account Information</a>
+                  </li>
+                  <li>
+                    <a href="#account-balances" class="toc-h2 toc-link" data-title="account-balances">Account Balances</a>
+                  </li>
+                  <li>
+                    <a href="#account-trades" class="toc-h2 toc-link" data-title="account-trades">Account Trades</a>
+                  </li>
+                  <li>
+                    <a href="#account-activity" class="toc-h2 toc-link" data-title="account-activity">Account Activity</a>
+                  </li>
+                  <li>
+                    <a href="#account-votes" class="toc-h2 toc-link" data-title="account-votes">Account Votes</a>
+                  </li>
+                  <li>
+                    <a href="#account-funding" class="toc-h2 toc-link" data-title="account-funding">Account Funding</a>
+                  </li>
+                  <li>
+                    <a href="#account-properties" class="toc-h2 toc-link" data-title="account-properties">Account Properties</a>
+                  </li>
+                  <li>
+                    <a href="#account-util-functions" class="toc-h2 toc-link" data-title="account-util-functions">Account Util functions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='#'>Ardor API Documentation</a></li>
+            <li><a href='https://www.ardornxt.group'>Documentation Powered by ArdorNxt Group</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Ardor Blockchain-as-a-Service platform API documentation.
+This documentation is intended for developers from all horizons who want to explore with Ardor platform, build Decentrealized Applications (Dapps), leverage and integrate their own solutions to a public blockchain with huge flexibility like Ardor.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>All the interactions with Ardor blockchain are done using HTTP requests and the responses are delivered as JSON objects. Thus, Ardor API can be used universally with any langage of your choice. In the what follows, <code>shell</code> and <code>Javascript</code> langages will be used to demonstrate the usage of the API, but other sdks are in development.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>If you want to interactivally test the API with more recent blockchain data, we recommend you to:
+1. Download the Ardor wallet <a href="https://www.ardorplatform.org/">here</a>
+2. Follow the installation instructions
+3. Launch the Ardor wallet (can bee found as Ardor Server too on Windows) and wait for the wallet to sync
+4. Go to http://localhost:27876/test
+5. Scroll to the call you want to test, set the call parameters and explore the results on the side</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -432,8 +466,12 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to delete</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<h1 id='accounts'>Accounts</h1>
+<p>In this chapter we focus on all the API calls that can help you interact with an account, this can include sending Ardor to this account, getting his balances, or more advanced interactions like properties and control features.</p>
+<h2 id='account-information'>Account Information</h2><h3 id='getaccountid'>getAccountId</h3><h3 id='getaccountpublickey'>getAccountPublicKey</h3><h3 id='getaccountledger'>getAccountLedger</h3><h3 id='getaccountledgerentry'>getAccountLedgerEntry</h3><h3 id='getaccountassetcount'>getAccountAssetCount</h3><h3 id='getaccountassets'>getAccountAssets</h3><h3 id='getaccountblockcount'>getAccountBlockCount</h3><h3 id='getaccountblockids'>getAccountBlockIds</h3><h3 id='getaccountblocks'>getAccountBlocks</h3><h3 id='getaccountcurrencycount'>getAccountCurrencyCount</h3><h3 id='getaccountcurrencies'>getAccountCurrencies</h3><h3 id='getaccountlessors'>getAccountLessors</h3><h3 id='getaccountphasedtransactioncount'>getAccountPhasedTransactionCount</h3><h3 id='getaccountphasedtransactions'>getAccountPhasedTransactions</h3><h3 id='getunconfirmedtransactionids'>getUnconfirmedTransactionIds</h3><h3 id='getunconfirmedtransactions'>getUnconfirmedTransactions</h3><h3 id='setaccountinfo'>setAccountInfo</h3><h2 id='account-balances'>Account Balances</h2><h3 id='getbalance'>getBalance</h3><h3 id='getbalances'>getBalances</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='geteffectivebalance'>getEffectiveBalance</h3><h3 id='sendmoney'>sendMoney</h3><h2 id='account-trades'>Account Trades</h2><h3 id='getaccountcurrentaskorderids'>getAccountCurrentAskOrderIds</h3><h3 id='getaccountcurrentaskorders'>getAccountCurrentAskOrders</h3><h3 id='getaccountcurrentbidorderids'>getAccountCurrentBidOrderIds</h3><h3 id='getaccountcurrentbidorders'>getAccountCurrentBidOrders</h3><h3 id='getaccountexchangerequests'>getAccountExchangeRequests</h3><h2 id='account-activity'>Account Activity</h2><h3 id='getcurrenciesbyissuer'> getCurrenciesByIssuer</h3><h3 id='getassetsbyissuer'>getAssetsByIssuer</h3><h3 id='getblockchaintransactions'>getBlockchainTransactions</h3><h2 id='account-votes'>Account Votes</h2><h3 id='getpolls'>getPolls</h3><h3 id='getvoterphasedtransactions'>getVoterPhasedTransactions</h3><h2 id='account-funding'>Account Funding</h2><h3 id='getfundingmonitor'>getFundingMonitor</h3><h3 id='startfundingmonitor'>startFundingMonitor</h3><h3 id='stopfundingmonitor'>stopFundingMonitor</h3><h2 id='account-properties'>Account Properties</h2><h3 id='getaccountproperties'>getAccountProperties</h3><h3 id='setaccountproperty'>setAccountProperty</h3><h3 id='deleteaccountproperty'>deleteAccountProperty</h3><h2 id='account-util-functions'>Account Util functions</h2><h3 id='rsconvert'>rsConvert</h3><h3 id='searchaccounts'>searchAccounts</h3><h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
 
 <p>The Kittn API uses the following error codes:</p>
 
@@ -445,7 +483,7 @@ Remember — a happy kitten is an authenticated kitten!
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request sucks.</td>
+<td>Bad Request -- Your request is invalid.</td>
 </tr>
 <tr>
 <td>401</td>
@@ -493,9 +531,8 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="python">python</a>
           </div>
       </div>
     </div>
