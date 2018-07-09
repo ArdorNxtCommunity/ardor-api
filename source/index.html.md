@@ -9,25 +9,26 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - <a href='#'>Ardor API Documentation</a>
   - <a href='https://www.ardornxt.group'>Documentation Powered by ArdorNxt Group</a>
-
-api-docs:
-  - asset-exchange.md
-  - data-cloud.md
   
 includes:
-  - asset-exchange.md
+  - accounts.md
   - errors
 
 search: true
 ---
 
 # Introduction
+Welcome to the Ardor Blockchain-as-a-Service platform API documentation.
+This documentation is intended for developers from all horizons who want to explore with Ardor platform, build Decentrealized Applications (Dapps), leverage and integrate their own solutions to a public blockchain with huge flexibility like Ardor.
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+All the interactions with Ardor blockchain are done using HTTP requests and the responses are delivered as JSON objects. Thus, Ardor API can be used universally with any langage of your choice. In the what follows, `shell` and `Javascript` langages will be used to demonstrate the usage of the API, but other sdks are in development.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+If you want to interactivally test the API with more recent blockchain data, we recommend you to:
+1. Download the Ardor wallet [here](https://www.ardorplatform.org/)
+2. Follow the installation instructions
+3. Launch the Ardor wallet (can bee found as Ardor Server too on Windows) and wait for the wallet to sync
+4. Go to http://localhost:27876/test
+5. Scroll to the call you want to test, set the call parameters and explore the results on the side
 
 
 # Authentication
