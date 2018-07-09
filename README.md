@@ -1,6 +1,7 @@
 <p align="center">
   <img src="./source/images/logo.png" alt="Ardor API Documentation" width="226">
   <br>
+  <a href="https://travis-ci.org/ArdorNxtCommunity/ardor-api"></a>
 </p>
 
 <p align="center">Welcome the Ardor platform API documentation</p>
