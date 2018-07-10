@@ -12,6 +12,13 @@ toc_footers:
   
 includes:
   - accounts.md
+  - account-control.md
+  - alias.md
+  - asset-exchange.md
+  - blocks.md
+  - coin-exchange.md
+  - digital-goods.md
+  - forging.md
   - errors
 
 search: true
@@ -24,6 +31,7 @@ This documentation is intended for developers from all horizons who want to expl
 All the interactions with Ardor blockchain are done using HTTP requests and the responses are delivered as JSON objects. Thus, Ardor API can be used universally with any langage of your choice. In the what follows, `shell` and `Javascript` langages will be used to demonstrate the usage of the API, but other sdks are in development.
 
 If you want to interactivally test the API with more recent blockchain data, we recommend you to:
+
 1. Download the Ardor wallet [here](https://www.ardorplatform.org/)
 2. Follow the installation instructions
 3. Launch the Ardor wallet (can bee found as Ardor Server too on Windows) and wait for the wallet to sync
@@ -31,7 +39,7 @@ If you want to interactivally test the API with more recent blockchain data, we 
 5. Scroll to the call you want to test, set the call parameters and explore the results on the side
 
 
-# Authentication
+# Authentication (Only for test)
 
 > To authorize, use this code:
 
@@ -71,7 +79,7 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Kittens (Only for test)
 
 ## Get All Kittens
 
