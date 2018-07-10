@@ -1,5 +1,6 @@
 ---
 title: Ardor API Reference
+favicon: images/ardor-favicon.png
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
