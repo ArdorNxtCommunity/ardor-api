@@ -1,0 +1,6 @@
+<h1 id='coin-exchange'>Coin Exchange</h1>
+<p>The Coin Exchange feature is specific to Ardor architecture. 
+Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent chain have its own coin ARDR, and each childchain have its own coin too, like IGNIS, BITSWIFT, AEUR ...etc. The coin exchange allow users to exchange chilchain coins against the ARDR parent chain coin without going throw an   exeternal exchange.</p>
+
+<p>The API calls below help you achieve this.</p>
+<h2 id='orders-setting'>Orders Setting</h2><h3 id='exchangecoins'> exchangeCoins</h3><h3 id='cancelcoinexchange'> cancelCoinExchange</h3><h2 id='orders-discovery'>Orders Discovery</h2><h3 id='getcoinexchangeorders'> getCoinExchangeOrders</h3><h3 id='getcoinexchangeorderids'> getCoinExchangeOrderIds</h3><h3 id='getcoinexchangeorder'> getCoinExchangeOrder</h3><h3 id='getcoinexchangetrades'> getCoinExchangeTrades</h3><h3 id='getcoinexchangetrade'> getCoinExchangeTrade</h3><h3 id='getexpectedcoinexchangeorders'> getExpectedCoinExchangeOrders</h3><h3 id='getexpectedcoinexchangeordercancellations'> getExpectedCoinExchangeOrderCancellations</h3><h3 id='simulatecoinexchange'> simulateCoinExchange</h3>

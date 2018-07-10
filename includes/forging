@@ -1,0 +1,5 @@
+<h1 id='forging'>Forging</h1>
+<p>In Proof-of-Stake consensus algorithms, Forging is the process of building and validating transaction blocks, which equivalent to Mining in Proof-of-Work, with the exception that forgers are rewarded only from transaction fees and there is no new generation of forging coin (ARDR is this case).</p>
+
+<p>The API calls below allow you to </p>
+<h2 id='forge-amp-bundle'>Forge &amp; Bundle</h2><h3 id='leasebalance'>leaseBalance</h3><h3 id='startforging'>startForging</h3><h3 id='stopforging'>stopForging</h3><h3 id='startbundler'>startBundler</h3><h3 id='stopbundler'>stopBundler</h3><h2 id='forgers'>Forgers</h2><h3 id='getbundlers'>getBundlers</h3><h3 id='getallbundlerrates'>getAllBundlerRates</h3><h3 id='getbundlerrates'>getBundlerRates</h3><h3 id='getforging'>getForging</h3><h3 id='blacklistbundler'>blacklistBundler</h3><h3 id='bundletransactions'>bundleTransactions</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='getnextblockgenerators'>getNextBlockGenerators</h3>

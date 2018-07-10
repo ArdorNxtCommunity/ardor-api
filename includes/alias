@@ -1,0 +1,7 @@
+<h1 id='alias'>Alias</h1>
+<p>Alias are a way to substitute one piece of text by another, so that keywords or keyphrases can be used to represent other things, for example you substitute a server IP address by a text representing the name of a domain, or an Ardor account address by the name of its holder.</p>
+<h2 id='get-amp-set-alias'>Get &amp; Set Alias</h2>
+<p>In order to set an alias or search for existing ones, you can use the API calls below.</p>
+<h3 id='setalias'>setAlias</h3><h3 id='getaliascount'>getAliasCount</h3><h3 id='getalias'>getAlias</h3><h3 id='getaliases'>getAliases</h3><h3 id='getaliaseslike'>getAliasesLike</h3><h2 id='exchange-alias'>Exchange Alias</h2>
+<p>Alias can be set, bought and sold, and the API calls can help you achieve this.</p>
+<h3 id='buyalias'>buyAlias</h3><h3 id='sellalias'>sellAlias</h3><h3 id='deletealias'>deleteAlias</h3>
