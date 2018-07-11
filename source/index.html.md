@@ -1,11 +1,12 @@
 ---
 title: Ardor API Reference
 favicon: images/ardor-favicon.png
+logo: images/logo.png
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - javascript
-  - python
+  - shell: cURL
+  - javascript: JavaScript
+  - python: Python
 
 toc_footers:
   - <a href='#'>Ardor API Documentation</a>
