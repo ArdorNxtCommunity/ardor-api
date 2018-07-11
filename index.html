@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="images/ardor-favicon.png">
     <title>Ardor API Reference</title>
 
     <style>
@@ -380,6 +381,37 @@
               </ul>
           </li>
           <li>
+            <a href="#messages" class="toc-h1 toc-link" data-title="messages">Messages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#send-amp-read" class="toc-h2 toc-link" data-title="send-amp-read">Send &amp; Read</a>
+                  </li>
+                  <li>
+                    <a href="#encrypted-messages" class="toc-h2 toc-link" data-title="encrypted-messages">Encrypted Messages</a>
+                  </li>
+                  <li>
+                    <a href="#prunable-messages" class="toc-h2 toc-link" data-title="prunable-messages">Prunable Messages</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#monetary-system" class="toc-h1 toc-link" data-title="monetary-system">Monetary System</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#currency-issuance" class="toc-h2 toc-link" data-title="currency-issuance">Currency Issuance</a>
+                  </li>
+                  <li>
+                    <a href="#currency-holders" class="toc-h2 toc-link" data-title="currency-holders">Currency Holders</a>
+                  </li>
+                  <li>
+                    <a href="#account-currencies" class="toc-h2 toc-link" data-title="account-currencies">Account Currencies</a>
+                  </li>
+                  <li>
+                    <a href="#currency-exchange" class="toc-h2 toc-link" data-title="currency-exchange">Currency Exchange</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
@@ -410,10 +442,7 @@ This documentation is intended for developers from all horizons who want to expl
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
@@ -436,11 +465,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
-<h1 id='kittens-only-for-test'>Kittens (Only for test)</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<h1 id='kittens-only-for-test'>Kittens (Only for test)</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
@@ -497,11 +522,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -540,11 +561,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -606,7 +623,15 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <p>In Proof-of-Stake consensus algorithms, Forging is the process of building and validating transaction blocks, which equivalent to Mining in Proof-of-Work, with the exception that forgers are rewarded only from transaction fees and there is no new generation of forging coin (ARDR is this case).</p>
 
 <p>The API calls below allow you to </p>
-<h2 id='forge-amp-bundle'>Forge &amp; Bundle</h2><h3 id='leasebalance'>leaseBalance</h3><h3 id='startforging'>startForging</h3><h3 id='stopforging'>stopForging</h3><h3 id='startbundler'>startBundler</h3><h3 id='stopbundler'>stopBundler</h3><h2 id='forgers'>Forgers</h2><h3 id='getbundlers'>getBundlers</h3><h3 id='getallbundlerrates'>getAllBundlerRates</h3><h3 id='getbundlerrates'>getBundlerRates</h3><h3 id='getforging'>getForging</h3><h3 id='blacklistbundler'>blacklistBundler</h3><h3 id='bundletransactions'>bundleTransactions</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='getnextblockgenerators'>getNextBlockGenerators</h3><h1 id='errors'>Errors</h1>
+<h2 id='forge-amp-bundle'>Forge &amp; Bundle</h2><h3 id='leasebalance'>leaseBalance</h3><h3 id='startforging'>startForging</h3><h3 id='stopforging'>stopForging</h3><h3 id='startbundler'>startBundler</h3><h3 id='stopbundler'>stopBundler</h3><h2 id='forgers'>Forgers</h2><h3 id='getbundlers'>getBundlers</h3><h3 id='getallbundlerrates'>getAllBundlerRates</h3><h3 id='getbundlerrates'>getBundlerRates</h3><h3 id='getforging'>getForging</h3><h3 id='blacklistbundler'>blacklistBundler</h3><h3 id='bundletransactions'>bundleTransactions</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='getnextblockgenerators'>getNextBlockGenerators</h3><h1 id='messages'>Messages</h1>
+<p>Messages is a way for Ardor accounts to exchange information or data over the blockchain without using a secondary channel. The messages can be encrypted and are prunable from the blockchain history.</p>
+
+<p>The base implementation allows for the transmission of simple, unencrypted text messages between accounts, but since the messages are truly &quot;arbitrary&quot; the range of possible applications is vast. Secure messaging, torrent applications, voting systems, data storage systems and even simple distributed applications have been suggested.</p>
+<h2 id='send-amp-read'>Send &amp; Read</h2><h3 id='sendmessage'>sendMessage</h3><h3 id='readmessage'>readMessage</h3><h2 id='encrypted-messages'>Encrypted Messages</h2><h3 id='encryptto'>encryptTo</h3><h3 id='decryptfrom'>decryptFrom</h3><h3 id='getsharedkey'>getSharedKey</h3><h2 id='prunable-messages'>Prunable Messages</h2><h3 id='getallprunablemessages'>getAllPrunableMessages</h3><h3 id='getprunablemessages'>getPrunableMessages</h3><h3 id='getprunablemessage'>getPrunableMessage</h3><h3 id='downloadprunablemessage'>downloadPrunableMessage</h3><h3 id='verifyprunablemessage'>verifyPrunableMessage</h3><h1 id='monetary-system'>Monetary System</h1>
+<p>The Ardor Monetary System features a special asset class currency secured by the Ardor network and blockchain. Virtual currencies with a variety of customizable properties can be created in minutes.</p>
+
+<p>The API calls below help create and also exchange and manage your created virtual currency.</p>
+<h2 id='currency-issuance'>Currency Issuance</h2><h3 id='issuecurrency'>issueCurrency</h3><h3 id='transfercurrency'>transferCurrency</h3><h3 id='currencymint'>currencyMint</h3><h3 id='currencyreserveclaim'>currencyReserveClaim</h3><h3 id='currencyreserveincrease'>currencyReserveIncrease</h3><h3 id='candeletecurrency'> canDeleteCurrency</h3><h3 id='deletecurrency'>deleteCurrency</h3><h2 id='currency-holders'>Currency Holders</h2><h3 id='getcurrencyaccountcount'>getCurrencyAccountCount</h3><h3 id='getcurrencyaccounts'>getCurrencyAccounts</h3><h3 id='getcurrencyfounders'>getCurrencyFounders</h3><h2 id='account-currencies'>Account Currencies</h2><h3 id='getaccountcurrencycount'>getAccountCurrencyCount</h3><h3 id='getaccountcurrencies'>getAccountCurrencies</h3><h3 id='getaccountexchangerequests'>getAccountExchangeRequests</h3><h2 id='currency-exchange'>Currency Exchange</h2><h3 id='currencybuy'>currencyBuy</h3><h3 id='currencysell'>currencySell</h3><h3 id='getbuyoffers'>getBuyOffers</h3><h3 id='getselloffers'>getSellOffers</h3><h3 id='getallcurrencies'>getAllCurrencies</h3><h3 id='getallexchanges'>getAllExchanges</h3><h3 id='getavailabletobuy'>getAvailableToBuy</h3><h3 id='getavailabletosell'>getAvailableToSell</h3><h3 id='getcurrenciesbyissuer'>getCurrenciesByIssuer</h3><h3 id='getcurrencyids'>getCurrencyIds</h3><h3 id='getcurrencies'>getCurrencies</h3><h3 id='getcurrency'>getCurrency</h3><h3 id='searchcurrencies'>searchCurrencies</h3><h3 id='getcurrencyphasedtransactions'>getCurrencyPhasedTransactions</h3><h3 id='getcurrencytransfers'>getCurrencyTransfers</h3><h3 id='getexchanges'>getExchanges</h3><h3 id='getexchangesbyexchangerequest'>getExchangesByExchangeRequest</h3><h3 id='getexchangesbyoffer'>getExchangesByOffer</h3><h3 id='getexpectedbuyoffers'>getExpectedBuyOffers</h3><h3 id='getexpectedcurrencytransfers'>getExpectedCurrencyTransfers</h3><h3 id='getexpectedexchangerequests'>getExpectedExchangeRequests</h3><h3 id='getexpectedselloffers'>getExpectedSellOffers</h3><h3 id='getlastexchanges'>getLastExchanges</h3><h3 id='getmintingtarget'>getMintingTarget</h3><h3 id='getoffer'>getOffer</h3><h3 id='publishexchangeoffer'>publishExchangeOffer</h3><h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
