@@ -20,6 +20,8 @@ includes:
   - coin-exchange.md
   - digital-goods.md
   - forging.md
+  - messages.md
+  - monetary-system.md
   - errors
 
 search: true
@@ -43,12 +45,6 @@ If you want to interactivally test the API with more recent blockchain data, we 
 # Authentication (Only for test)
 
 > To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
 
 ```python
 import kittn
@@ -83,13 +79,6 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 # Kittens (Only for test)
 
 ## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
 
 ```python
 import kittn
@@ -150,13 +139,6 @@ Remember — a happy kitten is an authenticated kitten!
 
 ## Get a Specific Kitten
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
 ```python
 import kittn
 
@@ -203,13 +185,6 @@ Parameter | Description
 ID | The ID of the kitten to retrieve
 
 ## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
 
 ```python
 import kittn
