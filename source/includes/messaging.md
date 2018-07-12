@@ -1,4 +1,4 @@
-# Messages
+# Decentralized Messaging
 
 Messages is a way for Ardor accounts to exchange information or data over the blockchain without using a secondary channel. The messages can be encrypted and are prunable from the blockchain history.
 

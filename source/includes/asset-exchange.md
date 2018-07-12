@@ -1,4 +1,4 @@
-# Asset Exchange
+# Decentralized Asset Exchange
 
 This chapter focus on all the API calls available for the Asset Exchange feature. From asset issuance to decentralized exchange of the issued assets and many other services, these calls can help setup and monitor everything.
 

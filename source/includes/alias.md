@@ -1,4 +1,4 @@
-# Alias
+# Decentralized Alias
 
 Alias are a way to substitute one piece of text by another, so that keywords or keyphrases can be used to represent other things, for example you substitute a server IP address by a text representing the name of a domain, or an Ardor account address by the name of its holder.
 

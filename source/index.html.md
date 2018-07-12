@@ -15,14 +15,22 @@ toc_footers:
 includes:
   - accounts.md
   - account-control.md
-  - alias.md
-  - asset-exchange.md
-  - blocks.md
+  - transactions.md
   - coin-exchange.md
+  - asset-exchange.md
   - digital-goods.md
-  - forging.md
-  - messages.md
   - monetary-system.md
+  - messaging.md
+  - voting.md
+  - data-storage.md
+  - alias.md
+  - privacy-shuffling.md
+  - blocks.md
+  - forging.md
+  - node-network.md
+  - phasing.md
+  - search.md
+  - utils.md
   - errors
 
 search: true

@@ -350,7 +350,9 @@ html, body {
   &>h1, &>h2, &>div {
     clear:both;
   }
-
+  &>h1 {
+    margin-right: 0;
+  }
   h1 {
     @extend %header-font;
     font-size: 30px;
@@ -359,8 +361,8 @@ html, body {
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     border-bottom: 1px solid #ccc;
-    background-color: #FFF;
   }
+  
 
   h1:first-child, div:first-child + h1 {
     border-top-width: 0;

@@ -1,4 +1,4 @@
-# Monetary System
+# Decentralized Monetary System
 
 The Ardor Monetary System features a special asset class currency secured by the Ardor network and blockchain. Virtual currencies with a variety of customizable properties can be created in minutes.
 

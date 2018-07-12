@@ -1,4 +1,4 @@
-# Digital Goods (DGS)
+# Decentralized Digital Goods
 
 The Digital Goods, or DGS for abreviation, is an interesting feature available for each childchain and give it the possibility to build a Decentralized market place in an easy and smooth way.
 
