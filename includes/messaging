@@ -1,4 +1,4 @@
-<h1 id='messages'>Messages</h1>
+<h1 id='decentralized-messaging'>Decentralized Messaging</h1>
 <p>Messages is a way for Ardor accounts to exchange information or data over the blockchain without using a secondary channel. The messages can be encrypted and are prunable from the blockchain history.</p>
 
 <p>The base implementation allows for the transmission of simple, unencrypted text messages between accounts, but since the messages are truly &quot;arbitrary&quot; the range of possible applications is vast. Secure messaging, torrent applications, voting systems, data storage systems and even simple distributed applications have been suggested.</p>

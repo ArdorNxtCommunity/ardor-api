@@ -1,4 +1,4 @@
-<h1 id='alias'>Alias</h1>
+<h1 id='decentralized-alias'>Decentralized Alias</h1>
 <p>Alias are a way to substitute one piece of text by another, so that keywords or keyphrases can be used to represent other things, for example you substitute a server IP address by a text representing the name of a domain, or an Ardor account address by the name of its holder.</p>
 <h2 id='get-amp-set-alias'>Get &amp; Set Alias</h2>
 <p>In order to set an alias or search for existing ones, you can use the API calls below.</p>
