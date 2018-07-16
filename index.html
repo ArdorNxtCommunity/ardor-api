@@ -274,16 +274,10 @@
             <a href="#account-control" class="toc-h1 toc-link" data-title="account-control">Account Control</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#leasebalance" class="toc-h2 toc-link" data-title="leasebalance">leaseBalance</a>
+                    <a href="#set-controls" class="toc-h2 toc-link" data-title="set-controls">Set Controls</a>
                   </li>
                   <li>
-                    <a href="#getallphasingonlycontrols" class="toc-h2 toc-link" data-title="getallphasingonlycontrols">getAllPhasingOnlyControls</a>
-                  </li>
-                  <li>
-                    <a href="#getphasingonlycontrol" class="toc-h2 toc-link" data-title="getphasingonlycontrol">getPhasingOnlyControl</a>
-                  </li>
-                  <li>
-                    <a href="#setphasingonlycontrol" class="toc-h2 toc-link" data-title="setphasingonlycontrol">setPhasingOnlyControl</a>
+                    <a href="#view-controls" class="toc-h2 toc-link" data-title="view-controls">View Controls</a>
                   </li>
               </ul>
           </li>
@@ -428,19 +422,7 @@
             <a href="#blocks" class="toc-h1 toc-link" data-title="blocks">Blocks</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#getblocks" class="toc-h2 toc-link" data-title="getblocks"> getBlocks</a>
-                  </li>
-                  <li>
-                    <a href="#getblock" class="toc-h2 toc-link" data-title="getblock"> getBlock</a>
-                  </li>
-                  <li>
-                    <a href="#getblockid" class="toc-h2 toc-link" data-title="getblockid"> getBlockId</a>
-                  </li>
-                  <li>
-                    <a href="#getblockchainstatus" class="toc-h2 toc-link" data-title="getblockchainstatus"> getBlockchainStatus</a>
-                  </li>
-                  <li>
-                    <a href="#getecblock" class="toc-h2 toc-link" data-title="getecblock"> getECBlock</a>
+                    <a href="#blocks-discovery" class="toc-h2 toc-link" data-title="blocks-discovery">Blocks discovery</a>
                   </li>
               </ul>
           </li>
@@ -694,7 +676,7 @@ Remember — a happy kitten is an authenticated kitten!
 <p>In this chapter we focus on all the API calls that can help you interact with an account, this can include sending Ardor to this account, getting his balances, or more advanced interactions like properties and control features.</p>
 <h2 id='account-information'>Account Information</h2><h3 id='getaccountid'>getAccountId</h3><h3 id='getaccountpublickey'>getAccountPublicKey</h3><h3 id='getaccountledger'>getAccountLedger</h3><h3 id='getaccountledgerentry'>getAccountLedgerEntry</h3><h3 id='getaccountassetcount'>getAccountAssetCount</h3><h3 id='getaccountassets'>getAccountAssets</h3><h3 id='getaccountblockcount'>getAccountBlockCount</h3><h3 id='getaccountblockids'>getAccountBlockIds</h3><h3 id='getaccountblocks'>getAccountBlocks</h3><h3 id='getaccountcurrencycount'>getAccountCurrencyCount</h3><h3 id='getaccountcurrencies'>getAccountCurrencies</h3><h3 id='getaccountlessors'>getAccountLessors</h3><h3 id='getaccountphasedtransactioncount'>getAccountPhasedTransactionCount</h3><h3 id='getaccountphasedtransactions'>getAccountPhasedTransactions</h3><h3 id='getunconfirmedtransactionids'>getUnconfirmedTransactionIds</h3><h3 id='getunconfirmedtransactions'>getUnconfirmedTransactions</h3><h3 id='setaccountinfo'>setAccountInfo</h3><h2 id='account-balances'>Account Balances</h2><h3 id='getbalance'>getBalance</h3><h3 id='getbalances'>getBalances</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='geteffectivebalance'>getEffectiveBalance</h3><h3 id='sendmoney'>sendMoney</h3><h2 id='account-trades'>Account Trades</h2><h3 id='getaccountcurrentaskorderids'>getAccountCurrentAskOrderIds</h3><h3 id='getaccountcurrentaskorders'>getAccountCurrentAskOrders</h3><h3 id='getaccountcurrentbidorderids'>getAccountCurrentBidOrderIds</h3><h3 id='getaccountcurrentbidorders'>getAccountCurrentBidOrders</h3><h3 id='getaccountexchangerequests'>getAccountExchangeRequests</h3><h2 id='account-activity'>Account Activity</h2><h3 id='getcurrenciesbyissuer'> getCurrenciesByIssuer</h3><h3 id='getassetsbyissuer'>getAssetsByIssuer</h3><h3 id='getblockchaintransactions'>getBlockchainTransactions</h3><h2 id='account-votes'>Account Votes</h2><h3 id='getpolls'>getPolls</h3><h3 id='getvoterphasedtransactions'>getVoterPhasedTransactions</h3><h2 id='account-funding'>Account Funding</h2><h3 id='getfundingmonitor'>getFundingMonitor</h3><h3 id='startfundingmonitor'>startFundingMonitor</h3><h3 id='stopfundingmonitor'>stopFundingMonitor</h3><h2 id='account-properties'>Account Properties</h2><h3 id='getaccountproperties'>getAccountProperties</h3><h3 id='setaccountproperty'>setAccountProperty</h3><h3 id='deleteaccountproperty'>deleteAccountProperty</h3><h2 id='account-util-functions'>Account Util functions</h2><h3 id='rsconvert'>rsConvert</h3><h3 id='searchaccounts'>searchAccounts</h3><h1 id='account-control'>Account Control</h1>
 <p>Account control API calls allow you to apply different controls over your account like phasing, multiSig approvals or max spending limits.</p>
-<h2 id='leasebalance'>leaseBalance</h2><h2 id='getallphasingonlycontrols'>getAllPhasingOnlyControls</h2><h2 id='getphasingonlycontrol'>getPhasingOnlyControl</h2><h2 id='setphasingonlycontrol'>setPhasingOnlyControl</h2><h1 id='transactions'>Transactions</h1><h2 id='signing-amp-sending'>Signing &amp; Sending</h2><h3 id='signtransaction'>signTransaction</h3><h3 id='sendtransaction'>sendTransaction</h3><h3 id='broadcasttransaction'>broadcastTransaction</h3><h3 id='calculatefullhash'>calculateFullHash</h3><h3 id='parsetransaction'>parseTransaction</h3><h3 id='retrieveprunedtransaction'>retrievePrunedTransaction</h3><h2 id='explore-transactions'>Explore transactions</h2><h3 id='gettransaction'>getTransaction</h3><h3 id='gettransactionbytes'>getTransactionBytes</h3><h3 id='getunconfirmedtransactionids'>getUnconfirmedTransactionIds</h3><h3 id='getunconfirmedtransactions'>getUnconfirmedTransactions</h3><h3 id='getblockchaintransactions'>getBlockchainTransactions</h3><h3 id='getexecutedtransactions'>getExecutedTransactions</h3><h3 id='getexpectedtransactions'>getExpectedTransactions</h3><h3 id='getfxttransaction'>getFxtTransaction</h3><h3 id='getreferencingtransactions'>getReferencingTransactions</h3><h1 id='coin-exchange'>Coin Exchange</h1>
+<h2 id='set-controls'>Set Controls</h2><h3 id='leasebalance'>leaseBalance</h3><h3 id='setphasingonlycontrol'>setPhasingOnlyControl</h3><h2 id='view-controls'>View Controls</h2><h3 id='getallphasingonlycontrols'>getAllPhasingOnlyControls</h3><h3 id='getphasingonlycontrol'>getPhasingOnlyControl</h3><h1 id='transactions'>Transactions</h1><h2 id='signing-amp-sending'>Signing &amp; Sending</h2><h3 id='signtransaction'>signTransaction</h3><h3 id='sendtransaction'>sendTransaction</h3><h3 id='broadcasttransaction'>broadcastTransaction</h3><h3 id='calculatefullhash'>calculateFullHash</h3><h3 id='parsetransaction'>parseTransaction</h3><h3 id='retrieveprunedtransaction'>retrievePrunedTransaction</h3><h2 id='explore-transactions'>Explore transactions</h2><h3 id='gettransaction'>getTransaction</h3><h3 id='gettransactionbytes'>getTransactionBytes</h3><h3 id='getunconfirmedtransactionids'>getUnconfirmedTransactionIds</h3><h3 id='getunconfirmedtransactions'>getUnconfirmedTransactions</h3><h3 id='getblockchaintransactions'>getBlockchainTransactions</h3><h3 id='getexecutedtransactions'>getExecutedTransactions</h3><h3 id='getexpectedtransactions'>getExpectedTransactions</h3><h3 id='getfxttransaction'>getFxtTransaction</h3><h3 id='getreferencingtransactions'>getReferencingTransactions</h3><h1 id='coin-exchange'>Coin Exchange</h1>
 <p>The Coin Exchange feature is specific to Ardor architecture. 
 Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent chain have its own coin ARDR, and each childchain have its own coin too, like IGNIS, BITSWIFT, AEUR ...etc. The coin exchange allow users to exchange chilchain coins against the ARDR parent chain coin without going throw an   exeternal exchange.</p>
 
@@ -721,7 +703,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <p>Alias can be set, bought and sold, and the API calls can help you achieve this.</p>
 <h3 id='buyalias'>buyAlias</h3><h3 id='sellalias'>sellAlias</h3><h3 id='deletealias'>deleteAlias</h3><h1 id='privacy-amp-suffling'>Privacy &amp; Suffling</h1><h2 id='shuffling-setup'>Shuffling Setup</h2><h3 id='shufflingcreate'>shufflingCreate</h3><h3 id='shufflingcancel'>shufflingCancel</h3><h3 id='shufflingprocess'>shufflingProcess</h3><h3 id='shufflingregister'>shufflingRegister</h3><h3 id='shufflingverify'>shufflingVerify</h3><h3 id='startshuffler'>startShuffler</h3><h3 id='stopshuffler'>stopShuffler</h3><h2 id='suffling-monitoring'>Suffling Monitoring</h2><h3 id='getallshufflings'>getAllShufflings</h3><h3 id='getaccountshufflings'>getAccountShufflings</h3><h3 id='getassignedshufflings'>getAssignedShufflings</h3><h3 id='getholdingshufflings'>getHoldingShufflings</h3><h3 id='getshufflers'>getShufflers</h3><h3 id='getshuffling'>getShuffling</h3><h3 id='getshufflingparticipants'>getShufflingParticipants</h3><h1 id='blocks'>Blocks</h1>
 <p>Blocks are the series of constituent elements of the Blockchain. These API calls helps monitor the blockchain activity by exploring these blocks and their content.</p>
-<h3 id='getblocks'> getBlocks</h3><h3 id='getblock'> getBlock</h3><h3 id='getblockid'> getBlockId</h3><h3 id='getblockchainstatus'> getBlockchainStatus</h3><h3 id='getecblock'> getECBlock</h3><h1 id='forging'>Forging</h1>
+<h2 id='blocks-discovery'>Blocks discovery</h2><h3 id='getblocks'> getBlocks</h3><h3 id='getblock'> getBlock</h3><h3 id='getblockid'> getBlockId</h3><h3 id='getblockchainstatus'> getBlockchainStatus</h3><h3 id='getecblock'> getECBlock</h3><h1 id='forging'>Forging</h1>
 <p>In Proof-of-Stake consensus algorithms, Forging is the process of building and validating transaction blocks, which equivalent to Mining in Proof-of-Work, with the exception that forgers are rewarded only from transaction fees and there is no new generation of forging coin (ARDR is this case).</p>
 
 <p>The API calls below allow you to </p>

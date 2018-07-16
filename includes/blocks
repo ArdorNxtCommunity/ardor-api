@@ -1,3 +1,3 @@
 <h1 id='blocks'>Blocks</h1>
 <p>Blocks are the series of constituent elements of the Blockchain. These API calls helps monitor the blockchain activity by exploring these blocks and their content.</p>
-<h3 id='getblocks'> getBlocks</h3><h3 id='getblock'> getBlock</h3><h3 id='getblockid'> getBlockId</h3><h3 id='getblockchainstatus'> getBlockchainStatus</h3><h3 id='getecblock'> getECBlock</h3>
+<h2 id='blocks-discovery'>Blocks discovery</h2><h3 id='getblocks'> getBlocks</h3><h3 id='getblock'> getBlock</h3><h3 id='getblockid'> getBlockId</h3><h3 id='getblockchainstatus'> getBlockchainStatus</h3><h3 id='getecblock'> getECBlock</h3>

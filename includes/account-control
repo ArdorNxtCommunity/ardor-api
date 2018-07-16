@@ -1,3 +1,3 @@
 <h1 id='account-control'>Account Control</h1>
 <p>Account control API calls allow you to apply different controls over your account like phasing, multiSig approvals or max spending limits.</p>
-<h2 id='leasebalance'>leaseBalance</h2><h2 id='getallphasingonlycontrols'>getAllPhasingOnlyControls</h2><h2 id='getphasingonlycontrol'>getPhasingOnlyControl</h2><h2 id='setphasingonlycontrol'>setPhasingOnlyControl</h2>
+<h2 id='set-controls'>Set Controls</h2><h3 id='leasebalance'>leaseBalance</h3><h3 id='setphasingonlycontrol'>setPhasingOnlyControl</h3><h2 id='view-controls'>View Controls</h2><h3 id='getallphasingonlycontrols'>getAllPhasingOnlyControls</h3><h3 id='getphasingonlycontrol'>getPhasingOnlyControl</h3>
