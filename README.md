@@ -28,7 +28,7 @@ You're going to need:
 
 
 ### Getting Set Up
-1. Clone this repository from GitHub `git clone https://github.com/ArdorNxtCommunity/ardor-api.git`
+1. Clone this repository from GitHub `git clone https://github.com/ArdorNxtCommunity/ardor-api-doc.git`
 2. `cd slate`
 4. Initialize and start Slate. You can either do this locally, or with Vagrant:
 
@@ -47,7 +47,7 @@ If you'd prefer to use Docker, instructions are available [in the wiki](https://
 
 For those who don't have JavaScript runtime or are experiencing JavaScript runtime issues with ExecJS, it is recommended to add the [rubyracer gem](https://github.com/cowboyd/therubyracer) to your gemfile and run `bundle` again.
 
-How to contribute ?
+How to contribute?
 ---------------------------------
 
 If you want to contribute in writing and maintaining this documentation please proceed as follow:
@@ -55,11 +55,26 @@ If you want to contribute in writing and maintaining this documentation please p
 - Clone this repo.
 - Follow the Getting Started steps to set up your environment and build the documentation
 - Open the code in your favorite IDE (Visual Studio Code can be fine)
-- Start a contribution
+- Start a contribution:
+  - Open the `<LocalRepo>/source/includes/`
+  - Select the markdown file you want to contribute on
+  - Write the API call documentation starting by the code, then description, then the parameters, the specific notes if any
 - When you finish a contribution, please submit a Pull Request with a clear message defining the work done
 - Your contribution will be reviewed and merged as soon as possible. But, please be prepared to receive comments and adjust your contribution
 
-If you want to be a permanent contribution to this documentation, please contact us on [Slack](https://ardornxt.slack.com/) or [Discord](https://discord.gg/ZrBhZNp) channels
+As you may notice in code, creating a parameters' table is made easier by centeralizing all the API inputs in the file `<LocalRepo>/source/includes/_api_inputs.json`, and then simply using a Ruby tag in the Markdown file as in the example below:
+
+```markdown
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('param1', 'required', 'This is an additional description') %>
+<%= getParameter('param2', 'optional') %>
+```
+
+The function `getParameter(paramName, visibility, addDescription=nil)` will be called during the documentation generation process, will read from the JSON file and output a new line in parameters table with the Name, Type, Description[+addDescription].
+This way, we can have only one source of description for the parameters and when ever we modify this source, all the documentation will be updated accordingly.
+
+If you want to be a permanent contributor to this documentation, please contact us on [Slack](https://ardornxt.slack.com/) or [Discord](https://discord.gg/ZrBhZNp) channels
 
 Questions? Need Help? Found a bug?
 ----------------------------------
