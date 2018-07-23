@@ -202,7 +202,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;python&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -214,7 +214,6 @@
         <div class="lang-selector">
               <a href="#" data-language-name="shell">cURL</a>
               <a href="#" data-language-name="javascript">JavaScript</a>
-              <a href="#" data-language-name="python">Python</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -225,48 +224,167 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication-only-for-test" class="toc-h1 toc-link" data-title="authentication-only-for-test">Authentication (Only for test)</a>
-          </li>
-          <li>
-            <a href="#kittens-only-for-test" class="toc-h1 toc-link" data-title="kittens-only-for-test">Kittens (Only for test)</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="get-all-kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="get-a-specific-kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="delete-a-specific-kitten">Delete a Specific Kitten</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#accounts" class="toc-h1 toc-link" data-title="accounts">Accounts</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#account-information" class="toc-h2 toc-link" data-title="account-information">Account Information</a>
+                  <a href="#account-information" class="toc-h2 toc-link" data-title="account-information">Account Information</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getaccountid" class="toc-h3 toc-link" data-title="Accounts">getAccountId</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountpublickey" class="toc-h3 toc-link" data-title="Accounts">getAccountPublicKey</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountledger" class="toc-h3 toc-link" data-title="Accounts">getAccountLedger</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountledgerentry" class="toc-h3 toc-link" data-title="Accounts">getAccountLedgerEntry</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountassetcount" class="toc-h3 toc-link" data-title="Accounts">getAccountAssetCount</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountassets" class="toc-h3 toc-link" data-title="Accounts">getAccountAssets</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountblockcount" class="toc-h3 toc-link" data-title="Accounts">getAccountBlockCount</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountblockids" class="toc-h3 toc-link" data-title="Accounts">getAccountBlockIds</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountblocks" class="toc-h3 toc-link" data-title="Accounts">getAccountBlocks</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrencycount" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrencyCount</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrencies" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrencies</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountlessors" class="toc-h3 toc-link" data-title="Accounts">getAccountLessors</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountphasedtransactioncount" class="toc-h3 toc-link" data-title="Accounts">getAccountPhasedTransactionCount</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountphasedtransactions" class="toc-h3 toc-link" data-title="Accounts">getAccountPhasedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getunconfirmedtransactionids" class="toc-h3 toc-link" data-title="Accounts">getUnconfirmedTransactionIds</a>
+                          </li>
+                          <li>
+                            <a href="#getunconfirmedtransactions" class="toc-h3 toc-link" data-title="Accounts">getUnconfirmedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#setaccountinfo" class="toc-h3 toc-link" data-title="Accounts">setAccountInfo</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-balances" class="toc-h2 toc-link" data-title="account-balances">Account Balances</a>
+                  <a href="#account-balances" class="toc-h2 toc-link" data-title="account-balances">Account Balances</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getbalance" class="toc-h3 toc-link" data-title="Accounts">getBalance</a>
+                          </li>
+                          <li>
+                            <a href="#getbalances" class="toc-h3 toc-link" data-title="Accounts">getBalances</a>
+                          </li>
+                          <li>
+                            <a href="#getguaranteedbalance" class="toc-h3 toc-link" data-title="Accounts">getGuaranteedBalance</a>
+                          </li>
+                          <li>
+                            <a href="#geteffectivebalance" class="toc-h3 toc-link" data-title="Accounts">getEffectiveBalance</a>
+                          </li>
+                          <li>
+                            <a href="#sendmoney" class="toc-h3 toc-link" data-title="Accounts">sendMoney</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-trades" class="toc-h2 toc-link" data-title="account-trades">Account Trades</a>
+                  <a href="#account-trades" class="toc-h2 toc-link" data-title="account-trades">Account Trades</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getaccountcurrentaskorderids" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrentAskOrderIds</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrentaskorders" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrentAskOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrentbidorderids" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrentBidOrderIds</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrentbidorders" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrentBidOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountexchangerequests" class="toc-h3 toc-link" data-title="Accounts">getAccountExchangeRequests</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-activity" class="toc-h2 toc-link" data-title="account-activity">Account Activity</a>
+                  <a href="#account-activity" class="toc-h2 toc-link" data-title="account-activity">Account Activity</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getcurrenciesbyissuer" class="toc-h3 toc-link" data-title="Accounts"> getCurrenciesByIssuer</a>
+                          </li>
+                          <li>
+                            <a href="#getassetsbyissuer" class="toc-h3 toc-link" data-title="Accounts">getAssetsByIssuer</a>
+                          </li>
+                          <li>
+                            <a href="#getblockchaintransactions" class="toc-h3 toc-link" data-title="Accounts">getBlockchainTransactions</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-votes" class="toc-h2 toc-link" data-title="account-votes">Account Votes</a>
+                  <a href="#account-votes" class="toc-h2 toc-link" data-title="account-votes">Account Votes</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getpolls" class="toc-h3 toc-link" data-title="Accounts">getPolls</a>
+                          </li>
+                          <li>
+                            <a href="#getvoterphasedtransactions" class="toc-h3 toc-link" data-title="Accounts">getVoterPhasedTransactions</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-funding" class="toc-h2 toc-link" data-title="account-funding">Account Funding</a>
+                  <a href="#account-funding" class="toc-h2 toc-link" data-title="account-funding">Account Funding</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getfundingmonitor" class="toc-h3 toc-link" data-title="Accounts">getFundingMonitor</a>
+                          </li>
+                          <li>
+                            <a href="#startfundingmonitor" class="toc-h3 toc-link" data-title="Accounts">startFundingMonitor</a>
+                          </li>
+                          <li>
+                            <a href="#stopfundingmonitor" class="toc-h3 toc-link" data-title="Accounts">stopFundingMonitor</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-properties" class="toc-h2 toc-link" data-title="account-properties">Account Properties</a>
+                  <a href="#account-properties" class="toc-h2 toc-link" data-title="account-properties">Account Properties</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getaccountproperties" class="toc-h3 toc-link" data-title="Accounts">getAccountProperties</a>
+                          </li>
+                          <li>
+                            <a href="#setaccountproperty" class="toc-h3 toc-link" data-title="Accounts">setAccountProperty</a>
+                          </li>
+                          <li>
+                            <a href="#deleteaccountproperty" class="toc-h3 toc-link" data-title="Accounts">deleteAccountProperty</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-util-functions" class="toc-h2 toc-link" data-title="account-util-functions">Account Util functions</a>
+                  <a href="#account-util-functions" class="toc-h2 toc-link" data-title="account-util-functions">Account Util functions</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#rsconvert" class="toc-h3 toc-link" data-title="Accounts">rsConvert</a>
+                          </li>
+                          <li>
+                            <a href="#searchaccounts" class="toc-h3 toc-link" data-title="Accounts">searchAccounts</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -274,10 +392,26 @@
             <a href="#account-control" class="toc-h1 toc-link" data-title="account-control">Account Control</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#set-controls" class="toc-h2 toc-link" data-title="set-controls">Set Controls</a>
+                  <a href="#set-controls" class="toc-h2 toc-link" data-title="set-controls">Set Controls</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#leasebalance" class="toc-h3 toc-link" data-title="Account Control">leaseBalance</a>
+                          </li>
+                          <li>
+                            <a href="#setphasingonlycontrol" class="toc-h3 toc-link" data-title="Account Control">setPhasingOnlyControl</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#view-controls" class="toc-h2 toc-link" data-title="view-controls">View Controls</a>
+                  <a href="#view-controls" class="toc-h2 toc-link" data-title="view-controls">View Controls</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getallphasingonlycontrols" class="toc-h3 toc-link" data-title="Account Control">getAllPhasingOnlyControls</a>
+                          </li>
+                          <li>
+                            <a href="#getphasingonlycontrol" class="toc-h3 toc-link" data-title="Account Control">getPhasingOnlyControl</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -285,10 +419,59 @@
             <a href="#transactions" class="toc-h1 toc-link" data-title="transactions">Transactions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#signing-amp-sending" class="toc-h2 toc-link" data-title="signing-amp-sending">Signing &amp; Sending</a>
+                  <a href="#signing-amp-sending" class="toc-h2 toc-link" data-title="signing-amp-sending">Signing &amp; Sending</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#signtransaction" class="toc-h3 toc-link" data-title="Transactions">signTransaction</a>
+                          </li>
+                          <li>
+                            <a href="#sendtransaction" class="toc-h3 toc-link" data-title="Transactions">sendTransaction</a>
+                          </li>
+                          <li>
+                            <a href="#broadcasttransaction" class="toc-h3 toc-link" data-title="Transactions">broadcastTransaction</a>
+                          </li>
+                          <li>
+                            <a href="#calculatefullhash" class="toc-h3 toc-link" data-title="Transactions">calculateFullHash</a>
+                          </li>
+                          <li>
+                            <a href="#parsetransaction" class="toc-h3 toc-link" data-title="Transactions">parseTransaction</a>
+                          </li>
+                          <li>
+                            <a href="#retrieveprunedtransaction" class="toc-h3 toc-link" data-title="Transactions">retrievePrunedTransaction</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#explore-transactions" class="toc-h2 toc-link" data-title="explore-transactions">Explore transactions</a>
+                  <a href="#explore-transactions" class="toc-h2 toc-link" data-title="explore-transactions">Explore transactions</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#gettransaction" class="toc-h3 toc-link" data-title="Transactions">getTransaction</a>
+                          </li>
+                          <li>
+                            <a href="#gettransactionbytes" class="toc-h3 toc-link" data-title="Transactions">getTransactionBytes</a>
+                          </li>
+                          <li>
+                            <a href="#getunconfirmedtransactionids" class="toc-h3 toc-link" data-title="Transactions">getUnconfirmedTransactionIds</a>
+                          </li>
+                          <li>
+                            <a href="#getunconfirmedtransactions" class="toc-h3 toc-link" data-title="Transactions">getUnconfirmedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getblockchaintransactions" class="toc-h3 toc-link" data-title="Transactions">getBlockchainTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getexecutedtransactions" class="toc-h3 toc-link" data-title="Transactions">getExecutedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedtransactions" class="toc-h3 toc-link" data-title="Transactions">getExpectedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getfxttransaction" class="toc-h3 toc-link" data-title="Transactions">getFxtTransaction</a>
+                          </li>
+                          <li>
+                            <a href="#getreferencingtransactions" class="toc-h3 toc-link" data-title="Transactions">getReferencingTransactions</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -296,10 +479,44 @@
             <a href="#coin-exchange" class="toc-h1 toc-link" data-title="coin-exchange">Coin Exchange</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#orders-setting" class="toc-h2 toc-link" data-title="orders-setting">Orders Setting</a>
+                  <a href="#orders-setting" class="toc-h2 toc-link" data-title="orders-setting">Orders Setting</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#exchangecoins" class="toc-h3 toc-link" data-title="Coin Exchange"> exchangeCoins</a>
+                          </li>
+                          <li>
+                            <a href="#cancelcoinexchange" class="toc-h3 toc-link" data-title="Coin Exchange"> cancelCoinExchange</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#orders-discovery" class="toc-h2 toc-link" data-title="orders-discovery">Orders Discovery</a>
+                  <a href="#orders-discovery" class="toc-h2 toc-link" data-title="orders-discovery">Orders Discovery</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getcoinexchangeorders" class="toc-h3 toc-link" data-title="Coin Exchange"> getCoinExchangeOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getcoinexchangeorderids" class="toc-h3 toc-link" data-title="Coin Exchange"> getCoinExchangeOrderIds</a>
+                          </li>
+                          <li>
+                            <a href="#getcoinexchangeorder" class="toc-h3 toc-link" data-title="Coin Exchange"> getCoinExchangeOrder</a>
+                          </li>
+                          <li>
+                            <a href="#getcoinexchangetrades" class="toc-h3 toc-link" data-title="Coin Exchange"> getCoinExchangeTrades</a>
+                          </li>
+                          <li>
+                            <a href="#getcoinexchangetrade" class="toc-h3 toc-link" data-title="Coin Exchange"> getCoinExchangeTrade</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedcoinexchangeorders" class="toc-h3 toc-link" data-title="Coin Exchange"> getExpectedCoinExchangeOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedcoinexchangeordercancellations" class="toc-h3 toc-link" data-title="Coin Exchange"> getExpectedCoinExchangeOrderCancellations</a>
+                          </li>
+                          <li>
+                            <a href="#simulatecoinexchange" class="toc-h3 toc-link" data-title="Coin Exchange"> simulateCoinExchange</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -307,22 +524,172 @@
             <a href="#decentralized-asset-exchange" class="toc-h1 toc-link" data-title="decentralized-asset-exchange">Decentralized Asset Exchange</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#asset-creation" class="toc-h2 toc-link" data-title="asset-creation">Asset Creation</a>
+                  <a href="#asset-creation" class="toc-h2 toc-link" data-title="asset-creation">Asset Creation</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#issueasset" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">issueAsset</a>
+                          </li>
+                          <li>
+                            <a href="#transferasset" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">transferAsset</a>
+                          </li>
+                          <li>
+                            <a href="#increaseassetshares" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">increaseAssetShares</a>
+                          </li>
+                          <li>
+                            <a href="#dividendpayment" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">dividendPayment</a>
+                          </li>
+                          <li>
+                            <a href="#deleteassetshares" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">deleteAssetShares</a>
+                          </li>
+                          <li>
+                            <a href="#setphasingassetcontrol" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">setPhasingAssetControl</a>
+                          </li>
+                          <li>
+                            <a href="#getphasingassetcontrol" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getPhasingAssetControl</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#asset-holders" class="toc-h2 toc-link" data-title="asset-holders">Asset Holders</a>
+                  <a href="#asset-holders" class="toc-h2 toc-link" data-title="asset-holders">Asset Holders</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getassetaccountcount" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssetAccountCount</a>
+                          </li>
+                          <li>
+                            <a href="#getassetaccounts" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssetAccounts</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#asset-exchange" class="toc-h2 toc-link" data-title="asset-exchange">Asset Exchange</a>
+                  <a href="#asset-exchange" class="toc-h2 toc-link" data-title="asset-exchange">Asset Exchange</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#placeaskorder" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">placeAskOrder</a>
+                          </li>
+                          <li>
+                            <a href="#cancelaskorder" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">cancelAskOrder</a>
+                          </li>
+                          <li>
+                            <a href="#placebidorder" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">placeBidOrder</a>
+                          </li>
+                          <li>
+                            <a href="#cancelbidorder" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">cancelBidOrder</a>
+                          </li>
+                          <li>
+                            <a href="#getaskorderids" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAskOrderIds</a>
+                          </li>
+                          <li>
+                            <a href="#getaskorders" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAskOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getaskorder" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAskOrder</a>
+                          </li>
+                          <li>
+                            <a href="#getbidorderids" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getBidOrderIds</a>
+                          </li>
+                          <li>
+                            <a href="#getbidorders" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getBidOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getbidorder" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getBidOrder</a>
+                          </li>
+                          <li>
+                            <a href="#getallopenaskorders" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAllOpenAskOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getallopenbidorders" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAllOpenBidOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getalltrades" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAllTrades</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#asset-trades" class="toc-h2 toc-link" data-title="asset-trades">Asset Trades</a>
+                  <a href="#asset-trades" class="toc-h2 toc-link" data-title="asset-trades">Asset Trades</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#gettrades" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getTrades</a>
+                          </li>
+                          <li>
+                            <a href="#getlasttrades" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getLastTrades</a>
+                          </li>
+                          <li>
+                            <a href="#getordertrades" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getOrderTrades</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedaskorders" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getExpectedAskOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedassetdeletes" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getExpectedAssetDeletes</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedassettransfers" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getExpectedAssetTransfers</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedbidorders" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getExpectedBidOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedordercancellations" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getExpectedOrderCancellations</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-39-s-assets" class="toc-h2 toc-link" data-title="account-s-assets">Account's Assets</a>
+                  <a href="#account-39-s-assets" class="toc-h2 toc-link" data-title="account-s-assets">Account's Assets</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getaccountassetcount" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAccountAssetCount</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountassets" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAccountAssets</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrentaskorderids" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAccountCurrentAskOrderIds</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrentaskorders" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAccountCurrentAskOrders</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrentbidorderids" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAccountCurrentBidOrderIds</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrentbidorders" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAccountCurrentBidOrders</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#assets-discovery" class="toc-h2 toc-link" data-title="assets-discovery">Assets Discovery</a>
+                  <a href="#assets-discovery" class="toc-h2 toc-link" data-title="assets-discovery">Assets Discovery</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#searchassets" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">searchAssets</a>
+                          </li>
+                          <li>
+                            <a href="#getallassets" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAllAssets</a>
+                          </li>
+                          <li>
+                            <a href="#getassetids" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssetIds</a>
+                          </li>
+                          <li>
+                            <a href="#getassets" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssets</a>
+                          </li>
+                          <li>
+                            <a href="#getasset" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAsset</a>
+                          </li>
+                          <li>
+                            <a href="#getassetdividends" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssetDividends</a>
+                          </li>
+                          <li>
+                            <a href="#getassethistory" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssetHistory</a>
+                          </li>
+                          <li>
+                            <a href="#getassetphasedtransactions" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssetPhasedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getassettransfers" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssetTransfers</a>
+                          </li>
+                          <li>
+                            <a href="#getassetsbyissuer" class="toc-h3 toc-link" data-title="Decentralized Asset Exchange">getAssetsByIssuer</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -330,16 +697,90 @@
             <a href="#decentralized-digital-goods" class="toc-h1 toc-link" data-title="decentralized-digital-goods">Decentralized Digital Goods</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#dgs-lisiting" class="toc-h2 toc-link" data-title="dgs-lisiting">DGS Lisiting</a>
+                  <a href="#dgs-lisiting" class="toc-h2 toc-link" data-title="dgs-lisiting">DGS Lisiting</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#dgslisting" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">dgsListing</a>
+                          </li>
+                          <li>
+                            <a href="#dgsdelisting" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">dgsDelisting</a>
+                          </li>
+                          <li>
+                            <a href="#dgsdelivery" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">dgsDelivery</a>
+                          </li>
+                          <li>
+                            <a href="#dgsfeedback" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">dgsFeedback</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#dgs-actions" class="toc-h2 toc-link" data-title="dgs-actions">DGS Actions</a>
+                  <a href="#dgs-actions" class="toc-h2 toc-link" data-title="dgs-actions">DGS Actions</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#dgspricechange" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">dgsPriceChange</a>
+                          </li>
+                          <li>
+                            <a href="#dgspurchase" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">dgsPurchase</a>
+                          </li>
+                          <li>
+                            <a href="#dgsquantitychange" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">dgsQuantityChange</a>
+                          </li>
+                          <li>
+                            <a href="#dgsrefund" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">dgsRefund</a>
+                          </li>
+                          <li>
+                            <a href="#getdgspendingpurchases" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSPendingPurchases</a>
+                          </li>
+                          <li>
+                            <a href="#getdgsexpiredpurchases" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSExpiredPurchases</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#dgs-purchases" class="toc-h2 toc-link" data-title="dgs-purchases">DGS Purchases</a>
+                  <a href="#dgs-purchases" class="toc-h2 toc-link" data-title="dgs-purchases">DGS Purchases</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getdgsgoodspurchasecount" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSGoodsPurchaseCount</a>
+                          </li>
+                          <li>
+                            <a href="#getdgsgoodspurchases" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSGoodsPurchases</a>
+                          </li>
+                          <li>
+                            <a href="#getdgspurchasecount" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSPurchaseCount</a>
+                          </li>
+                          <li>
+                            <a href="#getdgspurchases" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSPurchases</a>
+                          </li>
+                          <li>
+                            <a href="#getdgspurchase" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSPurchase</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#dgs-discovery" class="toc-h2 toc-link" data-title="dgs-discovery">DGS Discovery</a>
+                  <a href="#dgs-discovery" class="toc-h2 toc-link" data-title="dgs-discovery">DGS Discovery</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getdgsgoodscount" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSGoodsCount</a>
+                          </li>
+                          <li>
+                            <a href="#getdgsgoods" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSGoods</a>
+                          </li>
+                          <li>
+                            <a href="#getdgsgood" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSGood</a>
+                          </li>
+                          <li>
+                            <a href="#getdgstagcount" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSTagCount</a>
+                          </li>
+                          <li>
+                            <a href="#getdgstags" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSTags</a>
+                          </li>
+                          <li>
+                            <a href="#getdgstagslike" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">getDGSTagsLike</a>
+                          </li>
+                          <li>
+                            <a href="#searchdgsgoods" class="toc-h3 toc-link" data-title="Decentralized Digital Goods">searchDGSGoods</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -347,16 +788,141 @@
             <a href="#decentralized-monetary-system" class="toc-h1 toc-link" data-title="decentralized-monetary-system">Decentralized Monetary System</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#currency-issuance" class="toc-h2 toc-link" data-title="currency-issuance">Currency Issuance</a>
+                  <a href="#currency-issuance" class="toc-h2 toc-link" data-title="currency-issuance">Currency Issuance</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#issuecurrency" class="toc-h3 toc-link" data-title="Decentralized Monetary System">issueCurrency</a>
+                          </li>
+                          <li>
+                            <a href="#transfercurrency" class="toc-h3 toc-link" data-title="Decentralized Monetary System">transferCurrency</a>
+                          </li>
+                          <li>
+                            <a href="#currencymint" class="toc-h3 toc-link" data-title="Decentralized Monetary System">currencyMint</a>
+                          </li>
+                          <li>
+                            <a href="#currencyreserveclaim" class="toc-h3 toc-link" data-title="Decentralized Monetary System">currencyReserveClaim</a>
+                          </li>
+                          <li>
+                            <a href="#currencyreserveincrease" class="toc-h3 toc-link" data-title="Decentralized Monetary System">currencyReserveIncrease</a>
+                          </li>
+                          <li>
+                            <a href="#candeletecurrency" class="toc-h3 toc-link" data-title="Decentralized Monetary System"> canDeleteCurrency</a>
+                          </li>
+                          <li>
+                            <a href="#deletecurrency" class="toc-h3 toc-link" data-title="Decentralized Monetary System">deleteCurrency</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#currency-holders" class="toc-h2 toc-link" data-title="currency-holders">Currency Holders</a>
+                  <a href="#currency-holders" class="toc-h2 toc-link" data-title="currency-holders">Currency Holders</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getcurrencyaccountcount" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrencyAccountCount</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrencyaccounts" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrencyAccounts</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrencyfounders" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrencyFounders</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#account-currencies" class="toc-h2 toc-link" data-title="account-currencies">Account Currencies</a>
+                  <a href="#account-currencies" class="toc-h2 toc-link" data-title="account-currencies">Account Currencies</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getaccountcurrencycount" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getAccountCurrencyCount</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountcurrencies" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getAccountCurrencies</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountexchangerequests" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getAccountExchangeRequests</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#currency-exchange" class="toc-h2 toc-link" data-title="currency-exchange">Currency Exchange</a>
+                  <a href="#currency-exchange" class="toc-h2 toc-link" data-title="currency-exchange">Currency Exchange</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#currencybuy" class="toc-h3 toc-link" data-title="Decentralized Monetary System">currencyBuy</a>
+                          </li>
+                          <li>
+                            <a href="#currencysell" class="toc-h3 toc-link" data-title="Decentralized Monetary System">currencySell</a>
+                          </li>
+                          <li>
+                            <a href="#getbuyoffers" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getBuyOffers</a>
+                          </li>
+                          <li>
+                            <a href="#getselloffers" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getSellOffers</a>
+                          </li>
+                          <li>
+                            <a href="#getallcurrencies" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getAllCurrencies</a>
+                          </li>
+                          <li>
+                            <a href="#getallexchanges" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getAllExchanges</a>
+                          </li>
+                          <li>
+                            <a href="#getavailabletobuy" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getAvailableToBuy</a>
+                          </li>
+                          <li>
+                            <a href="#getavailabletosell" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getAvailableToSell</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrenciesbyissuer" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrenciesByIssuer</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrencyids" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrencyIds</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrencies" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrencies</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrency" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrency</a>
+                          </li>
+                          <li>
+                            <a href="#searchcurrencies" class="toc-h3 toc-link" data-title="Decentralized Monetary System">searchCurrencies</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrencyphasedtransactions" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrencyPhasedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrencytransfers" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getCurrencyTransfers</a>
+                          </li>
+                          <li>
+                            <a href="#getexchanges" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getExchanges</a>
+                          </li>
+                          <li>
+                            <a href="#getexchangesbyexchangerequest" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getExchangesByExchangeRequest</a>
+                          </li>
+                          <li>
+                            <a href="#getexchangesbyoffer" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getExchangesByOffer</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedbuyoffers" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getExpectedBuyOffers</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedcurrencytransfers" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getExpectedCurrencyTransfers</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedexchangerequests" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getExpectedExchangeRequests</a>
+                          </li>
+                          <li>
+                            <a href="#getexpectedselloffers" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getExpectedSellOffers</a>
+                          </li>
+                          <li>
+                            <a href="#getlastexchanges" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getLastExchanges</a>
+                          </li>
+                          <li>
+                            <a href="#getmintingtarget" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getMintingTarget</a>
+                          </li>
+                          <li>
+                            <a href="#getoffer" class="toc-h3 toc-link" data-title="Decentralized Monetary System">getOffer</a>
+                          </li>
+                          <li>
+                            <a href="#publishexchangeoffer" class="toc-h3 toc-link" data-title="Decentralized Monetary System">publishExchangeOffer</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -364,13 +930,49 @@
             <a href="#decentralized-messaging" class="toc-h1 toc-link" data-title="decentralized-messaging">Decentralized Messaging</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#send-amp-read" class="toc-h2 toc-link" data-title="send-amp-read">Send &amp; Read</a>
+                  <a href="#send-amp-read" class="toc-h2 toc-link" data-title="send-amp-read">Send &amp; Read</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#sendmessage" class="toc-h3 toc-link" data-title="Decentralized Messaging">sendMessage</a>
+                          </li>
+                          <li>
+                            <a href="#readmessage" class="toc-h3 toc-link" data-title="Decentralized Messaging">readMessage</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#encrypted-messages" class="toc-h2 toc-link" data-title="encrypted-messages">Encrypted Messages</a>
+                  <a href="#encrypted-messages" class="toc-h2 toc-link" data-title="encrypted-messages">Encrypted Messages</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#encryptto" class="toc-h3 toc-link" data-title="Decentralized Messaging">encryptTo</a>
+                          </li>
+                          <li>
+                            <a href="#decryptfrom" class="toc-h3 toc-link" data-title="Decentralized Messaging">decryptFrom</a>
+                          </li>
+                          <li>
+                            <a href="#getsharedkey" class="toc-h3 toc-link" data-title="Decentralized Messaging">getSharedKey</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#prunable-messages" class="toc-h2 toc-link" data-title="prunable-messages">Prunable Messages</a>
+                  <a href="#prunable-messages" class="toc-h2 toc-link" data-title="prunable-messages">Prunable Messages</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getallprunablemessages" class="toc-h3 toc-link" data-title="Decentralized Messaging">getAllPrunableMessages</a>
+                          </li>
+                          <li>
+                            <a href="#getprunablemessages" class="toc-h3 toc-link" data-title="Decentralized Messaging">getPrunableMessages</a>
+                          </li>
+                          <li>
+                            <a href="#getprunablemessage" class="toc-h3 toc-link" data-title="Decentralized Messaging">getPrunableMessage</a>
+                          </li>
+                          <li>
+                            <a href="#downloadprunablemessage" class="toc-h3 toc-link" data-title="Decentralized Messaging">downloadPrunableMessage</a>
+                          </li>
+                          <li>
+                            <a href="#verifyprunablemessage" class="toc-h3 toc-link" data-title="Decentralized Messaging">verifyPrunableMessage</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -378,10 +980,38 @@
             <a href="#decentralized-voting-system" class="toc-h1 toc-link" data-title="decentralized-voting-system">Decentralized Voting System</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#create-amp-vote" class="toc-h2 toc-link" data-title="create-amp-vote">Create &amp; Vote</a>
+                  <a href="#create-amp-vote" class="toc-h2 toc-link" data-title="create-amp-vote">Create &amp; Vote</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#createpoll" class="toc-h3 toc-link" data-title="Decentralized Voting System">createPoll</a>
+                          </li>
+                          <li>
+                            <a href="#castvote" class="toc-h3 toc-link" data-title="Decentralized Voting System">castVote</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#explore-votes" class="toc-h2 toc-link" data-title="explore-votes">Explore votes</a>
+                  <a href="#explore-votes" class="toc-h2 toc-link" data-title="explore-votes">Explore votes</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getpolls" class="toc-h3 toc-link" data-title="Decentralized Voting System">getPolls</a>
+                          </li>
+                          <li>
+                            <a href="#getpoll" class="toc-h3 toc-link" data-title="Decentralized Voting System">getPoll</a>
+                          </li>
+                          <li>
+                            <a href="#getpollresult" class="toc-h3 toc-link" data-title="Decentralized Voting System">getPollResult</a>
+                          </li>
+                          <li>
+                            <a href="#getpollvotes" class="toc-h3 toc-link" data-title="Decentralized Voting System">getPollVotes</a>
+                          </li>
+                          <li>
+                            <a href="#getpollvote" class="toc-h3 toc-link" data-title="Decentralized Voting System">getPollVote</a>
+                          </li>
+                          <li>
+                            <a href="#searchpolls" class="toc-h3 toc-link" data-title="Decentralized Voting System">searchPolls</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -389,10 +1019,50 @@
             <a href="#decentralized-data-storage" class="toc-h1 toc-link" data-title="decentralized-data-storage">Decentralized Data Storage</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#up-downloading-data" class="toc-h2 toc-link" data-title="up-downloading-data">Up/Downloading Data</a>
+                  <a href="#up-downloading-data" class="toc-h2 toc-link" data-title="up-downloading-data">Up/Downloading Data</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#uploadtaggeddata" class="toc-h3 toc-link" data-title="Decentralized Data Storage">uploadTaggedData</a>
+                          </li>
+                          <li>
+                            <a href="#downloadtaggeddata" class="toc-h3 toc-link" data-title="Decentralized Data Storage">downloadTaggedData</a>
+                          </li>
+                          <li>
+                            <a href="#verifytaggeddata" class="toc-h3 toc-link" data-title="Decentralized Data Storage">verifyTaggedData</a>
+                          </li>
+                          <li>
+                            <a href="#searchtaggeddata" class="toc-h3 toc-link" data-title="Decentralized Data Storage">searchTaggedData</a>
+                          </li>
+                          <li>
+                            <a href="#detectmimetype" class="toc-h3 toc-link" data-title="Decentralized Data Storage">detectMimeType</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#exploring-data" class="toc-h2 toc-link" data-title="exploring-data">Exploring Data</a>
+                  <a href="#exploring-data" class="toc-h2 toc-link" data-title="exploring-data">Exploring Data</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getalltaggeddata" class="toc-h3 toc-link" data-title="Decentralized Data Storage">getAllTaggedData</a>
+                          </li>
+                          <li>
+                            <a href="#getaccounttaggeddata" class="toc-h3 toc-link" data-title="Decentralized Data Storage">getAccountTaggedData</a>
+                          </li>
+                          <li>
+                            <a href="#getchanneltaggeddata" class="toc-h3 toc-link" data-title="Decentralized Data Storage">getChannelTaggedData</a>
+                          </li>
+                          <li>
+                            <a href="#getdatatagcount" class="toc-h3 toc-link" data-title="Decentralized Data Storage">getDataTagCount</a>
+                          </li>
+                          <li>
+                            <a href="#getdatatags" class="toc-h3 toc-link" data-title="Decentralized Data Storage">getDataTags</a>
+                          </li>
+                          <li>
+                            <a href="#getdatatagslike" class="toc-h3 toc-link" data-title="Decentralized Data Storage">getDataTagsLike</a>
+                          </li>
+                          <li>
+                            <a href="#gettaggeddata" class="toc-h3 toc-link" data-title="Decentralized Data Storage">getTaggedData</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -400,10 +1070,38 @@
             <a href="#decentralized-alias" class="toc-h1 toc-link" data-title="decentralized-alias">Decentralized Alias</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-amp-set-alias" class="toc-h2 toc-link" data-title="get-amp-set-alias">Get &amp; Set Alias</a>
+                  <a href="#get-amp-set-alias" class="toc-h2 toc-link" data-title="get-amp-set-alias">Get &amp; Set Alias</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#setalias" class="toc-h3 toc-link" data-title="Decentralized Alias">setAlias</a>
+                          </li>
+                          <li>
+                            <a href="#getaliascount" class="toc-h3 toc-link" data-title="Decentralized Alias">getAliasCount</a>
+                          </li>
+                          <li>
+                            <a href="#getalias" class="toc-h3 toc-link" data-title="Decentralized Alias">getAlias</a>
+                          </li>
+                          <li>
+                            <a href="#getaliases" class="toc-h3 toc-link" data-title="Decentralized Alias">getAliases</a>
+                          </li>
+                          <li>
+                            <a href="#getaliaseslike" class="toc-h3 toc-link" data-title="Decentralized Alias">getAliasesLike</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#exchange-alias" class="toc-h2 toc-link" data-title="exchange-alias">Exchange Alias</a>
+                  <a href="#exchange-alias" class="toc-h2 toc-link" data-title="exchange-alias">Exchange Alias</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#buyalias" class="toc-h3 toc-link" data-title="Decentralized Alias">buyAlias</a>
+                          </li>
+                          <li>
+                            <a href="#sellalias" class="toc-h3 toc-link" data-title="Decentralized Alias">sellAlias</a>
+                          </li>
+                          <li>
+                            <a href="#deletealias" class="toc-h3 toc-link" data-title="Decentralized Alias">deleteAlias</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -411,10 +1109,56 @@
             <a href="#privacy-amp-suffling" class="toc-h1 toc-link" data-title="privacy-amp-suffling">Privacy &amp; Suffling</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#shuffling-setup" class="toc-h2 toc-link" data-title="shuffling-setup">Shuffling Setup</a>
+                  <a href="#shuffling-setup" class="toc-h2 toc-link" data-title="shuffling-setup">Shuffling Setup</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#shufflingcreate" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">shufflingCreate</a>
+                          </li>
+                          <li>
+                            <a href="#shufflingcancel" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">shufflingCancel</a>
+                          </li>
+                          <li>
+                            <a href="#shufflingprocess" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">shufflingProcess</a>
+                          </li>
+                          <li>
+                            <a href="#shufflingregister" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">shufflingRegister</a>
+                          </li>
+                          <li>
+                            <a href="#shufflingverify" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">shufflingVerify</a>
+                          </li>
+                          <li>
+                            <a href="#startshuffler" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">startShuffler</a>
+                          </li>
+                          <li>
+                            <a href="#stopshuffler" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">stopShuffler</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#suffling-monitoring" class="toc-h2 toc-link" data-title="suffling-monitoring">Suffling Monitoring</a>
+                  <a href="#suffling-monitoring" class="toc-h2 toc-link" data-title="suffling-monitoring">Suffling Monitoring</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getallshufflings" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">getAllShufflings</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountshufflings" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">getAccountShufflings</a>
+                          </li>
+                          <li>
+                            <a href="#getassignedshufflings" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">getAssignedShufflings</a>
+                          </li>
+                          <li>
+                            <a href="#getholdingshufflings" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">getHoldingShufflings</a>
+                          </li>
+                          <li>
+                            <a href="#getshufflers" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">getShufflers</a>
+                          </li>
+                          <li>
+                            <a href="#getshuffling" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">getShuffling</a>
+                          </li>
+                          <li>
+                            <a href="#getshufflingparticipants" class="toc-h3 toc-link" data-title="Privacy &amp; Suffling">getShufflingParticipants</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -422,7 +1166,24 @@
             <a href="#blocks" class="toc-h1 toc-link" data-title="blocks">Blocks</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#blocks-discovery" class="toc-h2 toc-link" data-title="blocks-discovery">Blocks discovery</a>
+                  <a href="#blocks-discovery" class="toc-h2 toc-link" data-title="blocks-discovery">Blocks discovery</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getblocks" class="toc-h3 toc-link" data-title="Blocks"> getBlocks</a>
+                          </li>
+                          <li>
+                            <a href="#getblock" class="toc-h3 toc-link" data-title="Blocks"> getBlock</a>
+                          </li>
+                          <li>
+                            <a href="#getblockid" class="toc-h3 toc-link" data-title="Blocks"> getBlockId</a>
+                          </li>
+                          <li>
+                            <a href="#getblockchainstatus" class="toc-h3 toc-link" data-title="Blocks"> getBlockchainStatus</a>
+                          </li>
+                          <li>
+                            <a href="#getecblock" class="toc-h3 toc-link" data-title="Blocks"> getECBlock</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -430,10 +1191,53 @@
             <a href="#forging" class="toc-h1 toc-link" data-title="forging">Forging</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#forge-amp-bundle" class="toc-h2 toc-link" data-title="forge-amp-bundle">Forge &amp; Bundle</a>
+                  <a href="#forge-amp-bundle" class="toc-h2 toc-link" data-title="forge-amp-bundle">Forge &amp; Bundle</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#leasebalance" class="toc-h3 toc-link" data-title="Forging">leaseBalance</a>
+                          </li>
+                          <li>
+                            <a href="#startforging" class="toc-h3 toc-link" data-title="Forging">startForging</a>
+                          </li>
+                          <li>
+                            <a href="#stopforging" class="toc-h3 toc-link" data-title="Forging">stopForging</a>
+                          </li>
+                          <li>
+                            <a href="#startbundler" class="toc-h3 toc-link" data-title="Forging">startBundler</a>
+                          </li>
+                          <li>
+                            <a href="#stopbundler" class="toc-h3 toc-link" data-title="Forging">stopBundler</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#forgers" class="toc-h2 toc-link" data-title="forgers">Forgers</a>
+                  <a href="#forgers" class="toc-h2 toc-link" data-title="forgers">Forgers</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getbundlers" class="toc-h3 toc-link" data-title="Forging">getBundlers</a>
+                          </li>
+                          <li>
+                            <a href="#getallbundlerrates" class="toc-h3 toc-link" data-title="Forging">getAllBundlerRates</a>
+                          </li>
+                          <li>
+                            <a href="#getbundlerrates" class="toc-h3 toc-link" data-title="Forging">getBundlerRates</a>
+                          </li>
+                          <li>
+                            <a href="#getforging" class="toc-h3 toc-link" data-title="Forging">getForging</a>
+                          </li>
+                          <li>
+                            <a href="#blacklistbundler" class="toc-h3 toc-link" data-title="Forging">blacklistBundler</a>
+                          </li>
+                          <li>
+                            <a href="#bundletransactions" class="toc-h3 toc-link" data-title="Forging">bundleTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getguaranteedbalance" class="toc-h3 toc-link" data-title="Forging">getGuaranteedBalance</a>
+                          </li>
+                          <li>
+                            <a href="#getnextblockgenerators" class="toc-h3 toc-link" data-title="Forging">getNextBlockGenerators</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -441,10 +1245,56 @@
             <a href="#node-amp-network" class="toc-h1 toc-link" data-title="node-amp-network">Node &amp; Network</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#node-info" class="toc-h2 toc-link" data-title="node-info">Node Info</a>
+                  <a href="#node-info" class="toc-h2 toc-link" data-title="node-info">Node Info</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getblockchainstatus" class="toc-h3 toc-link" data-title="Node &amp; Network">getBlockchainStatus</a>
+                          </li>
+                          <li>
+                            <a href="#getconstants" class="toc-h3 toc-link" data-title="Node &amp; Network">getConstants</a>
+                          </li>
+                          <li>
+                            <a href="#getplugins" class="toc-h3 toc-link" data-title="Node &amp; Network">getPlugins</a>
+                          </li>
+                          <li>
+                            <a href="#getstate" class="toc-h3 toc-link" data-title="Node &amp; Network">getState</a>
+                          </li>
+                          <li>
+                            <a href="#gettime" class="toc-h3 toc-link" data-title="Node &amp; Network">getTime</a>
+                          </li>
+                          <li>
+                            <a href="#eventregister" class="toc-h3 toc-link" data-title="Node &amp; Network">eventRegister</a>
+                          </li>
+                          <li>
+                            <a href="#eventwait" class="toc-h3 toc-link" data-title="Node &amp; Network">eventWait</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#network-amp-peers" class="toc-h2 toc-link" data-title="network-amp-peers">Network &amp; Peers</a>
+                  <a href="#network-amp-peers" class="toc-h2 toc-link" data-title="network-amp-peers">Network &amp; Peers</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getmyinfo" class="toc-h3 toc-link" data-title="Node &amp; Network">getMyInfo</a>
+                          </li>
+                          <li>
+                            <a href="#addpeer" class="toc-h3 toc-link" data-title="Node &amp; Network">addPeer</a>
+                          </li>
+                          <li>
+                            <a href="#getpeers" class="toc-h3 toc-link" data-title="Node &amp; Network">getPeers</a>
+                          </li>
+                          <li>
+                            <a href="#getpeer" class="toc-h3 toc-link" data-title="Node &amp; Network">getPeer</a>
+                          </li>
+                          <li>
+                            <a href="#setapiproxypeer" class="toc-h3 toc-link" data-title="Node &amp; Network">setAPIProxyPeer</a>
+                          </li>
+                          <li>
+                            <a href="#blacklistapiproxypeer" class="toc-h3 toc-link" data-title="Node &amp; Network">blacklistAPIProxyPeer</a>
+                          </li>
+                          <li>
+                            <a href="#blacklistpeer" class="toc-h3 toc-link" data-title="Node &amp; Network">blacklistPeer</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -452,13 +1302,52 @@
             <a href="#phasing" class="toc-h1 toc-link" data-title="phasing">Phasing</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#phasing-approval" class="toc-h2 toc-link" data-title="phasing-approval">Phasing approval</a>
+                  <a href="#phasing-approval" class="toc-h2 toc-link" data-title="phasing-approval">Phasing approval</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#approvetransaction" class="toc-h3 toc-link" data-title="Phasing">approveTransaction</a>
+                          </li>
+                          <li>
+                            <a href="#parsephasingparams" class="toc-h3 toc-link" data-title="Phasing">parsePhasingParams</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#phased-transactions" class="toc-h2 toc-link" data-title="phased-transactions">Phased transactions</a>
+                  <a href="#phased-transactions" class="toc-h2 toc-link" data-title="phased-transactions">Phased transactions</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getaccountphasedtransactioncount" class="toc-h3 toc-link" data-title="Phasing">getAccountPhasedTransactionCount</a>
+                          </li>
+                          <li>
+                            <a href="#getaccountphasedtransactions" class="toc-h3 toc-link" data-title="Phasing">getAccountPhasedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getassetphasedtransactions" class="toc-h3 toc-link" data-title="Phasing">getAssetPhasedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getcurrencyphasedtransactions" class="toc-h3 toc-link" data-title="Phasing">getCurrencyPhasedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getlinkedphasedtransactions" class="toc-h3 toc-link" data-title="Phasing">getLinkedPhasedTransactions</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#phased-votes" class="toc-h2 toc-link" data-title="phased-votes">Phased votes</a>
+                  <a href="#phased-votes" class="toc-h2 toc-link" data-title="phased-votes">Phased votes</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getphasingpollvotes" class="toc-h3 toc-link" data-title="Phasing">getPhasingPollVotes</a>
+                          </li>
+                          <li>
+                            <a href="#getphasingpollvote" class="toc-h3 toc-link" data-title="Phasing">getPhasingPollVote</a>
+                          </li>
+                          <li>
+                            <a href="#getphasingpoll" class="toc-h3 toc-link" data-title="Phasing">getPhasingPoll</a>
+                          </li>
+                          <li>
+                            <a href="#getvoterphasedtransactions" class="toc-h3 toc-link" data-title="Phasing">getVoterPhasedTransactions</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -466,10 +1355,41 @@
             <a href="#search" class="toc-h1 toc-link" data-title="search">Search</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#global-search" class="toc-h2 toc-link" data-title="global-search">Global Search</a>
+                  <a href="#global-search" class="toc-h2 toc-link" data-title="global-search">Global Search</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#searchaccounts" class="toc-h3 toc-link" data-title="Search">searchAccounts</a>
+                          </li>
+                          <li>
+                            <a href="#searchassets" class="toc-h3 toc-link" data-title="Search">searchAssets</a>
+                          </li>
+                          <li>
+                            <a href="#searchcurrencies" class="toc-h3 toc-link" data-title="Search">searchCurrencies</a>
+                          </li>
+                          <li>
+                            <a href="#searchdgsgoods" class="toc-h3 toc-link" data-title="Search">searchDGSGoods</a>
+                          </li>
+                          <li>
+                            <a href="#searchpolls" class="toc-h3 toc-link" data-title="Search">searchPolls</a>
+                          </li>
+                          <li>
+                            <a href="#searchtaggeddata" class="toc-h3 toc-link" data-title="Search">searchTaggedData</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#like-search" class="toc-h2 toc-link" data-title="like-search">Like Search</a>
+                  <a href="#like-search" class="toc-h2 toc-link" data-title="like-search">Like Search</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#getaliaseslike" class="toc-h3 toc-link" data-title="Search">getAliasesLike</a>
+                          </li>
+                          <li>
+                            <a href="#getdgstagslike" class="toc-h3 toc-link" data-title="Search">getDGSTagsLike</a>
+                          </li>
+                          <li>
+                            <a href="#getdatatagslike" class="toc-h3 toc-link" data-title="Search">getDataTagsLike</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
           </li>
@@ -477,23 +1397,113 @@
             <a href="#utils" class="toc-h1 toc-link" data-title="utils">Utils</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#tokens" class="toc-h2 toc-link" data-title="tokens">Tokens</a>
+                  <a href="#tokens" class="toc-h2 toc-link" data-title="tokens">Tokens</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#decodefiletoken" class="toc-h3 toc-link" data-title="Utils">decodeFileToken</a>
+                          </li>
+                          <li>
+                            <a href="#decodetoken" class="toc-h3 toc-link" data-title="Utils">decodeToken</a>
+                          </li>
+                          <li>
+                            <a href="#generatefiletoken" class="toc-h3 toc-link" data-title="Utils">generateFileToken</a>
+                          </li>
+                          <li>
+                            <a href="#generatetoken" class="toc-h3 toc-link" data-title="Utils">generateToken</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#expressions-amp-codes" class="toc-h2 toc-link" data-title="expressions-amp-codes">Expressions &amp; Codes</a>
+                  <a href="#expressions-amp-codes" class="toc-h2 toc-link" data-title="expressions-amp-codes">Expressions &amp; Codes</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#evaluateexpression" class="toc-h3 toc-link" data-title="Utils">evaluateExpression</a>
+                          </li>
+                          <li>
+                            <a href="#hash" class="toc-h3 toc-link" data-title="Utils">hash</a>
+                          </li>
+                          <li>
+                            <a href="#fullhashtoid" class="toc-h3 toc-link" data-title="Utils">fullHashToId</a>
+                          </li>
+                          <li>
+                            <a href="#encodeqrcode" class="toc-h3 toc-link" data-title="Utils">encodeQRCode</a>
+                          </li>
+                          <li>
+                            <a href="#decodeqrcode" class="toc-h3 toc-link" data-title="Utils">decodeQRCode</a>
+                          </li>
+                          <li>
+                            <a href="#detectmimetype" class="toc-h3 toc-link" data-title="Utils">detectMimeType</a>
+                          </li>
+                          <li>
+                            <a href="#hexconvert" class="toc-h3 toc-link" data-title="Utils">hexConvert</a>
+                          </li>
+                          <li>
+                            <a href="#longconvert" class="toc-h3 toc-link" data-title="Utils">longConvert</a>
+                          </li>
+                          <li>
+                            <a href="#rsconvert" class="toc-h3 toc-link" data-title="Utils">rsConvert</a>
+                          </li>
+                      </ul>
                   </li>
                   <li>
-                    <a href="#debugging" class="toc-h2 toc-link" data-title="debugging">Debugging</a>
+                  <a href="#debugging" class="toc-h2 toc-link" data-title="debugging">Debugging</a>
+                      <ul class="toc-list-h3">
+                          <li>
+                            <a href="#scan" class="toc-h3 toc-link" data-title="Utils">scan</a>
+                          </li>
+                          <li>
+                            <a href="#dumppeers" class="toc-h3 toc-link" data-title="Utils">dumpPeers</a>
+                          </li>
+                          <li>
+                            <a href="#fullreset" class="toc-h3 toc-link" data-title="Utils">fullReset</a>
+                          </li>
+                          <li>
+                            <a href="#popoff" class="toc-h3 toc-link" data-title="Utils">popOff</a>
+                          </li>
+                          <li>
+                            <a href="#lucenereindex" class="toc-h3 toc-link" data-title="Utils">luceneReindex</a>
+                          </li>
+                          <li>
+                            <a href="#retrievepruneddata" class="toc-h3 toc-link" data-title="Utils">retrievePrunedData</a>
+                          </li>
+                          <li>
+                            <a href="#setlogging" class="toc-h3 toc-link" data-title="Utils">setLogging</a>
+                          </li>
+                          <li>
+                            <a href="#getlog" class="toc-h3 toc-link" data-title="Utils">getLog</a>
+                          </li>
+                          <li>
+                            <a href="#getstacktraces" class="toc-h3 toc-link" data-title="Utils">getStackTraces</a>
+                          </li>
+                          <li>
+                            <a href="#shutdown" class="toc-h3 toc-link" data-title="Utils">shutdown</a>
+                          </li>
+                          <li>
+                            <a href="#clearunconfirmedtransactions" class="toc-h3 toc-link" data-title="Utils">clearUnconfirmedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getallbroadcastedtransactions" class="toc-h3 toc-link" data-title="Utils">getAllBroadcastedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#getallwaitingtransactions" class="toc-h3 toc-link" data-title="Utils">getAllWaitingTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#rebroadcastunconfirmedtransactions" class="toc-h3 toc-link" data-title="Utils">rebroadcastUnconfirmedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#requeueunconfirmedtransactions" class="toc-h3 toc-link" data-title="Utils">requeueUnconfirmedTransactions</a>
+                          </li>
+                          <li>
+                            <a href="#trimderivedtables" class="toc-h3 toc-link" data-title="Utils">trimDerivedTables</a>
+                          </li>
+                      </ul>
                   </li>
               </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
           </li>
       </div>
         <ul class="toc-footer">
             <li><a href='#'>Ardor API Documentation</a></li>
-            <li><a href='https://www.ardornxt.group'>Documentation Powered by ArdorNxt Group</a></li>
+            <li><a href='https://www.ardornxt.group'>Powered by ArdorNxt Group</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -514,170 +1524,40 @@ This documentation is intended for developers from all horizons who want to expl
 <li>Go to http://localhost:27876/test</li>
 <li>Scroll to the call you want to test, set the call parameters and explore the results on the side</li>
 </ol>
-<h1 id='authentication-only-for-test'>Authentication (Only for test)</h1>
+<h1 id='accounts'>Accounts</h1>
+<p>This chapter focuses on all API calls that can help you interact identify an account and many other actions including: sending Ardor to an account, getting his balances, or more advanced interactions like properties and control features.</p>
+<h2 id='account-information'>Account Information</h2>
+<p>The set of API calls bellow allow you to request many informations about an account.</p>
+<h3 id='getaccountid'>getAccountId</h3>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>The request:</p>
 </blockquote>
-<pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountId&amp;publicKey=7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">publicKey</span><span class="p">:</span> <span class="s2">"7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"</span>
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountId"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="s2">"Account id is:"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens-only-for-test'>Kittens (Only for test)</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above request returns the following JSON structured response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-XK2L-Z7NK-VNKM-AZYVT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"publicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10155581947047232530"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<p>Get an account ID given a secret passphrase or public key.</p>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='accounts'>Accounts</h1>
-<p>In this chapter we focus on all the API calls that can help you interact with an account, this can include sending Ardor to this account, getting his balances, or more advanced interactions like properties and control features.</p>
-<h2 id='account-information'>Account Information</h2>
-<p>The variables </p>
-<h3 id='getaccountid'>getAccountId</h3>
-<p>Get an account ID given a secret passphrase or public key. POST only,</p>
+<p><code>GET http://localhost:27876/nxt?requestType=getAccountId&amp;publicKey=&lt;PublicKEY&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -687,17 +1567,27 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td><em>secretPhrase</em></td>
+<td><strong>secretPhrase</strong></td>
 <td>string</td>
-<td>Secret phrase of the account</td>
+<td>Secret phrase of the account. Optional</td>
 </tr>
 <tr>
 <td><strong>publicKey</strong></td>
 <td>string</td>
-<td>Public key of the accoun</td>
+<td>Public key of the account. Mandatory if <strong>secretPhrase</strong> is not set.</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountpublickey'>getAccountPublicKey</h3><h3 id='getaccountledger'>getAccountLedger</h3><h3 id='getaccountledgerentry'>getAccountLedgerEntry</h3><h3 id='getaccountassetcount'>getAccountAssetCount</h3><h3 id='getaccountassets'>getAccountAssets</h3><h3 id='getaccountblockcount'>getAccountBlockCount</h3><h3 id='getaccountblockids'>getAccountBlockIds</h3><h3 id='getaccountblocks'>getAccountBlocks</h3><h3 id='getaccountcurrencycount'>getAccountCurrencyCount</h3><h3 id='getaccountcurrencies'>getAccountCurrencies</h3><h3 id='getaccountlessors'>getAccountLessors</h3><h3 id='getaccountphasedtransactioncount'>getAccountPhasedTransactionCount</h3><h3 id='getaccountphasedtransactions'>getAccountPhasedTransactions</h3><h3 id='getunconfirmedtransactionids'>getUnconfirmedTransactionIds</h3><h3 id='getunconfirmedtransactions'>getUnconfirmedTransactions</h3><h3 id='setaccountinfo'>setAccountInfo</h3><h2 id='account-balances'>Account Balances</h2><h3 id='getbalance'>getBalance</h3><h3 id='getbalances'>getBalances</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='geteffectivebalance'>getEffectiveBalance</h3><h3 id='sendmoney'>sendMoney</h3><h2 id='account-trades'>Account Trades</h2><h3 id='getaccountcurrentaskorderids'>getAccountCurrentAskOrderIds</h3><h3 id='getaccountcurrentaskorders'>getAccountCurrentAskOrders</h3><h3 id='getaccountcurrentbidorderids'>getAccountCurrentBidOrderIds</h3><h3 id='getaccountcurrentbidorders'>getAccountCurrentBidOrders</h3><h3 id='getaccountexchangerequests'>getAccountExchangeRequests</h3><h2 id='account-activity'>Account Activity</h2><h3 id='getcurrenciesbyissuer'> getCurrenciesByIssuer</h3><h3 id='getassetsbyissuer'>getAssetsByIssuer</h3><h3 id='getblockchaintransactions'>getBlockchainTransactions</h3><h2 id='account-votes'>Account Votes</h2><h3 id='getpolls'>getPolls</h3><h3 id='getvoterphasedtransactions'>getVoterPhasedTransactions</h3><h2 id='account-funding'>Account Funding</h2><h3 id='getfundingmonitor'>getFundingMonitor</h3><h3 id='startfundingmonitor'>startFundingMonitor</h3><h3 id='stopfundingmonitor'>stopFundingMonitor</h3><h2 id='account-properties'>Account Properties</h2><h3 id='getaccountproperties'>getAccountProperties</h3><h3 id='setaccountproperty'>setAccountProperty</h3><h3 id='deleteaccountproperty'>deleteAccountProperty</h3><h2 id='account-util-functions'>Account Util functions</h2><h3 id='rsconvert'>rsConvert</h3><h3 id='searchaccounts'>searchAccounts</h3><h1 id='account-control'>Account Control</h1>
+
+<aside class="warning">
+The secret phrase in this call is Optional. Thus, do never communicate it to an unknown or untrusted node.
+</aside>
+<h3 id='getaccountpublickey'>getAccountPublicKey</h3>
+<p>dsfqsdqdsfqdsfvqsdfqcvsdgcrtvghsc</p>
+<h3 id='getaccountledger'>getAccountLedger</h3>
+<p>dsfqsdqdsfqdsfvqsdfqcvsdgcrtvghsc</p>
+<h3 id='getaccountledgerentry'>getAccountLedgerEntry</h3>
+<p>dsfqsdqdsfqdsfvqsdfqcvsdgcrtvghsc</p>
+<h3 id='getaccountassetcount'>getAccountAssetCount</h3><h3 id='getaccountassets'>getAccountAssets</h3><h3 id='getaccountblockcount'>getAccountBlockCount</h3><h3 id='getaccountblockids'>getAccountBlockIds</h3><h3 id='getaccountblocks'>getAccountBlocks</h3><h3 id='getaccountcurrencycount'>getAccountCurrencyCount</h3><h3 id='getaccountcurrencies'>getAccountCurrencies</h3><h3 id='getaccountlessors'>getAccountLessors</h3><h3 id='getaccountphasedtransactioncount'>getAccountPhasedTransactionCount</h3><h3 id='getaccountphasedtransactions'>getAccountPhasedTransactions</h3><h3 id='getunconfirmedtransactionids'>getUnconfirmedTransactionIds</h3><h3 id='getunconfirmedtransactions'>getUnconfirmedTransactions</h3><h3 id='setaccountinfo'>setAccountInfo</h3><h2 id='account-balances'>Account Balances</h2><h3 id='getbalance'>getBalance</h3><h3 id='getbalances'>getBalances</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='geteffectivebalance'>getEffectiveBalance</h3><h3 id='sendmoney'>sendMoney</h3><h2 id='account-trades'>Account Trades</h2><h3 id='getaccountcurrentaskorderids'>getAccountCurrentAskOrderIds</h3><h3 id='getaccountcurrentaskorders'>getAccountCurrentAskOrders</h3><h3 id='getaccountcurrentbidorderids'>getAccountCurrentBidOrderIds</h3><h3 id='getaccountcurrentbidorders'>getAccountCurrentBidOrders</h3><h3 id='getaccountexchangerequests'>getAccountExchangeRequests</h3><h2 id='account-activity'>Account Activity</h2><h3 id='getcurrenciesbyissuer'> getCurrenciesByIssuer</h3><h3 id='getassetsbyissuer'>getAssetsByIssuer</h3><h3 id='getblockchaintransactions'>getBlockchainTransactions</h3><h2 id='account-votes'>Account Votes</h2><h3 id='getpolls'>getPolls</h3><h3 id='getvoterphasedtransactions'>getVoterPhasedTransactions</h3><h2 id='account-funding'>Account Funding</h2><h3 id='getfundingmonitor'>getFundingMonitor</h3><h3 id='startfundingmonitor'>startFundingMonitor</h3><h3 id='stopfundingmonitor'>stopFundingMonitor</h3><h2 id='account-properties'>Account Properties</h2><h3 id='getaccountproperties'>getAccountProperties</h3><h3 id='setaccountproperty'>setAccountProperty</h3><h3 id='deleteaccountproperty'>deleteAccountProperty</h3><h2 id='account-util-functions'>Account Util functions</h2><h3 id='rsconvert'>rsConvert</h3><h3 id='searchaccounts'>searchAccounts</h3><h1 id='account-control'>Account Control</h1>
 <p>Account control API calls allow you to apply different controls over your account like phasing, multiSig approvals or max spending limits.</p>
 <h2 id='set-controls'>Set Controls</h2><h3 id='leasebalance'>leaseBalance</h3><h3 id='setphasingonlycontrol'>setPhasingOnlyControl</h3><h2 id='view-controls'>View Controls</h2><h3 id='getallphasingonlycontrols'>getAllPhasingOnlyControls</h3><h3 id='getphasingonlycontrol'>getPhasingOnlyControl</h3><h1 id='transactions'>Transactions</h1><h2 id='signing-amp-sending'>Signing &amp; Sending</h2><h3 id='signtransaction'>signTransaction</h3><h3 id='sendtransaction'>sendTransaction</h3><h3 id='broadcasttransaction'>broadcastTransaction</h3><h3 id='calculatefullhash'>calculateFullHash</h3><h3 id='parsetransaction'>parseTransaction</h3><h3 id='retrieveprunedtransaction'>retrievePrunedTransaction</h3><h2 id='explore-transactions'>Explore transactions</h2><h3 id='gettransaction'>getTransaction</h3><h3 id='gettransactionbytes'>getTransactionBytes</h3><h3 id='getunconfirmedtransactionids'>getUnconfirmedTransactionIds</h3><h3 id='getunconfirmedtransactions'>getUnconfirmedTransactions</h3><h3 id='getblockchaintransactions'>getBlockchainTransactions</h3><h3 id='getexecutedtransactions'>getExecutedTransactions</h3><h3 id='getexpectedtransactions'>getExpectedTransactions</h3><h3 id='getfxttransaction'>getFxtTransaction</h3><h3 id='getreferencingtransactions'>getReferencingTransactions</h3><h1 id='coin-exchange'>Coin Exchange</h1>
 <p>The Coin Exchange feature is specific to Ardor architecture. 
@@ -730,71 +1620,12 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <p>In Proof-of-Stake consensus algorithms, Forging is the process of building and validating transaction blocks, which equivalent to Mining in Proof-of-Work, with the exception that forgers are rewarded only from transaction fees and there is no new generation of forging coin (ARDR is this case).</p>
 
 <p>The API calls below allow you to </p>
-<h2 id='forge-amp-bundle'>Forge &amp; Bundle</h2><h3 id='leasebalance'>leaseBalance</h3><h3 id='startforging'>startForging</h3><h3 id='stopforging'>stopForging</h3><h3 id='startbundler'>startBundler</h3><h3 id='stopbundler'>stopBundler</h3><h2 id='forgers'>Forgers</h2><h3 id='getbundlers'>getBundlers</h3><h3 id='getallbundlerrates'>getAllBundlerRates</h3><h3 id='getbundlerrates'>getBundlerRates</h3><h3 id='getforging'>getForging</h3><h3 id='blacklistbundler'>blacklistBundler</h3><h3 id='bundletransactions'>bundleTransactions</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='getnextblockgenerators'>getNextBlockGenerators</h3><h1 id='node-amp-network'>Node &amp; Network</h1><h2 id='node-info'>Node Info</h2><h3 id='getblockchainstatus'>getBlockchainStatus</h3><h3 id='getconstants'>getConstants</h3><h3 id='getplugins'>getPlugins</h3><h3 id='getstate'>getState</h3><h3 id='gettime'>getTime</h3><h3 id='eventregister'>eventRegister</h3><h3 id='eventwait'>eventWait</h3><h2 id='network-amp-peers'>Network &amp; Peers</h2><h3 id='getmyinfo'>getMyInfo</h3><h3 id='addpeer'>addPeer</h3><h3 id='getpeers'>getPeers</h3><h3 id='getpeer'>getPeer</h3><h3 id='setapiproxypeer'>setAPIProxyPeer</h3><h3 id='blacklistapiproxypeer'>blacklistAPIProxyPeer</h3><h3 id='blacklistpeer'>blacklistPeer</h3><h1 id='phasing'>Phasing</h1><h2 id='phasing-approval'>Phasing approval</h2><h3 id='approvetransaction'>approveTransaction</h3><h3 id='parsephasingparams'>parsePhasingParams</h3><h2 id='phased-transactions'>Phased transactions</h2><h3 id='getaccountphasedtransactioncount'>getAccountPhasedTransactionCount</h3><h3 id='getaccountphasedtransactions'>getAccountPhasedTransactions</h3><h3 id='getassetphasedtransactions'>getAssetPhasedTransactions</h3><h3 id='getcurrencyphasedtransactions'>getCurrencyPhasedTransactions</h3><h3 id='getlinkedphasedtransactions'>getLinkedPhasedTransactions</h3><h2 id='phased-votes'>Phased votes</h2><h3 id='getphasingpollvotes'>getPhasingPollVotes</h3><h3 id='getphasingpollvote'>getPhasingPollVote</h3><h3 id='getphasingpoll'>getPhasingPoll</h3><h3 id='getvoterphasedtransactions'>getVoterPhasedTransactions</h3><h1 id='search'>Search</h1><h2 id='global-search'>Global Search</h2><h3 id='searchaccounts'>searchAccounts</h3><h3 id='searchassets'>searchAssets</h3><h3 id='searchcurrencies'>searchCurrencies</h3><h3 id='searchdgsgoods'>searchDGSGoods</h3><h3 id='searchpolls'>searchPolls</h3><h3 id='searchtaggeddata'>searchTaggedData</h3><h2 id='like-search'>Like Search</h2><h3 id='getaliaseslike'>getAliasesLike</h3><h3 id='getdgstagslike'>getDGSTagsLike</h3><h3 id='getdatatagslike'>getDataTagsLike</h3><h1 id='utils'>Utils</h1><h2 id='tokens'>Tokens</h2><h3 id='decodefiletoken'>decodeFileToken</h3><h3 id='decodetoken'>decodeToken</h3><h3 id='generatefiletoken'>generateFileToken</h3><h3 id='generatetoken'>generateToken</h3><h2 id='expressions-amp-codes'>Expressions &amp; Codes</h2><h3 id='evaluateexpression'>evaluateExpression</h3><h3 id='hash'>hash</h3><h3 id='fullhashtoid'>fullHashToId</h3><h3 id='encodeqrcode'>encodeQRCode</h3><h3 id='decodeqrcode'>decodeQRCode</h3><h3 id='detectmimetype'>detectMimeType</h3><h3 id='hexconvert'>hexConvert</h3><h3 id='longconvert'>longConvert</h3><h3 id='rsconvert'>rsConvert</h3><h2 id='debugging'>Debugging</h2><h3 id='scan'>scan</h3><h3 id='dumppeers'>dumpPeers</h3><h3 id='fullreset'>fullReset</h3><h3 id='popoff'>popOff</h3><h3 id='lucenereindex'>luceneReindex</h3><h3 id='retrievepruneddata'>retrievePrunedData</h3><h3 id='setlogging'>setLogging</h3><h3 id='getlog'>getLog</h3><h3 id='getstacktraces'>getStackTraces</h3><h3 id='shutdown'>shutdown</h3><h3 id='clearunconfirmedtransactions'>clearUnconfirmedTransactions</h3><h3 id='getallbroadcastedtransactions'>getAllBroadcastedTransactions</h3><h3 id='getallwaitingtransactions'>getAllWaitingTransactions</h3><h3 id='rebroadcastunconfirmedtransactions'>rebroadcastUnconfirmedTransactions</h3><h3 id='requeueunconfirmedtransactions'>requeueUnconfirmedTransactions</h3><h3 id='trimderivedtables'>trimDerivedTables</h3><h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
-
+<h2 id='forge-amp-bundle'>Forge &amp; Bundle</h2><h3 id='leasebalance'>leaseBalance</h3><h3 id='startforging'>startForging</h3><h3 id='stopforging'>stopForging</h3><h3 id='startbundler'>startBundler</h3><h3 id='stopbundler'>stopBundler</h3><h2 id='forgers'>Forgers</h2><h3 id='getbundlers'>getBundlers</h3><h3 id='getallbundlerrates'>getAllBundlerRates</h3><h3 id='getbundlerrates'>getBundlerRates</h3><h3 id='getforging'>getForging</h3><h3 id='blacklistbundler'>blacklistBundler</h3><h3 id='bundletransactions'>bundleTransactions</h3><h3 id='getguaranteedbalance'>getGuaranteedBalance</h3><h3 id='getnextblockgenerators'>getNextBlockGenerators</h3><h1 id='node-amp-network'>Node &amp; Network</h1><h2 id='node-info'>Node Info</h2><h3 id='getblockchainstatus'>getBlockchainStatus</h3><h3 id='getconstants'>getConstants</h3><h3 id='getplugins'>getPlugins</h3><h3 id='getstate'>getState</h3><h3 id='gettime'>getTime</h3><h3 id='eventregister'>eventRegister</h3><h3 id='eventwait'>eventWait</h3><h2 id='network-amp-peers'>Network &amp; Peers</h2><h3 id='getmyinfo'>getMyInfo</h3><h3 id='addpeer'>addPeer</h3><h3 id='getpeers'>getPeers</h3><h3 id='getpeer'>getPeer</h3><h3 id='setapiproxypeer'>setAPIProxyPeer</h3><h3 id='blacklistapiproxypeer'>blacklistAPIProxyPeer</h3><h3 id='blacklistpeer'>blacklistPeer</h3><h1 id='phasing'>Phasing</h1><h2 id='phasing-approval'>Phasing approval</h2><h3 id='approvetransaction'>approveTransaction</h3><h3 id='parsephasingparams'>parsePhasingParams</h3><h2 id='phased-transactions'>Phased transactions</h2><h3 id='getaccountphasedtransactioncount'>getAccountPhasedTransactionCount</h3><h3 id='getaccountphasedtransactions'>getAccountPhasedTransactions</h3><h3 id='getassetphasedtransactions'>getAssetPhasedTransactions</h3><h3 id='getcurrencyphasedtransactions'>getCurrencyPhasedTransactions</h3><h3 id='getlinkedphasedtransactions'>getLinkedPhasedTransactions</h3><h2 id='phased-votes'>Phased votes</h2><h3 id='getphasingpollvotes'>getPhasingPollVotes</h3><h3 id='getphasingpollvote'>getPhasingPollVote</h3><h3 id='getphasingpoll'>getPhasingPoll</h3><h3 id='getvoterphasedtransactions'>getVoterPhasedTransactions</h3><h1 id='search'>Search</h1><h2 id='global-search'>Global Search</h2><h3 id='searchaccounts'>searchAccounts</h3><h3 id='searchassets'>searchAssets</h3><h3 id='searchcurrencies'>searchCurrencies</h3><h3 id='searchdgsgoods'>searchDGSGoods</h3><h3 id='searchpolls'>searchPolls</h3><h3 id='searchtaggeddata'>searchTaggedData</h3><h2 id='like-search'>Like Search</h2><h3 id='getaliaseslike'>getAliasesLike</h3><h3 id='getdgstagslike'>getDGSTagsLike</h3><h3 id='getdatatagslike'>getDataTagsLike</h3><h1 id='utils'>Utils</h1><h2 id='tokens'>Tokens</h2><h3 id='decodefiletoken'>decodeFileToken</h3><h3 id='decodetoken'>decodeToken</h3><h3 id='generatefiletoken'>generateFileToken</h3><h3 id='generatetoken'>generateToken</h3><h2 id='expressions-amp-codes'>Expressions &amp; Codes</h2><h3 id='evaluateexpression'>evaluateExpression</h3><h3 id='hash'>hash</h3><h3 id='fullhashtoid'>fullHashToId</h3><h3 id='encodeqrcode'>encodeQRCode</h3><h3 id='decodeqrcode'>decodeQRCode</h3><h3 id='detectmimetype'>detectMimeType</h3><h3 id='hexconvert'>hexConvert</h3><h3 id='longconvert'>longConvert</h3><h3 id='rsconvert'>rsConvert</h3><h2 id='debugging'>Debugging</h2><h3 id='scan'>scan</h3><h3 id='dumppeers'>dumpPeers</h3><h3 id='fullreset'>fullReset</h3><h3 id='popoff'>popOff</h3><h3 id='lucenereindex'>luceneReindex</h3><h3 id='retrievepruneddata'>retrievePrunedData</h3><h3 id='setlogging'>setLogging</h3><h3 id='getlog'>getLog</h3><h3 id='getstacktraces'>getStackTraces</h3><h3 id='shutdown'>shutdown</h3><h3 id='clearunconfirmedtransactions'>clearUnconfirmedTransactions</h3><h3 id='getallbroadcastedtransactions'>getAllBroadcastedTransactions</h3><h3 id='getallwaitingtransactions'>getAllWaitingTransactions</h3><h3 id='rebroadcastunconfirmedtransactions'>rebroadcastUnconfirmedTransactions</h3><h3 id='requeueunconfirmedtransactions'>requeueUnconfirmedTransactions</h3><h3 id='trimderivedtables'>trimDerivedTables</h3>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">cURL</a>
                 <a href="#" data-language-name="javascript">JavaScript</a>
-                <a href="#" data-language-name="python">Python</a>
           </div>
       </div>
     </div>
