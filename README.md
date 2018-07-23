@@ -74,6 +74,8 @@ Parameter | Type | Description
 The function `getParameter(paramName, visibility, addDescription=nil)` will be called during the documentation generation process, will read from the JSON file and output a new line in parameters table with the Name, Type, Description[+addDescription].
 This way, we can have only one source of description for the parameters and when ever we modify this source, all the documentation will be updated accordingly.
 
+This [GoogleSheet](https://docs.google.com/spreadsheets/d/1Jw8lEbhOi850TXpvEcNtRwL6iC76KLvDdLZXDC06TL8/) keeps track of the current contributors, please take a look at it before starting to contribute in order not to double spend time on a section which is already on progress.
+
 If you want to be a permanent contributor to this documentation, please contact us on [Slack](https://ardornxt.slack.com/) or [Discord](https://discord.gg/ZrBhZNp) channels
 
 Questions? Need Help? Found a bug?
