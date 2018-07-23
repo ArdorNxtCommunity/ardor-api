@@ -1,0 +1,387 @@
+//----------------------------------------------------------------
+//
+//       This file describes all the Ardor API parameters
+// It's a way to factorize the definitions of input paramters,
+// thus any change in this file will be replicated in the all
+// the documentation.
+//----------------------------------------------------------------
+
+
+{
+    "account":{
+    	    "type" : "number or RS", 
+    	    "description" : "An account ID."
+       },
+    "adminPassword":{
+	    "type" : "string", 
+	    "description" : "Admin password, used for restricted actions & in debug functions."
+    },
+    "amount":{
+	    "type" : "number", 
+	    "description" : "Amount to fund the recipient account with (in NQT or QNT)."
+    },
+    "amountNQT":{
+	    "type" : "number", 
+	    "description" : "Amount (in NQT) in the transaction."
+    },
+    "asset":{
+	    "type" : "number", 
+	    "description" : "Asset ID."
+    },
+    "broadcast":{
+	    "type" : "boolean", 
+	    "description" : "Broadcast the transaction to the network (default is *true*)."
+    },
+    "chain":{
+	    "type" : "number", 
+	    "description" : "Chain ID (Ignis=1, BITSWIFT=2, AEUR=3 ...)."
+    },
+    "compressMessageToEncrypt":{
+	    "type" : "boolean", 
+	    "description" : "Allow gzip compression of message before encryption (default is *true*)."
+    },
+    "compressMessageToEncryptToSelf":{
+	    "type" : "boolean", 
+	    "description" : "Allow gzip compression of message before encryption (default is *true*)."
+    },
+    "currency":{
+	    "type" : "number", 
+	    "description" : "Currency ID."
+    },
+    "deadline":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "description":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "ecBlockHeight":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "ecBlockId":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "encryptedMessageData":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "encryptedMessageIsPrunable":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "encryptedMessageNonce":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "encryptToSelfMessageData":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "encryptToSelfMessageNonce":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "event":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "eventType":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "executedOnly":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "feeNQT":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "feeRateNQTPerFXT":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "finishedOnly":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "firstIndex":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "height":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "holding":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "holdingType":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeAssetInfo":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeAssets":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeCounts":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeCurrencies":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeCurrencyInfo":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeEffectiveBalance":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeExpiredPrunable":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeFinished":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeHoldingInfo":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeLessors":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeMonitoredAccounts":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includePhasingResult":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeTransaction":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "includeTransactions":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "interval":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "lastIndex":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "ledgerId":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "message":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "messageIsPrunable":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "messageIsText":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "messageToEncrypt":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "messageToEncryptIsText":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "messageToEncryptToSelf":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "messageToEncryptToSelfIsText":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "minBundlerBalanceFXT":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "name":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "nonPhasedOnly":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "numberOfConfirmations":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phased":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasedOnly":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingExpression":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingFinishHeight":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingHashedSecret":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingHashedSecretAlgorithm":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingHolding":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingLinkedTransaction":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingMinBalance":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingMinBalanceModel":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingParams":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingQuorum":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingRecipientPropertyName":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingRecipientPropertySetter":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingRecipientPropertyValue":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingSenderPropertyName":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingSenderPropertySetter":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingSenderPropertyValue":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingSubPolls":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingVotingModel":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "phasingWhitelisted":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "property":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "publicKey":{
+	    "type" : "string", 
+	    "description" : "Public key of the account."
+    },
+    "query":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "recipient":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "recipientPublicKey":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "referencedTransaction":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "requireBlock":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "requireLastBlock":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "secretPhrase":{
+	    "type" : "string", 
+	    "description" : "Secret phrase of the account."
+    },
+    "setter":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "subtype":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "threshold":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "timestamp":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "type":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "value":{
+	    "type" : "", 
+	    "description" : ""
+    },
+    "withMessage":{
+	    "type" : "", 
+	    "description" : ""
+    }
+}
