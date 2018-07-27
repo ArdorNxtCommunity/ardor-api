@@ -7,14 +7,372 @@ The API calls below help you achieve this.
 
 ## Orders Setting
 ### exchangeCoins    
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
 ### cancelCoinExchange
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
 
 ## Orders Discovery
 ### getCoinExchangeOrders
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
 ### getCoinExchangeOrderIds    
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
 ### getCoinExchangeOrder    
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
 ### getCoinExchangeTrades    
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
 ### getCoinExchangeTrade    
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
 ### getExpectedCoinExchangeOrders    
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
 ### getExpectedCoinExchangeOrderCancellations    
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
 ### simulateCoinExchange
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+

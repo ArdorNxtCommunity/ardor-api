@@ -85,12 +85,12 @@
 	    "description" : ""
     },
     "event":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Event ID."
     },
     "eventType":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "string", 
+	    "description" : "A string representing the event type."
     },
     "executedOnly":{
 	    "type" : "", 
@@ -109,20 +109,20 @@
 	    "description" : ""
     },
     "firstIndex":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Zero-based index to the first block to retrieve."
     },
     "height":{
 	    "type" : "", 
 	    "description" : ""
     },
     "holding":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Holding ID."
     },
     "holdingType":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "string", 
+	    "description" : "A string representing the holding type."
     },
     "includeAssetInfo":{
 	    "type" : "", 
@@ -157,8 +157,8 @@
 	    "description" : ""
     },
     "includeHoldingInfo":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to retrieve asset or currency info (optional) with each ledger entry. The default is false."
     },
     "includeLessors":{
 	    "type" : "", 
@@ -177,16 +177,16 @@
 	    "description" : ""
     },
     "includeTransactions":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to retrieve transaction details, otherwise only transaction IDs are retrieved. The default is false."
     },
     "interval":{
 	    "type" : "", 
 	    "description" : ""
     },
     "lastIndex":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Zero-based index to the first block to retrieve."
     },
     "ledgerId":{
 	    "type" : "", 
@@ -345,12 +345,12 @@
 	    "description" : ""
     },
     "requireBlock":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Block ID of a block that must be present in the blockchain during execution."
     },
     "requireLastBlock":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Block ID of a block that must be last in the blockchain during execution."
     },
     "secretPhrase":{
 	    "type" : "string", 

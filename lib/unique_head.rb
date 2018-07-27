@@ -46,13 +46,17 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
 
     # Method returning an api parameter with its type and description
     def getParameter(param, required, additional=nil)
-      type = @input_params[param]["type"]
-      description = @input_params[param]["description"]
-      if required == "required"
-        name = "**#{param}**"
+      if !param.empty?
+        type = @input_params[param]["type"]
+        description = @input_params[param]["description"]
+        if required == "required"
+          name = "**#{param}**"
+        else
+          name = "*#{param}*"
+        end
+        return " #{name} | #{type} | #{description} #{additional}"
       else
-        name = "*#{param}*"
+        return "param | type | description"
       end
-      return " #{name} | #{type} | #{description} #{additional}"
     end
 end
