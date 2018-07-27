@@ -1,7 +1,7 @@
 <p align="center">
   <img src="./source/images/logo.png" alt="Ardor API Documentation" width="226">
   <br>
-  <a href="https://travis-ci.org/ArdorNxtCommunity/ardor-api"><img src="https://travis-ci.org/ArdorNxtCommunity/ardor-api.svg?branch=master" alt="Build Status"></a>
+  <a href="https://travis-ci.org/ArdorNxtCommunity/ardor-api-doc"><img src="https://travis-ci.org/ArdorNxtCommunity/ardor-api-doc.svg?branch=master" alt="Build Status"></a>
 </p>
 
 <p align="center">Welcome the Ardor platform API documentation</p>
