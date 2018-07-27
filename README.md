@@ -29,8 +29,8 @@ You're going to need:
 
 ### Getting Set Up
 1. Clone this repository from GitHub `git clone https://github.com/ArdorNxtCommunity/ardor-api-doc.git`
-2. `cd slate`
-4. Initialize and start Slate. You can either do this locally, or with Vagrant:
+2. `cd ardor-api-doc`
+4. Initialize and start Ardor Doc. You can either do this locally:
 
 ```shell
 bundle install
