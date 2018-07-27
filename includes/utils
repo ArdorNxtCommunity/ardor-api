@@ -1,1 +1,1392 @@
-<h1 id='utils'>Utils</h1><h2 id='tokens'>Tokens</h2><h3 id='decodefiletoken'>decodeFileToken</h3><h3 id='decodetoken'>decodeToken</h3><h3 id='generatefiletoken'>generateFileToken</h3><h3 id='generatetoken'>generateToken</h3><h2 id='expressions-amp-codes'>Expressions &amp; Codes</h2><h3 id='evaluateexpression'>evaluateExpression</h3><h3 id='hash'>hash</h3><h3 id='fullhashtoid'>fullHashToId</h3><h3 id='encodeqrcode'>encodeQRCode</h3><h3 id='decodeqrcode'>decodeQRCode</h3><h3 id='detectmimetype'>detectMimeType</h3><h3 id='hexconvert'>hexConvert</h3><h3 id='longconvert'>longConvert</h3><h3 id='rsconvert'>rsConvert</h3><h2 id='debugging'>Debugging</h2><h3 id='scan'>scan</h3><h3 id='dumppeers'>dumpPeers</h3><h3 id='fullreset'>fullReset</h3><h3 id='popoff'>popOff</h3><h3 id='lucenereindex'>luceneReindex</h3><h3 id='retrievepruneddata'>retrievePrunedData</h3><h3 id='setlogging'>setLogging</h3><h3 id='getlog'>getLog</h3><h3 id='getstacktraces'>getStackTraces</h3><h3 id='shutdown'>shutdown</h3><h3 id='clearunconfirmedtransactions'>clearUnconfirmedTransactions</h3><h3 id='getallbroadcastedtransactions'>getAllBroadcastedTransactions</h3><h3 id='getallwaitingtransactions'>getAllWaitingTransactions</h3><h3 id='rebroadcastunconfirmedtransactions'>rebroadcastUnconfirmedTransactions</h3><h3 id='requeueunconfirmedtransactions'>requeueUnconfirmedTransactions</h3><h3 id='trimderivedtables'>trimDerivedTables</h3>
+<h1 id='utils'>Utils</h1><h2 id='tokens'>Tokens</h2><h3 id='decodefiletoken'>decodeFileToken</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='decodetoken'>decodeToken</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='generatefiletoken'>generateFileToken</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='generatetoken'>generateToken</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h2 id='expressions-amp-codes'>Expressions &amp; Codes</h2><h3 id='evaluateexpression'>evaluateExpression</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='hash'>hash</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='fullhashtoid'>fullHashToId</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='encodeqrcode'>encodeQRCode</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='decodeqrcode'>decodeQRCode</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='detectmimetype'>detectMimeType</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='hexconvert'>hexConvert</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='longconvert'>longConvert</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='rsconvert'>rsConvert</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h2 id='debugging'>Debugging</h2><h3 id='scan'>scan</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='dumppeers'>dumpPeers</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='fullreset'>fullReset</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='popoff'>popOff</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='lucenereindex'>luceneReindex</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='retrievepruneddata'>retrievePrunedData</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='setlogging'>setLogging</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='getlog'>getLog</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='getstacktraces'>getStackTraces</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='shutdown'>shutdown</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='clearunconfirmedtransactions'>clearUnconfirmedTransactions</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='getallbroadcastedtransactions'>getAllBroadcastedTransactions</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='getallwaitingtransactions'>getAllWaitingTransactions</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='rebroadcastunconfirmedtransactions'>rebroadcastUnconfirmedTransactions</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='requeueunconfirmedtransactions'>requeueUnconfirmedTransactions</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
+<h3 id='trimderivedtables'>trimDerivedTables</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Call Description</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+<tr>
+<td>param</td>
+<td>type</td>
+<td>description</td>
+</tr>
+</tbody></table>
