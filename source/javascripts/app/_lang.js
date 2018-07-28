@@ -156,6 +156,11 @@ under the License.
   $(function() {
     $(".lang-selector a").on("click", function() {
       var language = $(this).data("language-name");
+      if (language === "github"){
+        var url = $(this)("href")
+        window.open(url)
+        return false;
+      }
       pushURL(language);
       activateLanguage(language);
       return false;
