@@ -158,7 +158,7 @@
     },
     "includeHoldingInfo":{
 	    "type" : "boolean", 
-	    "description" : "true to retrieve asset or currency info (optional) with each ledger entry. The default is false."
+	    "description" : "Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false"
     },
     "includeLessors":{
 	    "type" : "", 
@@ -174,11 +174,11 @@
     },
     "includeTransaction":{
 	    "type" : "", 
-	    "description" : ""
+	    "description" : "Specify TRUE to include the transaction associated with the ledger entry. The default is false."
     },
     "includeTransactions":{
 	    "type" : "boolean", 
-	    "description" : "true to retrieve transaction details, otherwise only transaction IDs are retrieved. The default is false."
+	    "description" : "Specify TRUE to include the transaction associated with the ledger entry. The default is false."
     },
     "interval":{
 	    "type" : "", 
@@ -189,8 +189,8 @@
 	    "description" : "Zero-based index to the first block to retrieve."
     },
     "ledgerId":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Ledger entry identifier"
     },
     "message":{
 	    "type" : "", 

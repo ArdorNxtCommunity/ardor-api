@@ -7,12 +7,12 @@ This chapter focuses on all API calls that can help you interact identify an acc
 
 The set of API calls bellow allow you to request many informations about an account.
 
-### getAccountId
+### GetAccountId
 
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountId&publicKey=7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"
+curl "http://localhost:27876/nxt?requestType=getAccountId&publicKey=f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"
 ```
 
 ```javascript
@@ -20,7 +20,7 @@ curl "http://localhost:27876/nxt?requestType=getAccountId&publicKey=7cca421cdb6b
 var ardor = require('ardor-blockchain');
 
 var data = {
-    publicKey: "7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"
+    publicKey: "f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"
 };
 ardor.sendRequest("getAccountId", data, function (response) {
     ardor.logConsole("Account id is:" + JSON.stringify(response));
@@ -32,10 +32,10 @@ ardor.sendRequest("getAccountId", data, function (response) {
 ```json
 [
     {
-        "accountRS": "ARDOR-XK2L-Z7NK-VNKM-AZYVT",
-        "publicKey": "7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e",
-        "requestProcessingTime": 0,
-        "account": "10155581947047232530"
+        "accountRS": "ARDOR-8MVA-XCVR-3JC9-2C7C3",
+        "publicKey": "f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a",
+        "requestProcessingTime": 1,
+        "account": "47475721164246888"
     }
 ]
 ```
@@ -53,12 +53,12 @@ Parameter | Type | Description
 The secret phrase in this call is Optional. Thus, do never communicate it to an unknown or untrusted node.
 </aside>
 
-### getAccountPublicKey
+### GetAccountPublicKey
 
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountPublicKey&account=ARDOR-XK2L-Z7NK-VNKM-AZYVT"
+curl "http://localhost:27876/nxt?requestType=getAccountPublicKey&account=ARDOR-8MVA-XCVR-3JC9-2C7C3"
 ```
 
 ```javascript
@@ -66,7 +66,7 @@ curl "http://localhost:27876/nxt?requestType=getAccountPublicKey&account=ARDOR-X
 var ardor = require('ardor-blockchain');
 
 var data = {
-    account : "ARDOR-XK2L-Z7NK-VNKM-AZYVT"
+    account : "ARDOR-8MVA-XCVR-3JC9-2C7C3"
 };
 ardor.sendRequest("getAccountPublicKey", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -78,8 +78,8 @@ ardor.sendRequest("getAccountPublicKey", data, function (response) {
 ```json
 [
     {
-    "publicKey": "7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e",
-    "requestProcessingTime": 0
+        "publicKey": "f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a",
+        "requestProcessingTime": 0
     }
 ]
 ```
@@ -94,12 +94,12 @@ Parameter | Type | Description
 <%= getParameter('requireBlock', 'optional') %>
 <%= getParameter('requireLastBlock', 'optional') %>
 
-### getAccountLedger
+### GetAccountLedger
 
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountLedger&account=ARDOR-XK2L-Z7NK-VNKM-AZYVT""
+curl "http://localhost:27876/nxt?requestType=getAccountLedger&account=ARDOR-XK2L-Z7NK-VNKM-AZYVT"
 ```
 
 ```javascript
@@ -143,7 +143,7 @@ ardor.sendRequest("getAccountLedger", data, function (response) {
 ]
 ```
 
-Get multiple account ledger entries.
+The GetAccountLedger API will return entries from the account ledger. The account ledger tracks all account changes as determined by the nxt.ledgerAccounts, nxt.ledgerLogUnconfirmed and nxt.ledgerTrimKeep properties.
 
 `GET http://localhost:27876/nxt?requestType=getAccountLedger&account=<Account>...`
 
@@ -162,7 +162,103 @@ Parameter | Type | Description
 <%= getParameter('requireLastBlock', 'optional') %>
 
 
-### getAccountLedgerEntry
+### GetAccountLedgerEntry
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType=getAccountLedgerEntry&ledgerId=119533"
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    ledgerId : "119533"
+};
+ardor.sendRequest("getAccountLedgerEntry", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+    {
+        "holdingTypeIsUnconfirmed": true,
+        "chain": 1,
+        "change": "250000",
+        "holdingTypeCode": 1,
+        "eventType": "BLOCK_GENERATED",
+        "requestProcessingTime": 0,
+        "ledgerId": "119533",
+        "holding": "1",
+        "isTransactionEvent": false,
+        "balance": "4000397523847250",
+        "holdingType": "UNCONFIRMED_COIN_BALANCE",
+        "accountRS": "ARDOR-8ZW9-BEW7-8QHM-2F67L",
+        "block": "7794716992135705008",
+        "event": "7794716992135705008",
+        "account": "654303200082624391",
+        "height": 291612,
+        "timestamp": 17312462
+    }
+]
+```
+
+The GetAccountLedgerEntry API will return an entry from the account ledger. The account ledger tracks all account changes as determined by the nxt.ledgerAccounts, nxt.ledgerLogUnconfirmed and nxt.ledgerTrimKeep properties.
+
+`GET http://localhost:27876/nxt?requestType=getAccountLedgerEntry&account=<LedgerId>&...`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('ledgerId', 'required') %>
+<%= getParameter('includeTransaction', 'optional') %>
+<%= getParameter('includeHoldingInfo', 'optional') %>
+
+### GetAccountAssetCount
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType=getAccountAssetCount&account=ARDOR-APM5-TLV8-J3KY-6T3JG"
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    account : "ARDOR-APM5-TLV8-J3KY-6T3JG"
+};
+ardor.sendRequest("getAccountAssetCount", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+    {
+        "requestProcessingTime": 0,
+        "numberOfAssets": 1
+    }
+]
+```
+
+Get the number of assets owned by an account given the account ID
+
+`GET http://localhost:27876/nxt?requestType=getAccountAssetCount&account=<Account>&...`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('account', 'required') %>
+<%= getParameter('height', 'optional') %>
+<%= getParameter('requireBlock', 'optional') %>
+<%= getParameter('requireLastBlock', 'optional') %>
+
+### GetAccountAssets
 > The request:
 
 ```shell
@@ -188,41 +284,6 @@ ardor.sendRequest("", data, function (response) {
 ]
 ```
 
-Call Description
-
-`GET http://localhost:27876/nxt?requestType=`
-
-Parameter | Type | Description
---------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
-### getAccountAssetCount
-> The request:
-
-```shell
-curl "http://localhost:27876/nxt?requestType="
-```
-
-```javascript
-// The ardor-blockchain npm package is still on deployement stage
-var ardor = require('ardor-blockchain');
-
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
-});
-```
-
-> The above request returns the following JSON structured response:
-
-```json
-[
-]
-```
 
 Call Description
 
@@ -234,119 +295,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 <%= getParameter('', '', '') %>
 
-
-### getAccountAssets
-> The request:
-
-```shell
-curl "http://localhost:27876/nxt?requestType="
-```
-
-```javascript
-// The ardor-blockchain npm package is still on deployement stage
-var ardor = require('ardor-blockchain');
-
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
-});
-```
-
-> The above request returns the following JSON structured response:
-
-```json
-[
-]
-```
-
-
-Call Description
-
-`GET http://localhost:27876/nxt?requestType=`
-
-Parameter | Type | Description
---------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
-### getAccountBlockCount
-> The request:
-
-```shell
-curl "http://localhost:27876/nxt?requestType="
-```
-
-```javascript
-// The ardor-blockchain npm package is still on deployement stage
-var ardor = require('ardor-blockchain');
-
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
-});
-```
-
-> The above request returns the following JSON structured response:
-
-```json
-[
-]
-```
-
-Call Description
-
-`GET http://localhost:27876/nxt?requestType=`
-
-Parameter | Type | Description
---------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
-
-### getAccountBlockIds
-> The request:
-
-```shell
-curl "http://localhost:27876/nxt?requestType="
-```
-
-```javascript
-// The ardor-blockchain npm package is still on deployement stage
-var ardor = require('ardor-blockchain');
-
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
-});
-```
-
-> The above request returns the following JSON structured response:
-
-```json
-[
-]
-```
-
-Call Description
-
-`GET http://localhost:27876/nxt?requestType=`
-
-Parameter | Type | Description
---------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
-
-### getAccountBlocks
+### GetAccountBlockCount
 > The request:
 
 ```shell
@@ -383,7 +332,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountCurrencyCount
+### GetAccountBlockIds
 > The request:
 
 ```shell
@@ -420,7 +369,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountCurrencies
+### GetAccountBlocks
 > The request:
 
 ```shell
@@ -457,7 +406,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountLessors
+### GetAccountCurrencyCount
 > The request:
 
 ```shell
@@ -494,7 +443,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountPhasedTransactionCount
+### GetAccountCurrencies
 > The request:
 
 ```shell
@@ -531,7 +480,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountPhasedTransactions
+### GetAccountLessors
 > The request:
 
 ```shell
@@ -568,7 +517,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getUnconfirmedTransactionIds
+### GetAccountPhasedTransactionCount
 > The request:
 
 ```shell
@@ -605,7 +554,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getUnconfirmedTransactions
+### GetAccountPhasedTransactions
 > The request:
 
 ```shell
@@ -642,7 +591,81 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### setAccountInfo
+### GetUnconfirmedTransactionIds
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
+### GetUnconfirmedTransactions
+> The request:
+
+```shell
+curl "http://localhost:27876/nxt?requestType="
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    
+};
+ardor.sendRequest("", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+[
+]
+```
+
+Call Description
+
+`GET http://localhost:27876/nxt?requestType=`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+<%= getParameter('', '', '') %>
+
+
+### SetAccountInfo
 > The request:
 
 ```shell
@@ -682,7 +705,7 @@ Parameter | Type | Description
 
 ## Account Balances
 
-### getBalance
+### GetBalance
 > The request:
 
 ```shell
@@ -719,7 +742,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getBalances
+### GetBalances
 > The request:
 
 ```shell
@@ -756,7 +779,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getGuaranteedBalance
+### GetGuaranteedBalance
 > The request:
 
 ```shell
@@ -793,7 +816,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getEffectiveBalance
+### GetEffectiveBalance
 > The request:
 
 ```shell
@@ -870,7 +893,7 @@ Parameter | Type | Description
 
 ## Account Trades
 
-### getAccountCurrentAskOrderIds
+### GetAccountCurrentAskOrderIds
 > The request:
 
 ```shell
@@ -907,7 +930,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountCurrentAskOrders
+### GetAccountCurrentAskOrders
 > The request:
 
 ```shell
@@ -944,7 +967,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountCurrentBidOrderIds
+### GetAccountCurrentBidOrderIds
 > The request:
 
 ```shell
@@ -981,7 +1004,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountCurrentBidOrders
+### GetAccountCurrentBidOrders
 > The request:
 
 ```shell
@@ -1018,7 +1041,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAccountExchangeRequests
+### GetAccountExchangeRequests
 > The request:
 
 ```shell
@@ -1095,7 +1118,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getAssetsByIssuer
+### GetAssetsByIssuer
 > The request:
 
 ```shell
@@ -1132,7 +1155,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getBlockchainTransactions
+### GetBlockchainTransactions
 > The request:
 
 ```shell
@@ -1171,7 +1194,7 @@ Parameter | Type | Description
    
 ## Account Votes
 
-### getPolls
+### GetPolls
 > The request:
 
 ```shell
@@ -1208,7 +1231,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### getVoterPhasedTransactions  
+### GetVoterPhasedTransactions  
 > The request:
 
 ```shell
@@ -1247,7 +1270,7 @@ Parameter | Type | Description
 
 ## Account Funding
 
-### getFundingMonitor
+### GetFundingMonitor
 > The request:
 
 ```shell
@@ -1360,7 +1383,7 @@ Parameter | Type | Description
 
 ## Account Properties
 
-### getAccountProperties
+### GetAccountProperties
 > The request:
 
 ```shell
@@ -1397,7 +1420,7 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### setAccountProperty
+### SetAccountProperty
 > The request:
 
 ```shell
