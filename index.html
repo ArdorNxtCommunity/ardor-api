@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="icon" href="images/ardor-favicon.png">
     <title>Ardor API Reference</title>
 
@@ -221,7 +222,30 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+            <a href="#introduction-to-ardor-api" class="toc-h1 toc-link" data-title="introduction-to-ardor-api">Introduction to Ardor API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                  <a href="#flexible-account-ids" class="toc-h2 toc-link" data-title="flexible-account-ids">Flexible Account IDs</a>
+                  </li>
+                  <li>
+                  <a href="#creating-unsigned-transactions" class="toc-h2 toc-link" data-title="creating-unsigned-transactions">Creating Unsigned Transactions</a>
+                  </li>
+                  <li>
+                  <a href="#escrow-operations" class="toc-h2 toc-link" data-title="escrow-operations">Escrow Operations</a>
+                  </li>
+                  <li>
+                  <a href="#prunable-data" class="toc-h2 toc-link" data-title="prunable-data">Prunable Data</a>
+                  </li>
+                  <li>
+                  <a href="#properties-files" class="toc-h2 toc-link" data-title="properties-files">Properties Files</a>
+                  </li>
+                  <li>
+                  <a href="#admin-password" class="toc-h2 toc-link" data-title="admin-password">Admin Password</a>
+                  </li>
+                  <li>
+                  <a href="#roaming-and-light-client-modes" class="toc-h2 toc-link" data-title="roaming-and-light-client-modes">Roaming and Light Client Modes</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#accounts" class="toc-h1 toc-link" data-title="accounts">Accounts</a>
@@ -230,55 +254,55 @@
                   <a href="#account-information" class="toc-h2 toc-link" data-title="account-information">Account Information</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#getaccountid" class="toc-h3 toc-link" data-title="Accounts">getAccountId</a>
+                            <a href="#getaccountid" class="toc-h3 toc-link" data-title="Accounts">GetAccountId</a>
                           </li>
                           <li>
-                            <a href="#getaccountpublickey" class="toc-h3 toc-link" data-title="Accounts">getAccountPublicKey</a>
+                            <a href="#getaccountpublickey" class="toc-h3 toc-link" data-title="Accounts">GetAccountPublicKey</a>
                           </li>
                           <li>
-                            <a href="#getaccountledger" class="toc-h3 toc-link" data-title="Accounts">getAccountLedger</a>
+                            <a href="#getaccountledger" class="toc-h3 toc-link" data-title="Accounts">GetAccountLedger</a>
                           </li>
                           <li>
-                            <a href="#getaccountledgerentry" class="toc-h3 toc-link" data-title="Accounts">getAccountLedgerEntry</a>
+                            <a href="#getaccountledgerentry" class="toc-h3 toc-link" data-title="Accounts">GetAccountLedgerEntry</a>
                           </li>
                           <li>
-                            <a href="#getaccountassetcount" class="toc-h3 toc-link" data-title="Accounts">getAccountAssetCount</a>
+                            <a href="#getaccountassetcount" class="toc-h3 toc-link" data-title="Accounts">GetAccountAssetCount</a>
                           </li>
                           <li>
-                            <a href="#getaccountassets" class="toc-h3 toc-link" data-title="Accounts">getAccountAssets</a>
+                            <a href="#getaccountassets" class="toc-h3 toc-link" data-title="Accounts">GetAccountAssets</a>
                           </li>
                           <li>
-                            <a href="#getaccountblockcount" class="toc-h3 toc-link" data-title="Accounts">getAccountBlockCount</a>
+                            <a href="#getaccountblockcount" class="toc-h3 toc-link" data-title="Accounts">GetAccountBlockCount</a>
                           </li>
                           <li>
-                            <a href="#getaccountblockids" class="toc-h3 toc-link" data-title="Accounts">getAccountBlockIds</a>
+                            <a href="#getaccountblockids" class="toc-h3 toc-link" data-title="Accounts">GetAccountBlockIds</a>
                           </li>
                           <li>
-                            <a href="#getaccountblocks" class="toc-h3 toc-link" data-title="Accounts">getAccountBlocks</a>
+                            <a href="#getaccountblocks" class="toc-h3 toc-link" data-title="Accounts">GetAccountBlocks</a>
                           </li>
                           <li>
-                            <a href="#getaccountcurrencycount" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrencyCount</a>
+                            <a href="#getaccountcurrencycount" class="toc-h3 toc-link" data-title="Accounts">GetAccountCurrencyCount</a>
                           </li>
                           <li>
-                            <a href="#getaccountcurrencies" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrencies</a>
+                            <a href="#getaccountcurrencies" class="toc-h3 toc-link" data-title="Accounts">GetAccountCurrencies</a>
                           </li>
                           <li>
-                            <a href="#getaccountlessors" class="toc-h3 toc-link" data-title="Accounts">getAccountLessors</a>
+                            <a href="#getaccountlessors" class="toc-h3 toc-link" data-title="Accounts">GetAccountLessors</a>
                           </li>
                           <li>
-                            <a href="#getaccountphasedtransactioncount" class="toc-h3 toc-link" data-title="Accounts">getAccountPhasedTransactionCount</a>
+                            <a href="#getaccountphasedtransactioncount" class="toc-h3 toc-link" data-title="Accounts">GetAccountPhasedTransactionCount</a>
                           </li>
                           <li>
-                            <a href="#getaccountphasedtransactions" class="toc-h3 toc-link" data-title="Accounts">getAccountPhasedTransactions</a>
+                            <a href="#getaccountphasedtransactions" class="toc-h3 toc-link" data-title="Accounts">GetAccountPhasedTransactions</a>
                           </li>
                           <li>
-                            <a href="#getunconfirmedtransactionids" class="toc-h3 toc-link" data-title="Accounts">getUnconfirmedTransactionIds</a>
+                            <a href="#getunconfirmedtransactionids" class="toc-h3 toc-link" data-title="Accounts">GetUnconfirmedTransactionIds</a>
                           </li>
                           <li>
-                            <a href="#getunconfirmedtransactions" class="toc-h3 toc-link" data-title="Accounts">getUnconfirmedTransactions</a>
+                            <a href="#getunconfirmedtransactions" class="toc-h3 toc-link" data-title="Accounts">GetUnconfirmedTransactions</a>
                           </li>
                           <li>
-                            <a href="#setaccountinfo" class="toc-h3 toc-link" data-title="Accounts">setAccountInfo</a>
+                            <a href="#setaccountinfo" class="toc-h3 toc-link" data-title="Accounts">SetAccountInfo</a>
                           </li>
                       </ul>
                   </li>
@@ -286,16 +310,16 @@
                   <a href="#account-balances" class="toc-h2 toc-link" data-title="account-balances">Account Balances</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#getbalance" class="toc-h3 toc-link" data-title="Accounts">getBalance</a>
+                            <a href="#getbalance" class="toc-h3 toc-link" data-title="Accounts">GetBalance</a>
                           </li>
                           <li>
-                            <a href="#getbalances" class="toc-h3 toc-link" data-title="Accounts">getBalances</a>
+                            <a href="#getbalances" class="toc-h3 toc-link" data-title="Accounts">GetBalances</a>
                           </li>
                           <li>
-                            <a href="#getguaranteedbalance" class="toc-h3 toc-link" data-title="Accounts">getGuaranteedBalance</a>
+                            <a href="#getguaranteedbalance" class="toc-h3 toc-link" data-title="Accounts">GetGuaranteedBalance</a>
                           </li>
                           <li>
-                            <a href="#geteffectivebalance" class="toc-h3 toc-link" data-title="Accounts">getEffectiveBalance</a>
+                            <a href="#geteffectivebalance" class="toc-h3 toc-link" data-title="Accounts">GetEffectiveBalance</a>
                           </li>
                           <li>
                             <a href="#sendmoney" class="toc-h3 toc-link" data-title="Accounts">sendMoney</a>
@@ -306,19 +330,19 @@
                   <a href="#account-trades" class="toc-h2 toc-link" data-title="account-trades">Account Trades</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#getaccountcurrentaskorderids" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrentAskOrderIds</a>
+                            <a href="#getaccountcurrentaskorderids" class="toc-h3 toc-link" data-title="Accounts">GetAccountCurrentAskOrderIds</a>
                           </li>
                           <li>
-                            <a href="#getaccountcurrentaskorders" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrentAskOrders</a>
+                            <a href="#getaccountcurrentaskorders" class="toc-h3 toc-link" data-title="Accounts">GetAccountCurrentAskOrders</a>
                           </li>
                           <li>
-                            <a href="#getaccountcurrentbidorderids" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrentBidOrderIds</a>
+                            <a href="#getaccountcurrentbidorderids" class="toc-h3 toc-link" data-title="Accounts">GetAccountCurrentBidOrderIds</a>
                           </li>
                           <li>
-                            <a href="#getaccountcurrentbidorders" class="toc-h3 toc-link" data-title="Accounts">getAccountCurrentBidOrders</a>
+                            <a href="#getaccountcurrentbidorders" class="toc-h3 toc-link" data-title="Accounts">GetAccountCurrentBidOrders</a>
                           </li>
                           <li>
-                            <a href="#getaccountexchangerequests" class="toc-h3 toc-link" data-title="Accounts">getAccountExchangeRequests</a>
+                            <a href="#getaccountexchangerequests" class="toc-h3 toc-link" data-title="Accounts">GetAccountExchangeRequests</a>
                           </li>
                       </ul>
                   </li>
@@ -329,10 +353,10 @@
                             <a href="#getcurrenciesbyissuer" class="toc-h3 toc-link" data-title="Accounts"> getCurrenciesByIssuer</a>
                           </li>
                           <li>
-                            <a href="#getassetsbyissuer" class="toc-h3 toc-link" data-title="Accounts">getAssetsByIssuer</a>
+                            <a href="#getassetsbyissuer" class="toc-h3 toc-link" data-title="Accounts">GetAssetsByIssuer</a>
                           </li>
                           <li>
-                            <a href="#getblockchaintransactions" class="toc-h3 toc-link" data-title="Accounts">getBlockchainTransactions</a>
+                            <a href="#getblockchaintransactions" class="toc-h3 toc-link" data-title="Accounts">GetBlockchainTransactions</a>
                           </li>
                       </ul>
                   </li>
@@ -340,10 +364,10 @@
                   <a href="#account-votes" class="toc-h2 toc-link" data-title="account-votes">Account Votes</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#getpolls" class="toc-h3 toc-link" data-title="Accounts">getPolls</a>
+                            <a href="#getpolls" class="toc-h3 toc-link" data-title="Accounts">GetPolls</a>
                           </li>
                           <li>
-                            <a href="#getvoterphasedtransactions" class="toc-h3 toc-link" data-title="Accounts">getVoterPhasedTransactions</a>
+                            <a href="#getvoterphasedtransactions" class="toc-h3 toc-link" data-title="Accounts">GetVoterPhasedTransactions</a>
                           </li>
                       </ul>
                   </li>
@@ -351,7 +375,7 @@
                   <a href="#account-funding" class="toc-h2 toc-link" data-title="account-funding">Account Funding</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#getfundingmonitor" class="toc-h3 toc-link" data-title="Accounts">getFundingMonitor</a>
+                            <a href="#getfundingmonitor" class="toc-h3 toc-link" data-title="Accounts">GetFundingMonitor</a>
                           </li>
                           <li>
                             <a href="#startfundingmonitor" class="toc-h3 toc-link" data-title="Accounts">startFundingMonitor</a>
@@ -365,10 +389,10 @@
                   <a href="#account-properties" class="toc-h2 toc-link" data-title="account-properties">Account Properties</a>
                       <ul class="toc-list-h3">
                           <li>
-                            <a href="#getaccountproperties" class="toc-h3 toc-link" data-title="Accounts">getAccountProperties</a>
+                            <a href="#getaccountproperties" class="toc-h3 toc-link" data-title="Accounts">GetAccountProperties</a>
                           </li>
                           <li>
-                            <a href="#setaccountproperty" class="toc-h3 toc-link" data-title="Accounts">setAccountProperty</a>
+                            <a href="#setaccountproperty" class="toc-h3 toc-link" data-title="Accounts">SetAccountProperty</a>
                           </li>
                           <li>
                             <a href="#deleteaccountproperty" class="toc-h3 toc-link" data-title="Accounts">deleteAccountProperty</a>
@@ -1509,8 +1533,8 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Ardor Blockchain-as-a-Service platform API documentation.
+        <h1 id='introduction-to-ardor-api'>Introduction to Ardor API</h1>
+<p>Welcome to the Ardor Blockchain-as-a-Service platform API reference documentation.
 This documentation is intended for developers from all horizons who want to explore with Ardor platform, build Decentrealized Applications (Dapps), leverage and integrate their own solutions to a public blockchain with huge flexibility like Ardor.</p>
 
 <p>All the interactions with Ardor blockchain are done using HTTP requests and the responses are delivered as JSON objects. Thus, Ardor API can be used universally with any langage of your choice. In the what follows, <code>shell</code> and <code>Javascript</code> langages will be used to demonstrate the usage of the API, but other sdks are in development.</p>
@@ -1520,24 +1544,89 @@ This documentation is intended for developers from all horizons who want to expl
 <ol>
 <li>Download the Ardor wallet <a href="https://www.ardorplatform.org/">here</a></li>
 <li>Follow the installation instructions</li>
-<li>Launch the Ardor wallet (can bee found as Ardor Server too on Windows) and wait for the wallet to sync</li>
+<li>Launch the Ardor wallet (can be found as Ardor Server too on Windows) and wait for the wallet to sync</li>
 <li>Go to http://localhost:27876/test</li>
-<li>Scroll to the call you want to test, set the call parameters and explore the results on the side</li>
+<li>Scroll to the call you want to test, set the call parameters and explore the results on the side.</li>
 </ol>
+
+<p>We provide you here with some general notes when using the API, before going in detail with the description of each available call.</p>
+
+<p>When using the API, you may encounter in many places the usage of <em>nxt</em> either in the calls or in parameters and this is due to the fact that Ardor blockchain is an evolution of the Nxt blockchain that resulted in the creation of a new blockchain because of architecture changes introducing the Parent-ChildChain designed for high scalability. Nevertheless, many parts of the Nxt code source are shared between Nxt and Ardor and when you communicate with an Ardor server (using the API calls) then you can be ensured that all your interactions are with Ardor system and not Nxt system.</p>
+<h2 id='flexible-account-ids'>Flexible Account IDs</h2>
+<p>All API requests that require an account ID accept either an account number or the corresponding Reed-Solomon address (ARDR-XXXX-XXXX-XXXX-XXXXX).</p>
+<h2 id='creating-unsigned-transactions'>Creating Unsigned Transactions</h2>
+<p>All API requests that create a new transaction will accept either a <em>secretPhrase</em> or a <em>publicKey</em> parameter:</p>
+
+<ul>
+<li>If <em>secretPhrase</em> is supplied, a transaction is created, signed at the server, and broadcast by the server as usual.</li>
+<li>If only a <em>publicKey</em> parameter is supplied as a 64-digit (32-byte) hex string, the transaction will be prepared by the server and returned in the JSON response as <em>transactionJSON</em> without a signature. This JSON object along with <em>secretPhrase</em> can then be supplied to Sign Transaction as <em>unsignedTransactionJSON</em> and the resulting signed <em>transactionJSON</em> can then be supplied to Broadcast Transaction. This sequence allows for:
+
+<ul>
+<li>Offline signing of transactions so that <em>secretPhrase</em> never needs to be exposed and increases security of account holdings</li>
+<li>Voucher requests where a merchant can build the payment request and costumer signing it on his own device</li>
+</ul></li>
+<li><em>unsignedTransactionBytes</em> may be used instead of unsigned transactionJSON when there is no encrypted message. Messages to be encrypted require the secretPhrase for encryption and so cannot be included in unsignedTransactionBytes.</li>
+</ul>
+<h2 id='escrow-operations'>Escrow Operations</h2>
+<p>All API requests that create a new transaction will accept an optional <em>referencedTransactionFullHash</em> parameter which creates a chained transaction, meaning that the new transaction cannot be confirmed unless the referenced transaction is also confirmed. This feature allows a simple way of transaction escrow:</p>
+
+<ul>
+<li>Alice prepares and signs a transaction <strong>A</strong>, but doesn&#39;t broadcast it by setting the broadcast parameter to false. She sends to Bob the <em>unsignedTransactionBytes</em>, the <em>fullHash</em> of the transaction, and the <em>signatureHash</em>. All of those are included in the JSON returned by the API request.</li>
+</ul>
+
+<p>Warning: Make sure not to send the <em>signed transactionBytes</em>, or the signature itself, as then Bob can just broadcast transaction <strong>A</strong> himself.</p>
+
+<ul>
+<li>Bob prepares, signs and broadcasts transaction <strong>B</strong>, setting the <em>referencedTransactionFullHash</em> parameter to the <em>fullHash</em> of <strong>A</strong> provided by Alice. He can verify that this hash indeed belongs to the transaction he expects from Alice, by using Calculate Full Hash, which takes <em>unsignedTransactionByte*s and *signatureHash</em> (both of which Alice has also sent to Bob). He can also use Parse Transaction to decode the unsigned bytes and inspect all transaction fields.</li>
+<li>Transaction <strong>B</strong> is accepted in the unconfirmed transaction pool, but as long as <strong>A</strong> is still missing, <strong>B</strong> will not be confirmed, i.e. will not be included in the blockchain. If <strong>A</strong> is never submitted, <strong>B</strong> will eventually expire -- so Bob should make sure to set a long enough deadline, such as the maximum of 32767 minutes(~23 days).</li>
+<li>Once in the unconfirmed transactions pool, Bob has no way of recalling <strong>B</strong> back. So now Alice can safely submit her transaction <strong>A</strong>, by just broadcasting the <em>signedTransactionBytes</em> she got in the first step. Transaction <strong>A</strong> will get included in the blockchain first, and in the next block Bob&#39;s transaction <strong>B</strong> will also be included.</li>
+</ul>
+
+<p>Note that while the above scheme is good enough for a simple escrow, the blockchain does not enforce that if <strong>A</strong> is included, <strong>B</strong> will also be included. It may happen due to forks and blockchain reorganization, that <strong>B</strong> never gets a chance to be included and expires unconfirmed, while <strong>A</strong> still remains in the blockchain. However, it is not practically possible for Bob to intentionally cause such chain of events and to prevent <strong>B</strong> from being confirmed.</p>
+<h2 id='prunable-data'>Prunable Data</h2>
+<p>Prunable data can be removed from the blockchain without affecting the integrity of the blockchain. When a transaction containing prunable data is created, only the 32-byte sha256 hash of the prunable data is included in the transactionBytes, not the prunable data itself. The non-prunable signed transactionBytes are used to verify the signature and to generate the transaction&#39;s fullHash and ID; when the prunable part of the transaction is removed at a later time, none of these operations are affected.</p>
+
+<p>Prunable data has a predetermined minimum lifetime of two weeks (24 hours on the Testnet) from the timestamp of the transaction. Transactions and blocks received from peer nodes are not accepted if prunable data is missing before this time has elapsed. After this time has elapsed, prunable data is no longer included with transactions and blocks transmitted to peer nodes, and is no longer included in the transaction JSON returned by general-purpose API calls such as Get Transaction; the only way to retrieve it, if still available, is through special-purpose API calls such as Get Prunable Message.</p>
+
+<p>Expired prunable data remains stored in the blockchain until removed at the same time derived tables are trimmed, which occurs automatically every 1000 blocks by default. Use Trim Derived Tables to remove expired prunable data immediately.</p>
+
+<p>Prunable data can be preserved on a node beyond the predetermined minimum lifetime by setting the <em>nxt.maxPrunableLifetime</em> property to a larger value than two weeks or to -1 to preserve it indefinitely. To force the node to include such preserved prunable data when transactions and blocks are transmitted to peer nodes, set the <em>nxt.includeExpiredPrunables</em> property to true, thus making it an archival node.</p>
+
+<p>Currently, there are two varieties of prunable data in the Ardor system: prunable Arbitrary Messages and Tagged Data. Both varities have a maximum prunable data length of 42 kilobytes</p>
+<h2 id='properties-files'>Properties Files</h2>
+<p>The behavior of some API calls is affected by property settings loaded from files in the <code>&lt;WorkingDirectory&gt;/ardor/conf</code> directory during Ardor server intialization. This directory contains the <code>nxt-default.properties</code> and <code>logging-default.properties</code> files, both of which contain default property settings along with documentation. A few of the property settings can be obtained while the server is running through the Get Blockchain Status and Get State calls.</p>
+
+<p>It is recommended not to modify default properties files because they can be overwritten during software updates. Instead, properties in the default files can be overridden by including them in optional <code>nxt.properties</code> and <code>logging.properties</code> files in the same directory. For example, a <code>nxt.properties</code> file can be created with the contents:</p>
+
+<p><code>
+nxt.isTestnet=true
+</code></p>
+
+<p>This causes the Nxt server to connect to the Testnet instead of the Mainnet.</p>
+<h2 id='admin-password'>Admin Password</h2>
+<p>Some API functions take an <em>adminPassword</em> parameter, which must match the <code>nxt.adminPassword</code> property unless the <code>nxt.disableAdminPassword</code> property is set to true or the API server only listens on the localhost interface (when the <code>nxt.apiServerHost</code> property is set to 127.0.0.1).</p>
+
+<p>All Debug Operations require <em>adminPassword</em> since they require some kind of privilege. On some functions <em>adminPassword</em> is used so you can override maximum allowed value for <em>lastIndex</em> parameter, which is set to 100 by default by the <code>nxt.maxAPIRecords</code> property. Giving you the option to retrieve more than 100 objects per request.</p>
+<h2 id='roaming-and-light-client-modes'>Roaming and Light Client Modes</h2>
+<p>The remote node to use when in roaming and light client modes is selected randomly, but can be changed manually in the UI, or using the new set API Proxy Peer API, or forced to a specific peer using the <code>nxt.forceAPIProxyServerURL</code> property.</p>
+
+<p>Remote nodes can be blacklisted from the UI, or using the Blacklist API Proxy Peer API. This blacklisting is independent from peer blacklisting. The API proxy blacklisting period can be set using the <code>nxt.apiProxyBlacklistingPeriod</code> property (default 1800000 milliseconds).</p>
+
+<p>API requests that require sending the secret phrase, shared key, or admin password to the server, for features like forging, shuffling, or running a funding monitor, are disabled when in roaming or light client mode.</p>
 <h1 id='accounts'>Accounts</h1>
 <p>This chapter focuses on all API calls that can help you interact identify an account and many other actions including: sending Ardor to an account, getting his balances, or more advanced interactions like properties and control features.</p>
 <h2 id='account-information'>Account Information</h2>
 <p>The set of API calls bellow allow you to request many informations about an account.</p>
-<h3 id='getaccountid'>getAccountId</h3>
+<h3 id='getaccountid'>GetAccountId</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountId&amp;publicKey=7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountId&amp;publicKey=f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">publicKey</span><span class="p">:</span> <span class="s2">"7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"</span>
+    <span class="na">publicKey</span><span class="p">:</span> <span class="s2">"f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountId"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="s2">"Account id is:"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1548,10 +1637,10 @@ This documentation is intended for developers from all horizons who want to expl
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-XK2L-Z7NK-VNKM-AZYVT"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"publicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10155581947047232530"</span><span class="w">
+        </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-8MVA-XCVR-3JC9-2C7C3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"publicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47475721164246888"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -1581,16 +1670,16 @@ This documentation is intended for developers from all horizons who want to expl
 <aside class="warning">
 The secret phrase in this call is Optional. Thus, do never communicate it to an unknown or untrusted node.
 </aside>
-<h3 id='getaccountpublickey'>getAccountPublicKey</h3>
+<h3 id='getaccountpublickey'>GetAccountPublicKey</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountPublicKey&amp;account=ARDOR-XK2L-Z7NK-VNKM-AZYVT"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountPublicKey&amp;account=ARDOR-8MVA-XCVR-3JC9-2C7C3"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-XK2L-Z7NK-VNKM-AZYVT"</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-8MVA-XCVR-3JC9-2C7C3"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountPublicKey"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1601,8 +1690,8 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"publicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7cca421cdb6b6210ce47e058734b364c5f6e13173c16a6bcccd01bab549b0f3e"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"publicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -1633,12 +1722,12 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountledger'>getAccountLedger</h3>
+<h3 id='getaccountledger'>GetAccountLedger</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLedger&amp;account=ARDOR-XK2L-Z7NK-VNKM-AZYVT""
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLedger&amp;account=ARDOR-XK2L-Z7NK-VNKM-AZYVT"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
@@ -1676,7 +1765,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
     </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Get multiple account ledger entries.</p>
+<p>The GetAccountLedger API will return entries from the account ledger. The account ledger tracks all account changes as determined by the nxt.ledgerAccounts, nxt.ledgerLogUnconfirmed and nxt.ledgerTrimKeep properties.</p>
 
 <p><code>GET http://localhost:27876/nxt?requestType=getAccountLedger&amp;account=&lt;Account&gt;...</code></p>
 
@@ -1725,12 +1814,12 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <tr>
 <td><em>includeTransactions</em></td>
 <td>boolean</td>
-<td>true to retrieve transaction details, otherwise only transaction IDs are retrieved. The default is false.</td>
+<td>Specify TRUE to include the transaction associated with the ledger entry. The default is false.</td>
 </tr>
 <tr>
 <td><em>includeHoldingInfo</em></td>
 <td>boolean</td>
-<td>true to retrieve asset or currency info (optional) with each ledger entry. The default is false.</td>
+<td>Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false</td>
 </tr>
 <tr>
 <td><em>requireBlock</em></td>
@@ -1743,7 +1832,131 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountledgerentry'>getAccountLedgerEntry</h3>
+<h3 id='getaccountledgerentry'>GetAccountLedgerEntry</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLedgerEntry&amp;ledgerId=119533"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">ledgerId</span> <span class="p">:</span> <span class="s2">"119533"</span>
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountLedgerEntry"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"holdingTypeIsUnconfirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"250000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holdingTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BLOCK_GENERATED"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ledgerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"119533"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"isTransactionEvent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4000397523847250"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"holdingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNCONFIRMED_COIN_BALANCE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-8ZW9-BEW7-8QHM-2F67L"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"block"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7794716992135705008"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7794716992135705008"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"654303200082624391"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">291612</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">17312462</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>The GetAccountLedgerEntry API will return an entry from the account ledger. The account ledger tracks all account changes as determined by the nxt.ledgerAccounts, nxt.ledgerLogUnconfirmed and nxt.ledgerTrimKeep properties.</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=getAccountLedgerEntry&amp;account=&lt;LedgerId&gt;&amp;...</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>ledgerId</strong></td>
+<td>number</td>
+<td>Ledger entry identifier</td>
+</tr>
+<tr>
+<td><em>includeTransaction</em></td>
+<td></td>
+<td>Specify TRUE to include the transaction associated with the ledger entry. The default is false.</td>
+</tr>
+<tr>
+<td><em>includeHoldingInfo</em></td>
+<td>boolean</td>
+<td>Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false</td>
+</tr>
+</tbody></table>
+<h3 id='getaccountassetcount'>GetAccountAssetCount</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountAssetCount&amp;account=ARDOR-APM5-TLV8-J3KY-6T3JG"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-APM5-TLV8-J3KY-6T3JG"</span>
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountAssetCount"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numberOfAssets"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Get the number of assets owned by an account given the account ID</p>
+
+<p><code>GET http://localhost:27876/nxt?requestType=getAccountAssetCount&amp;account=&lt;Account&gt;&amp;...</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
+</tr>
+<tr>
+<td><em>height</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
+</tr>
+</tbody></table>
+<h3 id='getaccountassets'>GetAccountAssets</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -1791,7 +2004,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountassetcount'>getAccountAssetCount</h3>
+<h3 id='getaccountblockcount'>GetAccountBlockCount</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -1839,7 +2052,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountassets'>getAccountAssets</h3>
+<h3 id='getaccountblockids'>GetAccountBlockIds</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -1887,7 +2100,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountblockcount'>getAccountBlockCount</h3>
+<h3 id='getaccountblocks'>GetAccountBlocks</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -1935,7 +2148,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountblockids'>getAccountBlockIds</h3>
+<h3 id='getaccountcurrencycount'>GetAccountCurrencyCount</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -1983,7 +2196,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountblocks'>getAccountBlocks</h3>
+<h3 id='getaccountcurrencies'>GetAccountCurrencies</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2031,7 +2244,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountcurrencycount'>getAccountCurrencyCount</h3>
+<h3 id='getaccountlessors'>GetAccountLessors</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2079,7 +2292,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountcurrencies'>getAccountCurrencies</h3>
+<h3 id='getaccountphasedtransactioncount'>GetAccountPhasedTransactionCount</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2127,7 +2340,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountlessors'>getAccountLessors</h3>
+<h3 id='getaccountphasedtransactions'>GetAccountPhasedTransactions</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2175,7 +2388,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountphasedtransactioncount'>getAccountPhasedTransactionCount</h3>
+<h3 id='getunconfirmedtransactionids'>GetUnconfirmedTransactionIds</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2223,7 +2436,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountphasedtransactions'>getAccountPhasedTransactions</h3>
+<h3 id='getunconfirmedtransactions'>GetUnconfirmedTransactions</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2271,7 +2484,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getunconfirmedtransactionids'>getUnconfirmedTransactionIds</h3>
+<h3 id='setaccountinfo'>SetAccountInfo</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2319,7 +2532,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getunconfirmedtransactions'>getUnconfirmedTransactions</h3>
+<h2 id='account-balances'>Account Balances</h2><h3 id='getbalance'>GetBalance</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2367,7 +2580,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='setaccountinfo'>setAccountInfo</h3>
+<h3 id='getbalances'>GetBalances</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2415,7 +2628,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h2 id='account-balances'>Account Balances</h2><h3 id='getbalance'>getBalance</h3>
+<h3 id='getguaranteedbalance'>GetGuaranteedBalance</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2463,103 +2676,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getbalances'>getBalances</h3>
-<blockquote>
-<p>The request:</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
-<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
-<span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns the following JSON structured response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>Call Description</p>
-
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-</tbody></table>
-<h3 id='getguaranteedbalance'>getGuaranteedBalance</h3>
-<blockquote>
-<p>The request:</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
-<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
-<span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns the following JSON structured response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>Call Description</p>
-
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-</tbody></table>
-<h3 id='geteffectivebalance'>getEffectiveBalance</h3>
+<h3 id='geteffectivebalance'>GetEffectiveBalance</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2655,7 +2772,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h2 id='account-trades'>Account Trades</h2><h3 id='getaccountcurrentaskorderids'>getAccountCurrentAskOrderIds</h3>
+<h2 id='account-trades'>Account Trades</h2><h3 id='getaccountcurrentaskorderids'>GetAccountCurrentAskOrderIds</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2703,7 +2820,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountcurrentaskorders'>getAccountCurrentAskOrders</h3>
+<h3 id='getaccountcurrentaskorders'>GetAccountCurrentAskOrders</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2751,7 +2868,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountcurrentbidorderids'>getAccountCurrentBidOrderIds</h3>
+<h3 id='getaccountcurrentbidorderids'>GetAccountCurrentBidOrderIds</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2799,7 +2916,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountcurrentbidorders'>getAccountCurrentBidOrders</h3>
+<h3 id='getaccountcurrentbidorders'>GetAccountCurrentBidOrders</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2847,7 +2964,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getaccountexchangerequests'>getAccountExchangeRequests</h3>
+<h3 id='getaccountexchangerequests'>GetAccountExchangeRequests</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2943,7 +3060,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getassetsbyissuer'>getAssetsByIssuer</h3>
+<h3 id='getassetsbyissuer'>GetAssetsByIssuer</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -2991,7 +3108,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getblockchaintransactions'>getBlockchainTransactions</h3>
+<h3 id='getblockchaintransactions'>GetBlockchainTransactions</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -3039,7 +3156,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h2 id='account-votes'>Account Votes</h2><h3 id='getpolls'>getPolls</h3>
+<h2 id='account-votes'>Account Votes</h2><h3 id='getpolls'>GetPolls</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -3087,7 +3204,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='getvoterphasedtransactions'>getVoterPhasedTransactions</h3>
+<h3 id='getvoterphasedtransactions'>GetVoterPhasedTransactions</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -3135,7 +3252,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h2 id='account-funding'>Account Funding</h2><h3 id='getfundingmonitor'>getFundingMonitor</h3>
+<h2 id='account-funding'>Account Funding</h2><h3 id='getfundingmonitor'>GetFundingMonitor</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -3279,7 +3396,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h2 id='account-properties'>Account Properties</h2><h3 id='getaccountproperties'>getAccountProperties</h3>
+<h2 id='account-properties'>Account Properties</h2><h3 id='getaccountproperties'>GetAccountProperties</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -3327,7 +3444,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='setaccountproperty'>setAccountProperty</h3>
+<h3 id='setaccountproperty'>SetAccountProperty</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
@@ -16518,6 +16635,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">cURL</a>
                 <a href="#" data-language-name="javascript">JavaScript</a>
+            <a data-language-name="github" href="https://github.com/ArdorNxtCommunity/ardor-api-doc" style="margin-right:0; right: 61%;position: absolute;"><i class="fab fa-github"></i> Edit on GitHub</a>
           </div>
       </div>
     </div>
