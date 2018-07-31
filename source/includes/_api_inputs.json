@@ -113,8 +113,8 @@
 	    "description" : "Zero-based index to the first block to retrieve."
     },
     "height":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Blockchain height at which to retrieve data. Default is most recent block."
     },
     "holding":{
 	    "type" : "number", 
@@ -125,8 +125,8 @@
 	    "description" : "A string representing the holding type."
     },
     "includeAssetInfo":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true if asset information is to be included."
     },
     "includeAssets":{
 	    "type" : "", 
@@ -141,8 +141,8 @@
 	    "description" : ""
     },
     "includeCurrencyInfo":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true if several currency information properties is to be included."
     },
     "includeEffectiveBalance":{
 	    "type" : "", 
@@ -369,8 +369,8 @@
 	    "description" : ""
     },
     "timestamp":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Earliest block (in seconds since the genesis block) to retrieve."
     },
     "type":{
 	    "type" : "", 
