@@ -9,7 +9,7 @@ The API calls below allow you to
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d 'secretPhrase=INSERT PASSPHRASE HERE&period=1440&recipient=ARDOR-8MVA-XCVR-3JC9-2C7C3' http://localhost:27876/nxt?requestType=leaseBalance
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "secretPhrase=INSERT PASSPHRASE HERE&period=1440&recipient=ARDOR-8MVA-XCVR-3JC9-2C7C3" "http://localhost:27876/nxt?requestType=leaseBalance"
 ```
 
 ```javascript
@@ -51,7 +51,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d 'secretPhrase=INSERT PASSPHRASE HERE' http://localhost:27876/nxt?requestType=startForging
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "secretPhrase=INSERT PASSPHRASE HERE "http://localhost:27876/nxt?requestType=startForging"
 ```
 
 ```javascript
@@ -86,7 +86,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d 'secretPhrase=INSERT PASSPHRASE HERE' http://localhost:27876/nxt?requestType=stopForging
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "secretPhrase=INSERT PASSPHRASE HERE" "http://localhost:27876/nxt?requestType=stopForging"
 ```
 
 ```javascript
