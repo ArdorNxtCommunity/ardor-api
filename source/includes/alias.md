@@ -12,7 +12,7 @@ In order to set an alias or search for existing ones, you can use the API calls 
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -49,7 +49,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -86,7 +86,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -123,7 +123,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -160,7 +160,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -202,7 +202,7 @@ Alias can be set, bought and sold, and the API calls can help you achieve this.
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -239,7 +239,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -276,7 +276,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript

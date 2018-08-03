@@ -9,7 +9,7 @@ The API calls below help create and also exchange and manage your created virtua
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -46,7 +46,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -83,7 +83,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -120,7 +120,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -157,7 +157,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -194,7 +194,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -231,7 +231,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -270,7 +270,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -307,7 +307,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -344,7 +344,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -383,7 +383,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -420,7 +420,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -457,7 +457,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -496,7 +496,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -533,7 +533,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -570,7 +570,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -607,7 +607,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -644,7 +644,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -681,7 +681,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -718,7 +718,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -755,7 +755,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -792,7 +792,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -829,7 +829,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -866,7 +866,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -903,7 +903,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -940,7 +940,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -977,7 +977,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1014,7 +1014,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1051,7 +1051,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1088,7 +1088,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1125,7 +1125,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1162,7 +1162,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1199,7 +1199,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1236,7 +1236,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1273,7 +1273,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1310,7 +1310,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1347,7 +1347,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1384,7 +1384,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1421,7 +1421,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript

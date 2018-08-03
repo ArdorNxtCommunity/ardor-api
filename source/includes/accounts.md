@@ -12,7 +12,7 @@ The set of API calls bellow allow you to request many informations about an acco
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountId&publicKey=f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "publicKey=f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a" "http://localhost:27876/nxt?requestType=getAccountId"
 ```
 
 ```javascript
@@ -56,7 +56,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountPublicKey&account=ARDOR-8MVA-XCVR-3JC9-2C7C3"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-8MVA-XCVR-3JC9-2C7C3" "http://localhost:27876/nxt?requestType=getAccountPublicKey"
 ```
 
 ```javascript
@@ -95,7 +95,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountLedger&account=ARDOR-XK2L-Z7NK-VNKM-AZYVT"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-XK2L-Z7NK-VNKM-AZYVT" "http://localhost:27876/nxt?requestType=getAccountLedger"
 ```
 
 ```javascript
@@ -162,7 +162,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountLedgerEntry&ledgerId=119533"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "ledgerId=119533" "http://localhost:27876/nxt?requestType=getAccountLedgerEntry"
 ```
 
 ```javascript
@@ -215,7 +215,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountAssetCount&account=ARDOR-APM5-TLV8-J3KY-6T3JG"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-APM5-TLV8-J3KY-6T3JG" "http://localhost:27876/nxt?requestType=getAccountAssetCount"
 ```
 
 ```javascript
@@ -254,7 +254,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountAssets&account=ARDOR-APM5-TLV8-J3KY-6T3JG&includeAssetInfo=true"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-APM5-TLV8-J3KY-6T3JG&includeAssetInfo=true" "http://localhost:27876/nxt?requestType=getAccountAssets"
 ```
 
 ```javascript
@@ -304,7 +304,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountBlockCount&account=ARDOR-58JH-YGLD-DG25-CRVXC"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-58JH-YGLD-DG25-CRVXC" "http://localhost:27876/nxt?requestType=getAccountBlockCount"
 ```
 
 ```javascript
@@ -343,7 +343,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountBlockIds&account=ARDOR-58JH-YGLD-DG25-CRVXC"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-58JH-YGLD-DG25-CRVXC" "http://localhost:27876/nxt?requestType=getAccountBlockIds"
 ```
 
 ```javascript
@@ -398,7 +398,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountBlocks&account=ARDOR-58JH-YGLD-DG25-CRVXC"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-58JH-YGLD-DG25-CRVXC" "http://localhost:27876/nxt?requestType=getAccountBlocks"
 ```
 
 ```javascript
@@ -462,7 +462,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountCurrencyCount&account=ARDOR-VS8T-QYQS-SK9H-5BYBB"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-VS8T-QYQS-SK9H-5BYBB" "http://localhost:27876/nxt?requestType=getAccountCurrencyCount"
 ```
 
 ```javascript
@@ -501,7 +501,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountCurrencies&account=ARDOR-VS8T-QYQS-SK9H-5BYBB&includeCurrencyInfo=true"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-VS8T-QYQS-SK9H-5BYBB&includeCurrencyInfo=true" "http://localhost:27876/nxt?requestType=getAccountCurrencies"
 ```
 
 ```javascript
@@ -559,7 +559,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType=getAccountLessors&account=ARDOR-VS8T-QYQS-SK9H-5BYBB"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-VS8T-QYQS-SK9H-5BYBB" "http://localhost:27876/nxt?requestType=getAccountLessors"
 ```
 
 ```javascript
@@ -601,7 +601,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -636,7 +636,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -671,7 +671,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -706,7 +706,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -741,7 +741,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -779,7 +779,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -814,7 +814,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -849,7 +849,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -884,7 +884,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -919,7 +919,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -957,7 +957,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -992,7 +992,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1027,7 +1027,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1062,7 +1062,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1097,7 +1097,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1135,7 +1135,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1170,7 +1170,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1205,7 +1205,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1242,7 +1242,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1277,7 +1277,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1314,7 +1314,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1349,7 +1349,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1384,7 +1384,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1421,7 +1421,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1456,7 +1456,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1491,7 +1491,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1529,7 +1529,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
@@ -1564,7 +1564,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
 ```
 
 ```javascript
