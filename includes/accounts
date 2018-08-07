@@ -1447,8 +1447,8 @@ This call inherit from Create Transaction Request, thus it also inherit all its 
 </tr>
 <tr>
 <td><em>numberOfConfirmations</em></td>
-<td></td>
-<td></td>
+<td>number</td>
+<td>Minimum confirmation blocks.</td>
 </tr>
 <tr>
 <td><em>requireBlock</em></td>
@@ -1581,7 +1581,7 @@ Bitswift | 3
 AEUR | 4
 ... | ...</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=sendMoney</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=sendMoney&amp;chain=&lt;Chain&gt;&amp;recipient=&lt;Recipient&gt;&amp;amountNQT=&lt;Amount&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1624,9 +1624,9 @@ AEUR | 4
 
 <p>Additional common parameters are given in the Create Transaction Call.</p>
 
-<p><aside class="notice">
+<aside class="notice">
 In the example given, we do not provide secretPhrase of the sender, thus a unisgned transaction will created and should be signed later by the sender. This opens usage to Offline signing, Voucher claiming, Escrow services... etc.
-<aside></p>
+</aside>
 <h2 id='account-trades'>Account Trades</h2><h3 id='getaccountcurrentaskorderids'>GetAccountCurrentAskOrderIds</h3>
 <blockquote>
 <p>The request:</p>
