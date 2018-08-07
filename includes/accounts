@@ -6,7 +6,7 @@
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountId&amp;publicKey=f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"publicKey=f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountId"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -29,7 +29,7 @@
 </span></code></pre>
 <p>Get an account ID given a secret passphrase or public key.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountId&amp;publicKey=&lt;PublicKEY&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountId&amp;publicKey=&lt;PublicKEY&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -57,7 +57,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountPublicKey&amp;account=ARDOR-8MVA-XCVR-3JC9-2C7C3"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-8MVA-XCVR-3JC9-2C7C3"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountPublicKey"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -78,7 +78,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get the public key associated with an account ID</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountPublicKey&amp;account=&lt;AccountID&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountPublicKey&amp;account=&lt;AccountID&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -107,7 +107,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLedger&amp;account=ARDOR-XK2L-Z7NK-VNKM-AZYVT"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-XK2L-Z7NK-VNKM-AZYVT"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLedger"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -148,7 +148,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>The GetAccountLedger API will return entries from the account ledger. The account ledger tracks all account changes as determined by the nxt.ledgerAccounts, nxt.ledgerLogUnconfirmed and nxt.ledgerTrimKeep properties.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountLedger&amp;account=&lt;Account&gt;...</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountLedger&amp;account=&lt;Account&gt;...</code></p>
 
 <table><thead>
 <tr>
@@ -217,7 +217,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLedgerEntry&amp;ledgerId=119533"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"ledgerId=119533"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLedgerEntry"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -253,7 +253,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>The GetAccountLedgerEntry API will return an entry from the account ledger. The account ledger tracks all account changes as determined by the nxt.ledgerAccounts, nxt.ledgerLogUnconfirmed and nxt.ledgerTrimKeep properties.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountLedgerEntry&amp;account=&lt;LedgerId&gt;&amp;...</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountLedgerEntry&amp;account=&lt;LedgerId&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -282,7 +282,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountAssetCount&amp;account=ARDOR-APM5-TLV8-J3KY-6T3JG"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-APM5-TLV8-J3KY-6T3JG"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountAssetCount"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -303,7 +303,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get the number of assets owned by an account given the account ID.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountAssetCount&amp;account=&lt;Account&gt;&amp;...</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountAssetCount&amp;account=&lt;Account&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -337,7 +337,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountAssets&amp;account=ARDOR-APM5-TLV8-J3KY-6T3JG&amp;includeAssetInfo=true"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-APM5-TLV8-J3KY-6T3JG&amp;includeAssetInfo=true"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountAssets"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -367,7 +367,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get the assets owned by a given account in reverse quantity order.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountAssets&amp;account=&lt;Account&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountAssets&amp;account=&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -411,7 +411,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountBlockCount&amp;account=ARDOR-58JH-YGLD-DG25-CRVXC"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-58JH-YGLD-DG25-CRVXC"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountBlockCount"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -432,7 +432,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get the number of blocks forged by an account.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountBlockCount&amp;account=&lt;Account&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountBlockCount&amp;account=&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -461,7 +461,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountBlockIds&amp;account=ARDOR-58JH-YGLD-DG25-CRVXC"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-58JH-YGLD-DG25-CRVXC"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountBlockIds"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -495,7 +495,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get the block IDs of all blocks forged (generated) by an account in reverse block height order,</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountBlockIds&amp;account&lt;Account&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountBlockIds&amp;account&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -544,7 +544,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountBlocks&amp;account=ARDOR-58JH-YGLD-DG25-CRVXC"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-58JH-YGLD-DG25-CRVXC"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountBlocks"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -586,7 +586,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get all blocks forged (generated) by an account in reverse block height order.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountBlocks&amp;account=&lt;Account&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountBlocks&amp;account=&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -640,7 +640,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrencyCount&amp;account=ARDOR-VS8T-QYQS-SK9H-5BYBB"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-VS8T-QYQS-SK9H-5BYBB"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrencyCount"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -661,7 +661,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get the number of currencies issued by a given account.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountCurrencyCount&amp;account=&lt;Account&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrencyCount&amp;account=&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -695,7 +695,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrencies&amp;account=ARDOR-VS8T-QYQS-SK9H-5BYBB&amp;includeCurrencyInfo=true"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-VS8T-QYQS-SK9H-5BYBB&amp;includeCurrencyInfo=true"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrencies"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -731,7 +731,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get the currencies issued by a given account.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountCurrencies&amp;account=&lt;Account&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrencies&amp;account=&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -775,7 +775,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLessors&amp;account=ARDOR-VS8T-QYQS-SK9H-5BYBB"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-VS8T-QYQS-SK9H-5BYBB"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountLessors"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -799,7 +799,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </span></code></pre>
 <p>Get the lessors (accounts leasing their forging balance) to an account.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=getAccountLessors&amp;account=&lt;Account&gt;</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountLessors&amp;account=&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -833,24 +833,29 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-VS8T-QYQS-SK9H-5BYBB"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountPhasedTransactionCount"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-VS8T-QYQS-SK9H-5BYBB"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountPhasedTransactionCount"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numberOfPhasedTransactions"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the number of pending phased transactions associated with an account given the account ID.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountPhasedTransactionCount&amp;chain=&lt;ChainId&gt;&amp;account=&lt;Account&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -860,43 +865,53 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getaccountphasedtransactions'>GetAccountPhasedTransactions</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-VS8T-QYQS-SK9H-5BYBB"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountPhasedTransactions"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-VS8T-QYQS-SK9H-5BYBB"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountPhasedTransactions"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get pending phased transactions associated with an account given the account ID in reverse chronological creation order.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountPhasedTransactions&amp;chain=&lt;ChainId&gt;&amp;account=&lt;Account&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -906,43 +921,71 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getunconfirmedtransactionids'>GetUnconfirmedTransactionIds</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L8&amp;account=ARDOR-492G-A5YD-FUGZ-C6N2B"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getUnconfirmedTransactionIds"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getUnconfirmedTransactionIds"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unconfirmedTransactionIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"7939835860691128054"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get a list of unconfirmed transaction IDs associated with an account.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getUnconfirmedTransactionIds&amp;chain=2&amp;account=&lt;Account1&gt;&amp;account=&lt;Account2&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -952,43 +995,107 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID. First account to monitor.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID. Second account to monitor.</td>
+</tr>
+<tr>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID. Third account to monitor, you can add as many accounts as you want.</td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getunconfirmedtransactions'>GetUnconfirmedTransactions</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L8&amp;account=ARDOR-492G-A5YD-FUGZ-C6N2B"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getUnconfirmedTransactions"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getUnconfirmedTransactions"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"unconfirmedTransactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"senderPublicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"isBundled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c8edc854fe2fba9d1b95fc81b006dffa4b1ab041eeb1d26ef217bbdd14002406d8a4851d15ebc6893de25b1fcee3cca88a400c898153202a6251eb80c3acea5f"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"feeNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1f007e0ee4675228e4b1ff50def20403f46a1d7fb2ec7dc8271b38b8a12bae3d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fxtTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phased"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ecBlockId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2329106975025976796"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"signatureHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"025c171e9d1d80b4ad5cabc836cb48aed050ed8764dcdec4f0e32f8d2ca050de"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"version.OrdinaryPayment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"senderRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"recipientRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11854182583844805646"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ecBlockHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">230000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">19115098</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get a list of unconfirmed transactions associated with an account.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getUnconfirmedTransactions&amp;chain=2&amp;account=&lt;Account1&gt;&amp;account=&lt;Account2&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -998,43 +1105,114 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID. First account to monitor.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID. Second account to monitor.</td>
+</tr>
+<tr>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID. Third account to monitor, you can add as many accounts as you want.</td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='setaccountinfo'>SetAccountInfo</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;name=ArdorCommunity&amp;description=Test+SetAccountInfo&amp;publicKey=5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27&amp;passPhrase=xxxxxxxxxx"</span> <span class="s2">"http://localhost:27876/nxt?requestType=setAccountInfo"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">name</span> <span class="p">:</span> <span class="s2">"ArdorCommunity"</span><span class="p">,</span>
+    <span class="na">description</span> <span class="p">:</span> <span class="s2">"Test SetAccountInfo"</span><span class="p">,</span>
+    <span class="na">secretPhrase</span> <span class="p">:</span> <span class="s2">"xxxxxxxxxx"</span><span class="p">,</span>
+    <span class="na">publicKey</span> <span class="p">:</span> <span class="s2">"5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27"</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"setAccountInfo"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"minimumFeeFQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"signatureHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ece8129f69c513c9117a1217358fedd5ff3834028e9cf8582cd5a7b9759c38c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionJSON"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"senderPublicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3db02a823ead11afa82b20cd2c97451967808d05037cb32b4b0914866f9daa00854691662776178cbe79abf2d05ed27af3553e6911393a22d24e657a8c5c4006"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"feeNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200000000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"764e5f9da83f24742a664465465762726b979c351d9ee4d2fba93f9d00748876"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fxtTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phased"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ecBlockId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9132963265459034843"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"signatureHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5ece8129f69c513c9117a1217358fedd5ff3834028e9cf8582cd5a7b9759c38c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ArdorCommunity"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test SetAccountInfo"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version.AccountInfo"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"senderRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amountNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ecBlockHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">321182</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">19116494</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"unsignedTransactionBytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"020000000a0001ceb123010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270000000000000000000000000000000000c2eb0b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009ee60400db9a6090b3cdbe7e00000000010e4172646f72436f6d6d756e697479130054657374205365744163636f756e74496e666f000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"broadcasted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionBytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"020000000a0001ceb123010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270000000000000000000000000000000000c2eb0b000000003db02a823ead11afa82b20cd2c97451967808d05037cb32b4b0914866f9daa00854691662776178cbe79abf2d05ed27af3553e6911393a22d24e657a8c5c40069ee60400db9a6090b3cdbe7e00000000010e4172646f72436f6d6d756e697479130054657374205365744163636f756e74496e666f000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"764e5f9da83f24742a664465465762726b979c351d9ee4d2fba93f9d00748876"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Set account information. POST only.
+This call inherit from Create Transaction Request, thus it also inherit all its parameters but they are optional.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=setAccountInfo&amp;chain=&lt;Chain&gt;&amp;name=&lt;Name&gt;&amp;description=&lt;Description&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1044,43 +1222,66 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>name</em></td>
+<td>string</td>
+<td>Name to associate with the account.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>description</em></td>
+<td>string</td>
+<td>A description to associate with the account.</td>
+</tr>
+<tr>
+<td><em>secretPhrase</em></td>
+<td>string</td>
+<td>Secret phrase of the account. It&#39;s optional, but needed for broadcasting</td>
+</tr>
+<tr>
+<td><em>publicKey</em></td>
+<td>string</td>
+<td>Public key of the account. If secretPhrase is not set than it&#39;s required</td>
+</tr>
+<tr>
+<td><em>feeNQT</em></td>
+<td>number</td>
+<td>Fee (in NQT) of the transaction. If not specified, the response will provide the minimal fee that should be included.</td>
 </tr>
 </tbody></table>
+
+<p>Additional common parameters are given in the Create Transaction Call.</p>
 <h2 id='account-balances'>Account Balances</h2><h3 id='getbalance'>GetBalance</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L8"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getBalance"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span>  <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getBalance"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"unconfirmedBalanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3496611077300"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"balanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3496611077300"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the balance of an account.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getBalance&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1090,43 +1291,71 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>height</em></td>
+<td>number</td>
+<td>Blockchain height at which to retrieve data. Default is most recent block.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getbalances'>GetBalances</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-HWZW-5TT6-U68F-H26L8&amp;chain=1&amp;chain=2&amp;chain=3"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getBalances"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span>  <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">],</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getBalances"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"unconfirmedBalanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"975883500000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"balanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"975883500000"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"unconfirmedBalanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3496611077300"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"balanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3496611077300"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"unconfirmedBalanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"balanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the balance of an account on different childchain. You need to specify at least one chain id.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getBalances&amp;account&lt;Account&gt;&amp;chain=&lt;Chain&gt;&amp;chain=&lt;Chain&gt;&amp;chain=&lt;Chain&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1136,43 +1365,73 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>chain</em></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
+</tr>
+<tr>
+<td><em>chain</em></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
+</tr>
+<tr>
+<td><em>chain</em></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
+</tr>
+<tr>
+<td><em>height</em></td>
+<td>number</td>
+<td>Blockchain height at which to retrieve data. Default is most recent block.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getguaranteedbalance'>GetGuaranteedBalance</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-HWZW-5TT6-U68F-H26L8&amp;numberOfConfirmations=10"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getGuaranteedBalance"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">numberOfConfirmations</span> <span class="p">:</span> <span class="s2">"10"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getGuaranteedBalance"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"guaranteedBalanceNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"975883500000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the balance of an account that is confirmed at least a specified number of blocks in the past.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getGuaranteedBalance&amp;account=&lt;Account&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1182,31 +1441,36 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>numberOfConfirmations</em></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='geteffectivebalance'>GetEffectiveBalance</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-HWZW-5TT6-U68F-H26L8"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getEffectiveBalance"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1215,10 +1479,17 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"forgedBalanceFQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"guaranteedBalanceFQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"975883500000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"effectiveBalanceFXT"</span><span class="p">:</span><span class="w"> </span><span class="mi">9758</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the Effective balance of an account.
+The effective balance is used to compute the forging probability of an account, and it refers to the stable balance of an account during the last 24h or 1440 blocks.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getEffectiveBalance&amp;account=&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -1228,43 +1499,89 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>height</em></td>
+<td>number</td>
+<td>Blockchain height at which to retrieve data. Default is most recent block.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
-<h3 id='sendmoney'>sendMoney</h3>
+<h3 id='sendmoney'>SendMoney</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;recipient=ARDOR-HWZW-5TT6-U68F-H26L8&amp;amountNQT=1000000000&amp;publicKey=f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span> <span class="s2">"http://localhost:27876/nxt?requestType=sendMoney"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span><span class="c1">//Ignis</span>
+    <span class="na">recipient</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">amountNQT</span> <span class="p">:</span> <span class="s2">"1000000000"</span><span class="p">,</span><span class="c1">// 1 Ignis = 10^8 NQT, here 10 Ignis</span>
+    <span class="na">publicKey</span> <span class="p">:</span> <span class="s2">"f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span><span class="c1">//publicKey of the sender</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"sendMoney"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"minimumFeeFQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionJSON"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"senderPublicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"feeNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fxtTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phased"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ecBlockId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4227293255025921221"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"version.OrdinaryPayment"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"senderRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-8MVA-XCVR-3JC9-2C7C3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amountNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47475721164246888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipientRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ecBlockHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">324627</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">19323665</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"unsignedTransactionBytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0200000000000111db26010f00f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0afcf347721e8048f300ca9a3b0000000010270000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000013f40400c58c397bd15caa3a00000000000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"broadcasted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bundlerRateNQTPerFXT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Send a coin (ARDR, Ignis, Bitswift, AEUR, ...) to an account. POST only.
+The coin to be sent is determined by its chain Id:
+Coin Name | Chain Id
+--------- | --------
+ARDR | 1
+Ignis | 2
+Bitswift | 3
+AEUR | 4
+... | ...</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=sendMoney</code></p>
 
 <table><thead>
 <tr>
@@ -1274,33 +1591,54 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>recipient</strong></td>
+<td>number or RS</td>
+<td>Account ID of the recipient</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>amountNQT</strong></td>
+<td>number</td>
+<td>Amount (in NQT) in the transaction.</td>
+</tr>
+<tr>
+<td><em>secretPhrase</em></td>
+<td>string</td>
+<td>Secret phrase of the account. If not specified, publicKey has to be, then the response will be an unsigned transaction and will not be broadcasted.</td>
+</tr>
+<tr>
+<td><em>publicKey</em></td>
+<td>string</td>
+<td>Public key of the account. required if secretPhrase is not provided.</td>
+</tr>
+<tr>
+<td><em>feeNQT</em></td>
+<td>number</td>
+<td>Fee (in NQT) of the transaction. If not specified, the response will provide the minimal fee that should be included.</td>
 </tr>
 </tbody></table>
+
+<p>Additional common parameters are given in the Create Transaction Call.</p>
+
+<p><aside class="notice">
+In the example given, we do not provide secretPhrase of the sender, thus a unisgned transaction will created and should be signed later by the sender. This opens usage to Offline signing, Voucher claiming, Escrow services... etc.
+<aside></p>
 <h2 id='account-trades'>Account Trades</h2><h3 id='getaccountcurrentaskorderids'>GetAccountCurrentAskOrderIds</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentAskOrderIds"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountCurrentAskOrderIds"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1308,9 +1646,9 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<p>Get current asset order IDs given an account ID in reverse block height order.</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentAskOrderIds</code></p>
 
 <table><thead>
 <tr>
@@ -1339,14 +1677,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentAskOrders"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountCurrentAskOrders"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1356,7 +1694,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentAskOrders</code></p>
 
 <table><thead>
 <tr>
@@ -1385,14 +1723,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentBidOrderIds"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountCurrentBidOrderIds"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1402,7 +1740,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentBidOrderIds</code></p>
 
 <table><thead>
 <tr>
@@ -1431,14 +1769,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentBidOrders"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountCurrentBidOrders"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1448,7 +1786,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentBidOrders</code></p>
 
 <table><thead>
 <tr>
@@ -1477,14 +1815,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountExchangeRequests"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountExchangeRequests"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1494,7 +1832,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountExchangeRequests</code></p>
 
 <table><thead>
 <tr>
@@ -1519,18 +1857,18 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h2 id='account-activity'>Account Activity</h2><h3 id='getcurrenciesbyissuer'> getCurrenciesByIssuer</h3>
+<h2 id='account-activity'>Account Activity</h2><h3 id='getcurrenciesbyissuer'> GetCurrenciesByIssuer</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType= getCurrenciesByIssuer"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">" getCurrenciesByIssuer"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1540,7 +1878,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType= getCurrenciesByIssuer</code></p>
 
 <table><thead>
 <tr>
@@ -1569,14 +1907,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAssetsByIssuer"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAssetsByIssuer"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1586,7 +1924,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAssetsByIssuer</code></p>
 
 <table><thead>
 <tr>
@@ -1615,7 +1953,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -1632,7 +1970,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=</code></p>
 
 <table><thead>
 <tr>
@@ -1661,14 +1999,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getPolls"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getPolls"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1678,7 +2016,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getPolls</code></p>
 
 <table><thead>
 <tr>
@@ -1707,14 +2045,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getVoterPhasedTransactions"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getVoterPhasedTransactions"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1724,7 +2062,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getVoterPhasedTransactions</code></p>
 
 <table><thead>
 <tr>
@@ -1753,14 +2091,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getFundingMonitor"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getFundingMonitor"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1770,7 +2108,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getFundingMonitor</code></p>
 
 <table><thead>
 <tr>
@@ -1795,18 +2133,18 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='startfundingmonitor'>startFundingMonitor</h3>
+<h3 id='startfundingmonitor'>StartFundingMonitor</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=startFundingMonitor"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"startFundingMonitor"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1816,7 +2154,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=startFundingMonitor</code></p>
 
 <table><thead>
 <tr>
@@ -1841,18 +2179,18 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='stopfundingmonitor'>stopFundingMonitor</h3>
+<h3 id='stopfundingmonitor'>StopFundingMonitor</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=stopFundingMonitor"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"stopFundingMonitor"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1862,7 +2200,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=stopFundingMonitor</code></p>
 
 <table><thead>
 <tr>
@@ -1891,14 +2229,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountProperties"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountProperties"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1908,7 +2246,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountProperties</code></p>
 
 <table><thead>
 <tr>
@@ -1937,14 +2275,14 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=setAccountProperty"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"setAccountProperty"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -1954,7 +2292,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=setAccountProperty</code></p>
 
 <table><thead>
 <tr>
@@ -1979,18 +2317,18 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='deleteaccountproperty'>deleteAccountProperty</h3>
+<h3 id='deleteaccountproperty'>DeleteAccountProperty</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=deleteAccountProperty"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"deleteAccountProperty"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -2000,7 +2338,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=deleteAccountProperty</code></p>
 
 <table><thead>
 <tr>
@@ -2025,18 +2363,18 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h2 id='account-util-functions'>Account Util functions</h2><h3 id='rsconvert'>rsConvert</h3>
+<h2 id='account-util-functions'>Account Util functions</h2><h3 id='rsconvert'>RsConvert</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=rsConvert"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"rsConvert"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -2046,7 +2384,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=rsConvert</code></p>
 
 <table><thead>
 <tr>
@@ -2071,18 +2409,18 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <td>description</td>
 </tr>
 </tbody></table>
-<h3 id='searchaccounts'>searchAccounts</h3>
+<h3 id='searchaccounts'>SearchAccounts</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=searchAccounts"</span> -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
 
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"searchAccounts"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
@@ -2092,7 +2430,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <pre class="highlight json tab-json"><code></code></pre>
 <p>Call Description</p>
 
-<p><code>GET http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=searchAccounts</code></p>
 
 <table><thead>
 <tr>

@@ -7,7 +7,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -55,7 +55,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -103,7 +103,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -151,7 +151,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -199,7 +199,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -247,7 +247,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -295,7 +295,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -343,7 +343,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -391,7 +391,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
@@ -439,7 +439,7 @@ Indeed, Ardor is based on the Parent-ChildChain architecture, thus the parent ch
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
