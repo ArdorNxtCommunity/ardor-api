@@ -1135,7 +1135,7 @@ Bitswift | 3
 AEUR | 4
 ... | ...
 
-`POST http://localhost:27876/nxt?requestType=sendMoney`
+`POST http://localhost:27876/nxt?requestType=sendMoney&chain=<Chain>&recipient=<Recipient>&amountNQT=<Amount>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1150,7 +1150,7 @@ Additional common parameters are given in the Create Transaction Call.
 
 <aside class="notice">
 In the example given, we do not provide secretPhrase of the sender, thus a unisgned transaction will created and should be signed later by the sender. This opens usage to Offline signing, Voucher claiming, Escrow services... etc.
-<aside>
+</aside>
 
 ## Account Trades
 
