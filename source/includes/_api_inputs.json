@@ -34,7 +34,7 @@
     },
     "chain":{
 	    "type" : "number", 
-	    "description" : "Chain ID (Ignis=1, BITSWIFT=2, AEUR=3 ...)."
+	    "description" : "Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...)."
     },
     "compressMessageToEncrypt":{
 	    "type" : "boolean", 
@@ -53,8 +53,8 @@
 	    "description" : ""
     },
     "description":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "string", 
+	    "description" : "A description to associate with the account."
     },
     "ecBlockHeight":{
 	    "type" : "", 
@@ -97,8 +97,8 @@
 	    "description" : ""
     },
     "feeNQT":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Fee (in NQT) of the transaction."
     },
     "feeRateNQTPerFXT":{
 	    "type" : "", 
@@ -225,8 +225,8 @@
 	    "description" : ""
     },
     "name":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "string", 
+	    "description" : "Name to associate with the account."
     },
     "nonPhasedOnly":{
 	    "type" : "", 
@@ -333,8 +333,8 @@
 	    "description" : ""
     },
     "recipient":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number or RS", 
+	    "description" : "Account ID of the recipient"
     },
     "recipientPublicKey":{
 	    "type" : "", 

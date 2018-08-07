@@ -40,7 +40,7 @@ ardor.sendRequest("getAccountId", data, function (response) {
 
 Get an account ID given a secret passphrase or public key.
 
-`GET http://localhost:27876/nxt?requestType=getAccountId&publicKey=<PublicKEY>`
+`POST http://localhost:27876/nxt?requestType=getAccountId&publicKey=<PublicKEY>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -82,7 +82,7 @@ ardor.sendRequest("getAccountPublicKey", data, function (response) {
 
 Get the public key associated with an account ID
 
-`GET http://localhost:27876/nxt?requestType=getAccountPublicKey&account=<AccountID>`
+`POST http://localhost:27876/nxt?requestType=getAccountPublicKey&account=<AccountID>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -141,7 +141,7 @@ ardor.sendRequest("getAccountLedger", data, function (response) {
 
 The GetAccountLedger API will return entries from the account ledger. The account ledger tracks all account changes as determined by the nxt.ledgerAccounts, nxt.ledgerLogUnconfirmed and nxt.ledgerTrimKeep properties.
 
-`GET http://localhost:27876/nxt?requestType=getAccountLedger&account=<Account>...`
+`POST http://localhost:27876/nxt?requestType=getAccountLedger&account=<Account>...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -203,7 +203,7 @@ ardor.sendRequest("getAccountLedgerEntry", data, function (response) {
 
 The GetAccountLedgerEntry API will return an entry from the account ledger. The account ledger tracks all account changes as determined by the nxt.ledgerAccounts, nxt.ledgerLogUnconfirmed and nxt.ledgerTrimKeep properties.
 
-`GET http://localhost:27876/nxt?requestType=getAccountLedgerEntry&account=<LedgerId>&...`
+`POST http://localhost:27876/nxt?requestType=getAccountLedgerEntry&account=<LedgerId>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -241,7 +241,7 @@ ardor.sendRequest("getAccountAssetCount", data, function (response) {
 
 Get the number of assets owned by an account given the account ID.
 
-`GET http://localhost:27876/nxt?requestType=getAccountAssetCount&account=<Account>&...`
+`POST http://localhost:27876/nxt?requestType=getAccountAssetCount&account=<Account>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -289,7 +289,7 @@ ardor.sendRequest("getAccountAssets", data, function (response) {
 
 Get the assets owned by a given account in reverse quantity order.
 
-`GET http://localhost:27876/nxt?requestType=getAccountAssets&account=<Account>`
+`POST http://localhost:27876/nxt?requestType=getAccountAssets&account=<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -330,7 +330,7 @@ ardor.sendRequest("getAccountBlockCount", data, function (response) {
 
 Get the number of blocks forged by an account.
 
-`GET http://localhost:27876/nxt?requestType=getAccountBlockCount&account=<Account>`
+`POST http://localhost:27876/nxt?requestType=getAccountBlockCount&account=<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -382,7 +382,7 @@ ardor.sendRequest("getAccountBlockIds", data, function (response) {
 
 Get the block IDs of all blocks forged (generated) by an account in reverse block height order,
 
-`GET http://localhost:27876/nxt?requestType=getAccountBlockIds&account<Account>`
+`POST http://localhost:27876/nxt?requestType=getAccountBlockIds&account<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -445,7 +445,7 @@ ardor.sendRequest("getAccountBlocks", data, function (response) {
 
 Get all blocks forged (generated) by an account in reverse block height order.
 
-`GET http://localhost:27876/nxt?requestType=getAccountBlocks&account=<Account>`
+`POST http://localhost:27876/nxt?requestType=getAccountBlocks&account=<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -488,7 +488,7 @@ ardor.sendRequest("getAccountCurrencyCount", data, function (response) {
 
 Get the number of currencies issued by a given account.
 
-`GET http://localhost:27876/nxt?requestType=getAccountCurrencyCount&account=<Account>`
+`POST http://localhost:27876/nxt?requestType=getAccountCurrencyCount&account=<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -542,7 +542,7 @@ ardor.sendRequest("getAccountCurrencies", data, function (response) {
 
 Get the currencies issued by a given account.
 
-`GET http://localhost:27876/nxt?requestType=getAccountCurrencies&account=<Account>`
+`POST http://localhost:27876/nxt?requestType=getAccountCurrencies&account=<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -588,7 +588,7 @@ ardor.sendRequest("getAccountLessors", data, function (response) {
 
 Get the lessors (accounts leasing their forging balance) to an account.
 
-`GET http://localhost:27876/nxt?requestType=getAccountLessors&account=<Account>`
+`POST http://localhost:27876/nxt?requestType=getAccountLessors&account=<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -601,7 +601,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&account=ARDOR-VS8T-QYQS-SK9H-5BYBB" "http://localhost:27876/nxt?requestType=getAccountPhasedTransactionCount"
 ```
 
 ```javascript
@@ -609,9 +609,10 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    account : "ARDOR-VS8T-QYQS-SK9H-5BYBB"
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAccountPhasedTransactionCount", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -619,24 +620,28 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "requestProcessingTime": 0,
+    "numberOfPhasedTransactions": 0
+}
 ```
 
-Call Description
+Get the number of pending phased transactions associated with an account given the account ID.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAccountPhasedTransactionCount&chain=<ChainId>&account=<Account>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('account', 'required', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 ### GetAccountPhasedTransactions
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&account=ARDOR-VS8T-QYQS-SK9H-5BYBB" "http://localhost:27876/nxt?requestType=getAccountPhasedTransactions"
 ```
 
 ```javascript
@@ -644,9 +649,10 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    account : "ARDOR-VS8T-QYQS-SK9H-5BYBB"
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAccountPhasedTransactions", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -654,24 +660,31 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "requestProcessingTime": 0,
+    "transactions": []
+}
 ```
 
-Call Description
+Get pending phased transactions associated with an account given the account ID in reverse chronological creation order.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAccountPhasedTransactions&chain=<ChainId>&account=<Account>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('account', 'required', '') %>
+<%= getParameter('firstIndex', 'optional', '') %>
+<%= getParameter('lastIndex', 'optional', '') %>
+<%= getParameter('adminPassword', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 ### GetUnconfirmedTransactionIds
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&account=ARDOR-HWZW-5TT6-U68F-H26L8&account=ARDOR-492G-A5YD-FUGZ-C6N2B" "http://localhost:27876/nxt?requestType=getUnconfirmedTransactionIds"
 ```
 
 ```javascript
@@ -679,9 +692,11 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8",
+    account : "ARDOR-492G-A5YD-FUGZ-C6N2B"
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getUnconfirmedTransactionIds", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -689,24 +704,35 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "requestProcessingTime": 1,
+    "unconfirmedTransactionIds": [
+        "7939835860691128054"
+    ]
+}
 ```
 
-Call Description
+Get a list of unconfirmed transaction IDs associated with an account.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getUnconfirmedTransactionIds&chain=2&account=<Account1>&account=<Account2>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('account', 'optional', 'First account to monitor.') %>
+<%= getParameter('account', 'optional', 'Second account to monitor.') %>
+<%= getParameter('account', 'optional', 'Third account to monitor, you can add as many accounts as you want.') %>
+<%= getParameter('firstIndex', 'optional', '') %>
+<%= getParameter('lastIndex', 'optional', '') %>
+<%= getParameter('adminPassword', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 ### GetUnconfirmedTransactions
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&account=ARDOR-HWZW-5TT6-U68F-H26L8&account=ARDOR-492G-A5YD-FUGZ-C6N2B" "http://localhost:27876/nxt?requestType=getUnconfirmedTransactions"
 ```
 
 ```javascript
@@ -714,9 +740,11 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8",
+    account : "ARDOR-492G-A5YD-FUGZ-C6N2B"
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getUnconfirmedTransactions", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -724,24 +752,63 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "unconfirmedTransactions": [
+        {
+            "senderPublicKey": "5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27",
+            "isBundled": true,
+            "chain": 2,
+            "signature": "c8edc854fe2fba9d1b95fc81b006dffa4b1ab041eeb1d26ef217bbdd14002406d8a4851d15ebc6893de25b1fcee3cca88a400c898153202a6251eb80c3acea5f",
+            "feeNQT": "10000",
+            "type": 0,
+            "fullHash": "1f007e0ee4675228e4b1ff50def20403f46a1d7fb2ec7dc8271b38b8a12bae3d",
+            "version": 1,
+            "fxtTransaction": "0",
+            "phased": false,
+            "ecBlockId": "2329106975025976796",
+            "signatureHash": "025c171e9d1d80b4ad5cabc836cb48aed050ed8764dcdec4f0e32f8d2ca050de",
+            "attachment": {
+                "version.OrdinaryPayment": 0
+            },
+            "senderRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+            "subtype": 0,
+            "amountNQT": "500000000",
+            "sender": "17530402417794348028",
+            "recipientRS": "ARDOR-492G-A5YD-FUGZ-C6N2B",
+            "recipient": "11854182583844805646",
+            "ecBlockHeight": 230000,
+            "deadline": 15,
+            "timestamp": 19115098,
+            "height": 2147483647
+        }
+    ],
+    "requestProcessingTime": 0
+}
 ```
 
-Call Description
+Get a list of unconfirmed transactions associated with an account.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getUnconfirmedTransactions&chain=2&account=<Account1>&account=<Account2>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('account', 'optional', 'First account to monitor.') %>
+<%= getParameter('account', 'optional', 'Second account to monitor.') %>
+<%= getParameter('account', 'optional', 'Third account to monitor, you can add as many accounts as you want.') %>
+<%= getParameter('firstIndex', 'optional', '') %>
+<%= getParameter('lastIndex', 'optional', '') %>
+<%= getParameter('adminPassword', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
+
 
 
 ### SetAccountInfo
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&name=ArdorCommunity&description=Test+SetAccountInfo&publicKey=5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27&passPhrase=xxxxxxxxxx" "http://localhost:27876/nxt?requestType=setAccountInfo"
 ```
 
 ```javascript
@@ -749,9 +816,14 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    name : "ArdorCommunity",
+    description : "Test SetAccountInfo",
+    secretPhrase : "xxxxxxxxxx",
+    publicKey : "5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27"
+
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("setAccountInfo", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -759,19 +831,58 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "minimumFeeFQT": "200000000",
+    "signatureHash": "5ece8129f69c513c9117a1217358fedd5ff3834028e9cf8582cd5a7b9759c38c",
+    "transactionJSON": {
+        "senderPublicKey": "5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27",
+        "chain": 2,
+        "signature": "3db02a823ead11afa82b20cd2c97451967808d05037cb32b4b0914866f9daa00854691662776178cbe79abf2d05ed27af3553e6911393a22d24e657a8c5c4006",
+        "feeNQT": "200000000",
+        "type": 10,
+        "fullHash": "764e5f9da83f24742a664465465762726b979c351d9ee4d2fba93f9d00748876",
+        "version": 1,
+        "fxtTransaction": "0",
+        "phased": false,
+        "ecBlockId": "9132963265459034843",
+        "signatureHash": "5ece8129f69c513c9117a1217358fedd5ff3834028e9cf8582cd5a7b9759c38c",
+        "attachment": {
+            "name": "ArdorCommunity",
+            "description": "Test SetAccountInfo",
+            "version.AccountInfo": 1
+        },
+        "senderRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+        "subtype": 0,
+        "amountNQT": "0",
+        "sender": "17530402417794348028",
+        "ecBlockHeight": 321182,
+        "deadline": 15,
+        "timestamp": 19116494,
+        "height": 2147483647
+    },
+    "unsignedTransactionBytes": "020000000a0001ceb123010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270000000000000000000000000000000000c2eb0b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009ee60400db9a6090b3cdbe7e00000000010e4172646f72436f6d6d756e697479130054657374205365744163636f756e74496e666f000000000000000000000000000000000000000000000000000000000000000000000000",
+    "broadcasted": true,
+    "requestProcessingTime": 6,
+    "transactionBytes": "020000000a0001ceb123010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270000000000000000000000000000000000c2eb0b000000003db02a823ead11afa82b20cd2c97451967808d05037cb32b4b0914866f9daa00854691662776178cbe79abf2d05ed27af3553e6911393a22d24e657a8c5c40069ee60400db9a6090b3cdbe7e00000000010e4172646f72436f6d6d756e697479130054657374205365744163636f756e74496e666f000000000000000000000000000000000000000000000000000000000000000000000000",
+    "fullHash": "764e5f9da83f24742a664465465762726b979c351d9ee4d2fba93f9d00748876"
+}
 ```
 
+Set account information. POST only.
+This call inherit from Create Transaction Request, thus it also inherit all its parameters but they are optional.
 
-Call Description
-
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=setAccountInfo&chain=<Chain>&name=<Name>&description=<Description>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('name', 'optional', '') %>
+<%= getParameter('description', 'optional', '') %>
+<%= getParameter('secretPhrase', 'optional', 'It\'s optional, but needed for broadcasting') %>
+<%= getParameter('publicKey', 'optional', 'If secretPhrase is not set than it\'s required') %>
+<%= getParameter('feeNQT', 'optional', 'If not specified, the response will provide the minimal fee that should be included.') %>
 
+Additional common parameters are given in the Create Transaction Call.
 
 ## Account Balances
 
@@ -779,7 +890,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&account=ARDOR-HWZW-5TT6-U68F-H26L8" "http://localhost:27876/nxt?requestType=getBalance"
 ```
 
 ```javascript
@@ -787,9 +898,10 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain :  "2",
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8"
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getBalance", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -797,24 +909,30 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "unconfirmedBalanceNQT": "3496611077300",
+    "balanceNQT": "3496611077300",
+    "requestProcessingTime": 0
+}
 ```
 
-Call Description
+Get the balance of an account.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getBalance&chain=<Chain>&account=<Account>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('account', 'required', '') %>
+<%= getParameter('height', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 ### GetBalances
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-HWZW-5TT6-U68F-H26L8&chain=1&chain=2&chain=3" "http://localhost:27876/nxt?requestType=getBalances"
 ```
 
 ```javascript
@@ -822,9 +940,10 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain :  ["1", "2", "3"],
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8"
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getBalances", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -832,24 +951,45 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "balances": {
+        "1": {
+            "unconfirmedBalanceNQT": "975883500000",
+            "balanceNQT": "975883500000"
+        },
+        "2": {
+            "unconfirmedBalanceNQT": "3496611077300",
+            "balanceNQT": "3496611077300"
+        },
+        "3": {
+            "unconfirmedBalanceNQT": "0",
+            "balanceNQT": "0"
+        }
+    },
+    "requestProcessingTime": 1
+}
 ```
 
-Call Description
+Get the balance of an account on different childchain. You need to specify at least one chain id.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getBalances&account<Account>&chain=<Chain>&chain=<Chain>&chain=<Chain>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('account', 'required', '') %>
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('chain', 'optional', '') %>
+<%= getParameter('chain', 'optional', '') %>
+<%= getParameter('chain', 'optional', '') %>
+<%= getParameter('height', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 ### GetGuaranteedBalance
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-HWZW-5TT6-U68F-H26L8&numberOfConfirmations=10" "http://localhost:27876/nxt?requestType=getGuaranteedBalance"
 ```
 
 ```javascript
@@ -857,9 +997,10 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8",
+    numberOfConfirmations : "10"
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getGuaranteedBalance", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -867,24 +1008,28 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "guaranteedBalanceNQT": "975883500000",
+    "requestProcessingTime": 1
+}
 ```
 
-Call Description
+Get the balance of an account that is confirmed at least a specified number of blocks in the past.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getGuaranteedBalance&account=<Account>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('account', 'required', '') %>
+<%= getParameter('numberOfConfirmations', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 ### GetEffectiveBalance
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-HWZW-5TT6-U68F-H26L8" "http://localhost:27876/nxt?requestType=getEffectiveBalance"
 ```
 
 ```javascript
@@ -892,7 +1037,7 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8"
 };
 ardor.sendRequest("", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -902,24 +1047,32 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "forgedBalanceFQT": "0",
+    "guaranteedBalanceFQT": "975883500000",
+    "effectiveBalanceFXT": 9758,
+    "requestProcessingTime": 1
+}
 ```
 
-Call Description
+Get the Effective balance of an account.
+The effective balance is used to compute the forging probability of an account, and it refers to the stable balance of an account during the last 24h or 1440 blocks.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getEffectiveBalance&account=<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('account', 'required', '') %>
+<%= getParameter('height', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 
-### sendMoney
+### SendMoney
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&recipient=ARDOR-HWZW-5TT6-U68F-H26L8&amountNQT=1000000000&publicKey=f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a" "http://localhost:27876/nxt?requestType=sendMoney"
 ```
 
 ```javascript
@@ -927,9 +1080,12 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",//Ignis
+    recipient : "ARDOR-HWZW-5TT6-U68F-H26L8",
+    amountNQT : "1000000000",// 1 Ignis = 10^8 NQT, here 10 Ignis
+    publicKey : "f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"//publicKey of the sender
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("sendMoney", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -937,19 +1093,64 @@ ardor.sendRequest("", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "minimumFeeFQT": "1000000",
+    "transactionJSON": {
+        "senderPublicKey": "f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a",
+        "chain": 2,
+        "feeNQT": "10000",
+        "type": 0,
+        "version": 1,
+        "fxtTransaction": "0",
+        "phased": false,
+        "ecBlockId": "4227293255025921221",
+        "attachment": {
+            "version.OrdinaryPayment": 0
+        },
+        "senderRS": "ARDOR-8MVA-XCVR-3JC9-2C7C3",
+        "subtype": 0,
+        "amountNQT": "1000000000",
+        "sender": "47475721164246888",
+        "recipientRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+        "recipient": "17530402417794348028",
+        "ecBlockHeight": 324627,
+        "deadline": 15,
+        "timestamp": 19323665,
+        "height": 2147483647
+    },
+    "unsignedTransactionBytes": "0200000000000111db26010f00f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0afcf347721e8048f300ca9a3b0000000010270000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000013f40400c58c397bd15caa3a00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "broadcasted": false,
+    "requestProcessingTime": 2,
+    "bundlerRateNQTPerFXT": "1000000"
+}
 ```
 
+Send a coin (ARDR, Ignis, Bitswift, AEUR, ...) to an account. POST only.
+The coin to be sent is determined by its chain Id:
+Coin Name | Chain Id
+--------- | --------
+ARDR | 1
+Ignis | 2
+Bitswift | 3
+AEUR | 4
+... | ...
 
-Call Description
-
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=sendMoney`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('recipient', 'required', '') %>
+<%= getParameter('amountNQT', 'required', '') %>
+<%= getParameter('secretPhrase', 'optional', 'If not specified, publicKey has to be, then the response will be an unsigned transaction and will not be broadcasted.') %>
+<%= getParameter('publicKey', 'optional', 'required if secretPhrase is not provided.') %>
+<%= getParameter('feeNQT', 'optional', 'If not specified, the response will provide the minimal fee that should be included.') %>
 
+Additional common parameters are given in the Create Transaction Call.
+
+<aside class="notice">
+In the example given, we do not provide secretPhrase of the sender, thus a unisgned transaction will created and should be signed later by the sender. This opens usage to Offline signing, Voucher claiming, Escrow services... etc.
+<aside>
 
 ## Account Trades
 
@@ -957,7 +1158,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getAccountCurrentAskOrderIds"
 ```
 
 ```javascript
@@ -967,7 +1168,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAccountCurrentAskOrderIds", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -977,9 +1178,9 @@ ardor.sendRequest("", data, function (response) {
 ```json
 ```
 
-Call Description
+Get current asset order IDs given an account ID in reverse block height order.
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAccountCurrentAskOrderIds`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -992,7 +1193,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getAccountCurrentAskOrders"
 ```
 
 ```javascript
@@ -1002,7 +1203,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAccountCurrentAskOrders", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1014,7 +1215,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAccountCurrentAskOrders`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1027,7 +1228,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getAccountCurrentBidOrderIds"
 ```
 
 ```javascript
@@ -1037,7 +1238,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAccountCurrentBidOrderIds", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1049,7 +1250,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAccountCurrentBidOrderIds`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1062,7 +1263,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getAccountCurrentBidOrders"
 ```
 
 ```javascript
@@ -1072,7 +1273,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAccountCurrentBidOrders", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1084,7 +1285,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAccountCurrentBidOrders`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1097,7 +1298,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getAccountExchangeRequests"
 ```
 
 ```javascript
@@ -1107,7 +1308,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAccountExchangeRequests", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1119,7 +1320,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAccountExchangeRequests`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1130,12 +1331,12 @@ Parameter | Type | Description
 
 ## Account Activity
 
+### GetCurrenciesByIssuer
 
-### getCurrenciesByIssuer
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType= getCurrenciesByIssuer"
 ```
 
 ```javascript
@@ -1145,7 +1346,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest(" getCurrenciesByIssuer", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1157,7 +1358,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType= getCurrenciesByIssuer`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1170,7 +1371,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getAssetsByIssuer"
 ```
 
 ```javascript
@@ -1180,7 +1381,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAssetsByIssuer", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1192,7 +1393,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAssetsByIssuer`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1227,7 +1428,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1242,7 +1443,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getPolls"
 ```
 
 ```javascript
@@ -1252,7 +1453,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getPolls", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1264,7 +1465,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getPolls`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1277,7 +1478,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getVoterPhasedTransactions"
 ```
 
 ```javascript
@@ -1287,7 +1488,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getVoterPhasedTransactions", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1299,7 +1500,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getVoterPhasedTransactions`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1314,7 +1515,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getFundingMonitor"
 ```
 
 ```javascript
@@ -1324,7 +1525,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getFundingMonitor", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1336,7 +1537,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getFundingMonitor`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1345,11 +1546,11 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### startFundingMonitor   
+### StartFundingMonitor   
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=startFundingMonitor"
 ```
 
 ```javascript
@@ -1359,7 +1560,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("startFundingMonitor", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1371,7 +1572,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=startFundingMonitor`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1380,11 +1581,11 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### stopFundingMonitor  
+### StopFundingMonitor  
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=stopFundingMonitor"
 ```
 
 ```javascript
@@ -1394,7 +1595,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("stopFundingMonitor", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1406,7 +1607,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=stopFundingMonitor`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1421,7 +1622,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getAccountProperties"
 ```
 
 ```javascript
@@ -1431,7 +1632,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("getAccountProperties", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1443,7 +1644,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=getAccountProperties`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1456,7 +1657,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=setAccountProperty"
 ```
 
 ```javascript
@@ -1466,7 +1667,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("setAccountProperty", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1478,7 +1679,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=setAccountProperty`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1487,11 +1688,11 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### deleteAccountProperty
+### DeleteAccountProperty
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=deleteAccountProperty"
 ```
 
 ```javascript
@@ -1501,7 +1702,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("deleteAccountProperty", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1514,7 +1715,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=deleteAccountProperty`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1525,11 +1726,11 @@ Parameter | Type | Description
 
 ## Account Util functions
 
-### rsConvert
+### RsConvert
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=rsConvert"
 ```
 
 ```javascript
@@ -1539,7 +1740,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("rsConvert", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1551,7 +1752,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=rsConvert`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1560,11 +1761,11 @@ Parameter | Type | Description
 <%= getParameter('', '', '') %>
 
 
-### searchAccounts
+### SearchAccounts
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType="
+curl -X POST -d "" "http://localhost:27876/nxt?requestType=searchAccounts" -k -H "Content-Type: application/x-www-form-urlencoded"
 ```
 
 ```javascript
@@ -1574,7 +1775,7 @@ var ardor = require('ardor-blockchain');
 var data = {
     
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("searchAccounts", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1586,7 +1787,7 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=searchAccounts`
 
 Parameter | Type | Description
 --------- | ---- | -----------

@@ -59,4 +59,19 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
         return "param | type | description"
       end
     end
+
+    # Return template parameters
+    def getTemplate(templateName)
+      if !templateName.empty?
+        data = ''
+        file = File.open(File.join(__dir__, "../source/includes/templates/#{templateName}.md"), "r")
+        file.each_line do |line|
+          line_values = line.split(',', 3)
+          data += getParameter(line_values[0], line_values[1], line_values[2])
+        end
+        return data
+      else
+        return
+      end
+    end
 end
