@@ -93,8 +93,8 @@
 	    "description" : "A string representing the event type."
     },
     "executedOnly":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to exclude phased transactions that are not yet executed"
     },
     "feeNQT":{
 	    "type" : "number", 
@@ -133,8 +133,8 @@
 	    "description" : ""
     },
     "includeCounts":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true if number of transfers is to be included."
     },
     "includeCurrencies":{
 	    "type" : "", 
@@ -142,15 +142,15 @@
     },
     "includeCurrencyInfo":{
 	    "type" : "boolean", 
-	    "description" : "true if several currency information properties is to be included."
+        "description" : "true if several currency information properties is to be included."
     },
     "includeEffectiveBalance":{
 	    "type" : "", 
 	    "description" : ""
     },
     "includeExpiredPrunable":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true' to retrieve pruned data if available."
     },
     "includeFinished":{
 	    "type" : "", 
@@ -158,7 +158,7 @@
     },
     "includeHoldingInfo":{
 	    "type" : "boolean", 
-	    "description" : "Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false"
+	    "description" : "Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false."
     },
     "includeLessors":{
 	    "type" : "", 
@@ -169,8 +169,8 @@
 	    "description" : ""
     },
     "includePhasingResult":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to retrieve execution status of each phased transaction."
     },
     "includeTransaction":{
 	    "type" : "", 
@@ -190,7 +190,7 @@
     },
     "ledgerId":{
 	    "type" : "number", 
-	    "description" : "Ledger entry identifier"
+	    "description" : "Ledger entry identifier."
     },
     "message":{
 	    "type" : "", 
@@ -229,20 +229,20 @@
 	    "description" : "Name to associate with the account."
     },
     "nonPhasedOnly":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to retrieve only nonphased transactions."
     },
     "numberOfConfirmations":{
 	    "type" : "number", 
-	    "description" : "Minimum confirmation blocks."
+	    "description" : "Minimum confirmation number of blocks."
     },
     "phased":{
 	    "type" : "", 
 	    "description" : ""
     },
     "phasedOnly":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to retrieve only nonphased transactions."
     },
     "phasingExpression":{
 	    "type" : "", 
@@ -334,7 +334,7 @@
     },
     "recipient":{
 	    "type" : "number or RS", 
-	    "description" : "Account ID of the recipient"
+	    "description" : "Account ID of the recipient."
     },
     "recipientPublicKey":{
 	    "type" : "", 
@@ -361,8 +361,8 @@
 	    "description" : ""
     },
     "subtype":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "string", 
+	    "description" : "Subtype of transactions to retrieve."
     },
     "threshold":{
 	    "type" : "", 
@@ -373,15 +373,15 @@
 	    "description" : "Earliest block (in seconds since the genesis block) to retrieve."
     },
     "type":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "string", 
+	    "description" : "Type of transactions to retrieve."
     },
     "value":{
 	    "type" : "", 
 	    "description" : ""
     },
     "withMessage":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to retrieve only only transactions having a message attachment, either non-encrypted or decryptable by the account."
     }
 }
