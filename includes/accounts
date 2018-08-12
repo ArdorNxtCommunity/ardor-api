@@ -184,8 +184,8 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 </tr>
 <tr>
 <td><em>holdingType</em></td>
-<td>string</td>
-<td>A string representing the holding type.</td>
+<td>number</td>
+<td>A number representing the holding type (0 for Coin, 1 for Asset, 2 for Currency).</td>
 </tr>
 <tr>
 <td><em>holding</em></td>
@@ -200,7 +200,7 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <tr>
 <td><em>includeHoldingInfo</em></td>
 <td>boolean</td>
-<td>Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false</td>
+<td>Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false.</td>
 </tr>
 <tr>
 <td><em>requireBlock</em></td>
@@ -265,17 +265,17 @@ The secret phrase in this call is Optional. Thus, do never communicate it to an 
 <tr>
 <td><strong>ledgerId</strong></td>
 <td>number</td>
-<td>Ledger entry identifier</td>
+<td>Ledger entry identifier.</td>
 </tr>
 <tr>
 <td><em>includeTransaction</em></td>
-<td></td>
+<td>boolean</td>
 <td>Specify TRUE to include the transaction associated with the ledger entry. The default is false.</td>
 </tr>
 <tr>
 <td><em>includeHoldingInfo</em></td>
 <td>boolean</td>
-<td>Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false</td>
+<td>Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false.</td>
 </tr>
 </tbody></table>
 <h3 id='getaccountassetcount'>GetAccountAssetCount</h3>
@@ -1448,7 +1448,7 @@ This call inherit from Create Transaction Request, thus it also inherit all its 
 <tr>
 <td><em>numberOfConfirmations</em></td>
 <td>number</td>
-<td>Minimum confirmation blocks.</td>
+<td>Minimum confirmation number of blocks.</td>
 </tr>
 <tr>
 <td><em>requireBlock</em></td>
@@ -1598,7 +1598,7 @@ AEUR | 4
 <tr>
 <td><strong>recipient</strong></td>
 <td>number or RS</td>
-<td>Account ID of the recipient</td>
+<td>Account ID of the recipient.</td>
 </tr>
 <tr>
 <td><strong>amountNQT</strong></td>
@@ -1631,12 +1631,14 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentAskOrderIds"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L&amp;asset=779342883283236213"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentAskOrderIds"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">asset</span> <span class="p">:</span> <span class="s2">"779342883283236213"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountCurrentAskOrderIds"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1645,10 +1647,14 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Get current asset order IDs given an account ID in reverse block height order.</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"askOrdersskOrders"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get current ask asset order IDs given an account ID in reverse block height order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentAskOrderIds</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentAskOrderIds&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;asset=&lt;Asset&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1658,31 +1664,58 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>asset</strong></td>
+<td>number</td>
+<td>Asset ID.</td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getaccountcurrentaskorders'>GetAccountCurrentAskOrders</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentAskOrders"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L&amp;asset=779342883283236213"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentAskOrders"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">asset</span> <span class="p">:</span> <span class="s2">"779342883283236213"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountCurrentAskOrders"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1691,10 +1724,14 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"askOrdersskOrders"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>et current ask asset orders given an account ID in reverse block height order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentAskOrders</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentAskOrders&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;asset=&lt;Asset&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1704,31 +1741,53 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>asset</strong></td>
+<td>number</td>
+<td>Asset ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getaccountcurrentbidorderids'>GetAccountCurrentBidOrderIds</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentBidOrderIds"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L&amp;asset=779342883283236213"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentBidOrderIds"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">asset</span> <span class="p">:</span> <span class="s2">"779342883283236213"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountCurrentBidOrderIds"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1737,10 +1796,16 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"bidOrderIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"6614742097871009077"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get current bid asset order IDs given an account ID in reverse block height order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentBidOrderIds</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentBidOrderIds&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;asset=&lt;Asset&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1750,31 +1815,53 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>asset</strong></td>
+<td>number</td>
+<td>Asset ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getaccountcurrentbidorders'>GetAccountCurrentBidOrders</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentBidOrders"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L8&amp;asset=779342883283236213"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountCurrentBidOrders"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">asset</span> <span class="p">:</span> <span class="s2">"779342883283236213"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountCurrentBidOrders"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1783,10 +1870,28 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"bidOrders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"quantityQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"orderFullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35756c40e448cc5b1a07aca5f9dde14a167459b1a3bc0e07a050e35bde8b062f"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transactionHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">325352</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priceNQTPerShare"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transactionIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"779342883283236213"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6614742097871009077"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">325352</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get current bid asset order given an account ID in reverse block height order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentBidOrders</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountCurrentBidOrders&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;asset=&lt;Asset&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1796,31 +1901,53 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>asset</strong></td>
+<td>number</td>
+<td>Asset ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getaccountexchangerequests'>GetAccountExchangeRequests</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountExchangeRequests"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L8&amp;currency=5337417175848322445"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountExchangeRequests"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">currency</span> <span class="p">:</span> <span class="s2">"5337417175848322445"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountExchangeRequests"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1829,10 +1956,14 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"exchangeRequests"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the exchange requests associated with a given account and/or currency in reverse chronological order (or in expected order of execution for expected requests).</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getAccountExchangeRequests</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountExchangeRequests&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;currency=&lt;Currency&gt;&amp;includeCurrencyInfo=&lt;TrueFalse&gt;...</code></p>
 
 <table><thead>
 <tr>
@@ -1842,31 +1973,62 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>currency</strong></td>
+<td>number</td>
+<td>Currency ID.</td>
+</tr>
+<tr>
+<td><em>includeCurrencyInfo</em></td>
+<td>boolean</td>
+<td>true if several currency information properties is to be included.</td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
-<h2 id='account-activity'>Account Activity</h2><h3 id='getcurrenciesbyissuer'> GetCurrenciesByIssuer</h3>
+<h2 id='account-activity'>Account Activity</h2><h3 id='getcurrenciesbyissuer'>GetCurrenciesByIssuer</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType= getCurrenciesByIssuer"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-63EF-NL2A-WWNC-6JL6N&amp;includeCounts=true"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getCurrenciesByIssuer"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-63EF-NL2A-WWNC-6JL6N"</span><span class="p">,</span>
+    <span class="na">includeCounts</span> <span class="p">:</span> <span class="s2">"true"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">" getCurrenciesByIssuer"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1875,10 +2037,44 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"currentReservePerUnitNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"EXCHANGEABLE"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"MINTABLE"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CDMNT"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currentSupplyQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"creationHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">309813</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"minDifficulty"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"numberOfTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mintable test currency 27 July 2018"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"minReservePerUnitNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"initialSupplyQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"issuanceHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"maxSupplyQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"maxDifficulty"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-63EF-NL2A-WWNC-6JL6N"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CDTest1Mnt"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"reserveSupplyQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5149676163378732196"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5337417175848322445"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"algorithm"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get currencies issued by one or multiple accounts in reverse creation order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType= getCurrenciesByIssuer</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getCurrenciesByIssuer&amp;account=&lt;Account&gt;&amp;includeCounts=&lt;TrueFalse&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1888,31 +2084,62 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID.</td>
+</tr>
+<tr>
+<td><em>includeCounts</em></td>
+<td>boolean</td>
+<td>true if number of transfers is to be included.</td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getassetsbyissuer'>GetAssetsByIssuer</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAssetsByIssuer"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-HWZW-5TT6-U68F-H26L8&amp;includeCounts=true"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAssetsByIssuer"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span>
+    <span class="na">includeCounts</span> <span class="p">:</span> <span class="s2">"true"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAssetsByIssuer"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -1921,10 +2148,41 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"assets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"quantityQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"numberOfAccounts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"numberOfTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TerrainPar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26 Rue Nantes</span><span class="se">\r\n</span><span class="s2">ddsfdsfqsfddsqfqs"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hasPhasingAssetControl"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14829545266509418230"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"quantityQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"numberOfAccounts"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"numberOfTransfers"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BigUp"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BigUp project Asset for all kinds of investors and committed peope to BigUp"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hasPhasingAssetControl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"779342883283236213"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get assets issued by one or multiple accounts in reverse creation order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getAssetsByIssuer</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getAssetsByIssuer&amp;account=&lt;Account&gt;&amp;includeCounts=&lt;TrueFalse&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1934,43 +2192,116 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID.</td>
+</tr>
+<tr>
+<td><em>includeCounts</em></td>
+<td>boolean</td>
+<td>true if number of transfers is to be included.</td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getblockchaintransactions'>GetBlockchainTransactions</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType="</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L8"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getBlockchainTransactions"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getBlockchainTransactions"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"senderPublicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e713f575e10b158606c271fc7e15679f900054492a0951c693ba7be58ab35306d2d24f292223eb0c16931b52d6813c6f75fda64a64498aedd0b0ba56e6a72699"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"feeNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"transactionIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"confirmations"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3e7cbee99d7acd21ff96c5812a1f3554bbe6e4dac6e32fc173d3b81fc6805cfe"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fxtTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7263024814050473804"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phased"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ecBlockId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2329106975025976796"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"signatureHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36cc5de41f9250c400425e9495d9efd05a20779d88d8c231b943cda3a1100723"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"initialSellSupplyQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"buyRateNQTPerUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"expirationHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">329703</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"sellRateNQTPerUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"totalSellLimitQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"totalBuyLimitQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"version.PublishExchangeOffer"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5149676163378732196"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"initialBuySupplyQNT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"senderRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ecBlockHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">230000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"block"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7786070529799360378"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"blockTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">19496942</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">19496833</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">328267</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the transactions associated with an account in reverse block timestamp order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getBlockchainTransactions&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -1980,31 +2311,102 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>timestamp</em></td>
+<td>number</td>
+<td>Earliest block (in seconds since the genesis block) to retrieve.</td>
+</tr>
+<tr>
+<td><em>type</em></td>
+<td>string</td>
+<td>Type of transactions to retrieve.</td>
+</tr>
+<tr>
+<td><em>subtype</em></td>
+<td>string</td>
+<td>Subtype of transactions to retrieve.</td>
+</tr>
+<tr>
+<td><em>numberOfConfirmations</em></td>
+<td>number</td>
+<td>Minimum confirmation number of blocks.</td>
+</tr>
+<tr>
+<td><em>withMessage</em></td>
+<td>boolean</td>
+<td>true to retrieve only only transactions having a message attachment, either non-encrypted or decryptable by the account.</td>
+</tr>
+<tr>
+<td><em>phasedOnly</em></td>
+<td>boolean</td>
+<td>true to retrieve only nonphased transactions.</td>
+</tr>
+<tr>
+<td><em>nonPhasedOnly</em></td>
+<td>boolean</td>
+<td>true to retrieve only nonphased transactions.</td>
+</tr>
+<tr>
+<td><em>includeExpiredPrunable</em></td>
+<td>boolean</td>
+<td>true&#39; to retrieve pruned data if available.</td>
+</tr>
+<tr>
+<td><em>includePhasingResult</em></td>
+<td>boolean</td>
+<td>true to retrieve execution status of each phased transaction.</td>
+</tr>
+<tr>
+<td><em>executedOnly</em></td>
+<td>boolean</td>
+<td>true to exclude phased transactions that are not yet executed</td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h2 id='account-votes'>Account Votes</h2><h3 id='getpolls'>GetPolls</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getPolls"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L8"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getPolls"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getPolls"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -2013,10 +2415,60 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"polls"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"minRangeValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"votingModel"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vote for BigUp compagny actoin plan"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"finished"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"poll"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17465897093281664390"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minNumberOfOptions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"holding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"779342883283236213"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BigUp Action Plan"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Buid Client side"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Build Server side"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Start Both"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"finishHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">7854</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxNumberOfOptions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minBalanceModel"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxRangeValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">344422</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"minRangeValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"votingModel"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Who should reign the world?"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"finished"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"poll"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13371434558082231003"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minNumberOfOptions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minBalance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Presendential Election"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"A Dictator"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"A Liberal"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"An Alien"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"finishHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">7909</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxNumberOfOptions"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minBalanceModel"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maxRangeValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">244957</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get poll details in reverse creation order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getPolls</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getPolls&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -2026,31 +2478,67 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>timestamp</em></td>
+<td>number</td>
+<td>Earliest block (in seconds since the genesis block) to retrieve.</td>
+</tr>
+<tr>
+<td><em>includeFinished</em></td>
+<td>boolean</td>
+<td>true to include completed polls.</td>
+</tr>
+<tr>
+<td><em>finishedOnly</em></td>
+<td>boolean</td>
+<td>true to exclude not yet executed, phased transactions.</td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='getvoterphasedtransactions'>GetVoterPhasedTransactions</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getVoterPhasedTransactions"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;account=ARDOR-HWZW-5TT6-U68F-H26L8"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getVoterPhasedTransactions"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getVoterPhasedTransactions"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -2059,56 +2547,14 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get pending phased transactions which include a whitelist in reverse chronological creation order. These transactions can be considered transaction approval requests.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getVoterPhasedTransactions</code></p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-</tbody></table>
-<h2 id='account-funding'>Account Funding</h2><h3 id='getfundingmonitor'>GetFundingMonitor</h3>
-<blockquote>
-<p>The request:</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getFundingMonitor"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
-<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
-<span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getFundingMonitor"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above request returns the following JSON structured response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
-
-<p><code>POST http://localhost:27876/nxt?requestType=getFundingMonitor</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getVoterPhasedTransactions&amp;chain=&lt;Chain&gt;&amp;account=&lt;Account&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -2118,31 +2564,67 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
+<h2 id='account-funding'>Account Funding</h2>
+<p>COIN, ASSET and CURRENCY balances can be monitored.  If a balance falls below the threshold, a transaction will be submitted to transfer units from the funding account to the monitored account.  A transfer will remain pending if the number of blocks since the previous transfer transaction is less than the monitor interval.</p>
+
+<p>The recipient accounts are identified by the specified account property. Each account that has this property set by the funding account will be monitored for changes. The property value can be either:
+- Omitted
+- Consist of a JSON string containing one or more values in the format: {&quot;amount&quot;:long,&quot;threshold&quot;:long,&quot;interval&quot;:integer}.</p>
+
+<p>This way you can setup a general monitor (if value is omitted) or specific monitor for each account (by specifying the json value).</p>
 <h3 id='startfundingmonitor'>StartFundingMonitor</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=startFundingMonitor"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;holdingType=1&amp;holding=779342883283236213&amp;property=myTestAccount&amp;amount=100&amp;threshold=10&amp;interval=15&amp;secretPhrase=xxxxxxxxxx&amp;feeRateNQTPerFXT=1"</span> <span class="s2">"http://localhost:27876/nxt?requestType=startFundingMonitor"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">holdingType</span> <span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="na">holding</span> <span class="p">:</span> <span class="s2">"779342883283236213"</span><span class="p">,</span>
+    <span class="na">property</span> <span class="p">:</span> <span class="s2">"myTestAccount"</span><span class="p">,</span>
+    <span class="na">amount</span> <span class="p">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="na">threshold</span> <span class="p">:</span> <span class="s2">"10"</span><span class="p">,</span>
+    <span class="na">interval</span> <span class="p">:</span> <span class="s2">"15"</span><span class="p">,</span>
+    <span class="na">secretPhrase</span> <span class="p">:</span> <span class="s2">"xxxxxxxxxx"</span><span class="p">,</span>
+    <span class="na">feeRateNQTPerFXT</span> <span class="p">:</span> <span class="s2">"1"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"startFundingMonitor"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -2151,10 +2633,14 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Starts a funding monitor that will transfer COIN, ASSET or CURRENCY from the funding account to a recipient account when the amount held by the recipient account drops below the threshold. The funding account is identified by the secret phrase. POST Only.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=startFundingMonitor</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=startFundingMonitor&amp;chain=&lt;Chain&gt;&amp;holdingType=&lt;Type&gt;&amp;holding=&lt;Id&gt;&amp;property=&lt;Prop&gt;&amp;amount=&lt;Amount&gt;&amp;threshold=&lt;Threshold&gt;&amp;interval=&lt;Interval&gt;&amp;secretPhrase=&lt;Phrase&gt;&amp;feeRateNQTPerFXT=&lt;Fee&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -2164,31 +2650,65 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>holdingType</em></td>
+<td>number</td>
+<td>A number representing the holding type (0 for Coin, 1 for Asset, 2 for Currency).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>holding</strong></td>
+<td>number</td>
+<td>Holding ID. The Id of the coin, asset or currency.</td>
+</tr>
+<tr>
+<td><em>property</em></td>
+<td>string</td>
+<td>the name of the account property.</td>
+</tr>
+<tr>
+<td><strong>amount</strong></td>
+<td>number</td>
+<td>Amount to fund the recipient account with (in NQT or QNT).</td>
+</tr>
+<tr>
+<td><em>threshold</em></td>
+<td>number</td>
+<td>Threshold amount under which a funding transaction will be created.</td>
+</tr>
+<tr>
+<td><em>interval</em></td>
+<td>number</td>
+<td>Number of blocks to wait after before funding the recipient.</td>
+</tr>
+<tr>
+<td><em>secretPhrase</em></td>
+<td>string</td>
+<td>Secret phrase of the account.</td>
+</tr>
+<tr>
+<td><em>feeRateNQTPerFXT</em></td>
+<td></td>
+<td>If not set, the transaction will not be broadcasted</td>
 </tr>
 </tbody></table>
 <h3 id='stopfundingmonitor'>StopFundingMonitor</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=stopFundingMonitor"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;holdingType=1&amp;holding=779342883283236213&amp;property=myTestAccount&amp;secretPhrase=xxxxxxxxxx"</span> <span class="s2">"http://localhost:27876/nxt?requestType=stopFundingMonitor"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">holdingType</span> <span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="na">holding</span> <span class="p">:</span> <span class="s2">"779342883283236213"</span><span class="p">,</span>
+    <span class="na">property</span> <span class="p">:</span> <span class="s2">"myTestAccount"</span><span class="p">,</span>
+    <span class="na">secretPhrase</span> <span class="p">:</span> <span class="s2">"xxxxxxxxxx"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"stopFundingMonitor"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -2197,10 +2717,14 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"stopped"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Stop a previously started funding monitor.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=stopFundingMonitor</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=stopFundingMonitor&amp;chain=&lt;Chain&gt;&amp;holdingType=&lt;Type&gt;&amp;holding=&lt;Id&gt;&amp;property=&lt;Prop&gt;&amp;account=&lt;Account&gt;&amp;secretPhrase=&lt;Phrase&gt;&amp;adminPassword=&lt;Password&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -2210,43 +2734,93 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>holdingType</em></td>
+<td>number</td>
+<td>A number representing the holding type (0 for Coin, 1 for Asset, 2 for Currency).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>holding</strong></td>
+<td>number</td>
+<td>Holding ID. The Id of the coin, asset or currency.</td>
+</tr>
+<tr>
+<td><em>property</em></td>
+<td>string</td>
+<td>the name of the account property. Stops monitoring of all account with this property.</td>
+</tr>
+<tr>
+<td><em>account</em></td>
+<td>number or RS</td>
+<td>An account ID. Stops mointoring only for this account.</td>
+</tr>
+<tr>
+<td><em>secretPhrase</em></td>
+<td>string</td>
+<td>Secret phrase of the account. If provided, it&#39;s used to stop a single monitor by holder of the account.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions. Used to stop a single monitor or all monitor</td>
 </tr>
 </tbody></table>
-<h2 id='account-properties'>Account Properties</h2><h3 id='getaccountproperties'>GetAccountProperties</h3>
+<h3 id='getfundingmonitor'>GetFundingMonitor</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountProperties"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;holdingType=1&amp;holding=779342883283236213&amp;property=myTestAccount&amp;secretPhrase=xxxxxxxxxx&amp;includeMonitoredAccounts=true"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getFundingMonitor"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">holdingType</span> <span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="na">holding</span> <span class="p">:</span> <span class="s2">"779342883283236213"</span><span class="p">,</span>
+    <span class="na">property</span> <span class="p">:</span> <span class="s2">"myTestAccount"</span><span class="p">,</span>
+    <span class="na">secretPhrase</span> <span class="p">:</span> <span class="s2">"xxxxxxxxxx"</span><span class="p">,</span>
+    <span class="na">includeMonitoredAccounts</span> <span class="p">:</span> <span class="s2">"true"</span>
 <span class="p">};</span>
-<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountProperties"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getFundingMonitor"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"monitors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"holding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"779342883283236213"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"monitoredAccounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11854182583844805646"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"holdingType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myTestAccount"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"feeRateNQTPerFXT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get a funding monitor and the monitored accounts.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=getAccountProperties</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=getFundingMonitor&amp;chain=&lt;Chain&gt;&amp;holdingType=&lt;Type&gt;&amp;holding=&lt;Id&gt;&amp;property=&lt;Prop&gt;&amp;secretPhrase=&lt;Phrase&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -2256,31 +2830,61 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>holdingType</em></td>
+<td>number</td>
+<td>A number representing the holding type (0 for Coin, 1 for Asset, 2 for Currency).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>holding</strong></td>
+<td>number</td>
+<td>Holding ID.</td>
+</tr>
+<tr>
+<td><em>property</em></td>
+<td>string</td>
+<td>the name of the account property.</td>
+</tr>
+<tr>
+<td><em>secretPhrase</em></td>
+<td>string</td>
+<td>Secret phrase of the account.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>includeMonitoredAccounts</em></td>
+<td>boolean</td>
+<td>true to include account info of the monitored accounts.</td>
+</tr>
+<tr>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID. Specific account</td>
 </tr>
 </tbody></table>
-<h3 id='setaccountproperty'>SetAccountProperty</h3>
+<h2 id='account-properties'>Account Properties</h2><h3 id='setaccountproperty'>SetAccountProperty</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=setAccountProperty"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;recipient=1&amp;property=myTestAccount&amp;value=propValue&amp;secretPhrase=xxxxxxxxx&amp;feeNQT=10000000"</span> <span class="s2">"http://localhost:27876/nxt?requestType=setAccountProperty"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">recipient</span> <span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="na">property</span> <span class="p">:</span> <span class="s2">"myTestAccount"</span><span class="p">,</span>
+    <span class="na">value</span> <span class="p">:</span> <span class="s2">"propValue"</span><span class="p">,</span>
+    <span class="na">secretPhrase</span> <span class="p">:</span> <span class="s2">"xxxxxxxxx"</span><span class="p">,</span>
+    <span class="na">feeNQT</span> <span class="p">:</span> <span class="s2">"10000000"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"setAccountProperty"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -2289,10 +2893,47 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"minimumFeeFQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"signatureHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75426ef36800e6d18d10a58698570d05e5c0ee9c70b6e682d4203ed970eef33c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionJSON"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"senderPublicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1dec874b9fa9bcb693fc97777c902e743ef518e237b779beb62a03f12136ec060ca042d673d64454d0b42f18f358937e57e81cd370e4ada7634f8a057cd1dbcc"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"feeNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1367b14eaa80da5141757e0fdf2f53168500c7649a9d98dd421d7fc5c8084e2e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fxtTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phased"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ecBlockId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18026044117309167588"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"signatureHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75426ef36800e6d18d10a58698570d05e5c0ee9c70b6e682d4203ed970eef33c"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testProperty"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testValue"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version.AccountProperty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"senderRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amountNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipientRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11854182583844805646"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ecBlockHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">332716</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">19803191</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"unsignedTransactionBytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"020000000a0101372c2e010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270e1cb1fc408482a40000000000000000809698000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ac130500e497bb5d9e5f29fa00000000010c7465737450726f7065727479097465737456616c7565000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"broadcasted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionBytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"020000000a0101372c2e010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270e1cb1fc408482a4000000000000000080969800000000001dec874b9fa9bcb693fc97777c902e743ef518e237b779beb62a03f12136ec060ca042d673d64454d0b42f18f358937e57e81cd370e4ada7634f8a057cd1dbccac130500e497bb5d9e5f29fa00000000010c7465737450726f7065727479097465737456616c7565000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1367b14eaa80da5141757e0fdf2f53168500c7649a9d98dd421d7fc5c8084e2e"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Set account property. POST only.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=setAccountProperty</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=setAccountProperty&amp;chain=&lt;Chain&gt;&amp;recipient=&lt;Account&gt;&amp;property=&lt;Property&gt;&amp;value=&lt;Value&gt;&amp;secretPhrase=&lt;Phrase&gt;&amp;feeNQT=&lt;Fee&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -2302,31 +2943,155 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>chain</strong></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>recipient</strong></td>
+<td>number or RS</td>
+<td>Account ID of the recipient.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>property</strong></td>
+<td>string</td>
+<td>the name of the account property.</td>
+</tr>
+<tr>
+<td><em>value</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>secretPhrase</strong></td>
+<td>string</td>
+<td>Secret phrase of the account. Of the setter account.</td>
+</tr>
+</tbody></table>
+
+<p>Additional common parameters are given in the Create Transaction Call.</p>
+<h3 id='getaccountproperties'>GetAccountProperties</h3>
+<blockquote>
+<p>The request:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"recipient=ARDOR-492G-A5YD-FUGZ-C6N2B"</span> <span class="s2">"http://localhost:27876/nxt?requestType=getAccountProperties"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
+<span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">recipient</span><span class="p">:</span> <span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span>
+<span class="p">};</span>
+<span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"getAccountProperties"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above request returns the following JSON structured response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"recipientRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11854182583844805646"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"setterRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Birth Date"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"setter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01/01/1988"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"setterRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Citizenship"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"setter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"French"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"setterRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isBigUpAdvisor"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"setter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11854182583844805646"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"False"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"setterRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myTestAccount"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"setter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"setterRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testProperty"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"setter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testValue"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the Account properties for a specific account or setter.</p>
+
+<p><code>POST http://localhost:27876/nxt?requestType=getAccountProperties&amp;recipient=&lt;Account&gt;&amp;...</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>recipient</strong></td>
+<td>number or RS</td>
+<td>Account ID of the recipient.</td>
+</tr>
+<tr>
+<td><em>property</em></td>
+<td>string</td>
+<td>the name of the account property.</td>
+</tr>
+<tr>
+<td><em>setter</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
 <h3 id='deleteaccountproperty'>DeleteAccountProperty</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=deleteAccountProperty"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"chain=2&amp;recipient=ARDOR-492G-A5YD-FUGZ-C6N2B&amp;property=testProperty&amp;secretPhrase=xxxxxxxxx&amp;feeNQT=1000000"</span> <span class="s2">"http://localhost:27876/nxt?requestType=deleteAccountProperty"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">chain</span> <span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="na">recipient</span> <span class="p">:</span> <span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span><span class="p">,</span>
+    <span class="na">property</span> <span class="p">:</span> <span class="s2">"testProperty"</span><span class="p">,</span>
+    <span class="na">secretPhrase</span> <span class="p">:</span> <span class="s2">"xxxxxxxxx"</span><span class="p">,</span>
+    <span class="na">feeNQT</span> <span class="p">:</span> <span class="s2">"1000000"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"deleteAccountProperty"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -2335,10 +3100,46 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"minimumFeeFQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"signatureHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0f105f6c1f38922d66afedb0d9960e4cd3314eadf47e43e37aeb39b0be1a7b11"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionJSON"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"senderPublicKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chain"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c669a08446ebb6ef42bfa07a06a73206741811c817db417e5a9448d1d3c2ea0115bbb2da4f207d88495eaed3601fd03fb99bcd9f783fd6878ebc11cb3304ec73"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"feeNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"046878b10dc18c1b374eb24e0d81b73f9635ce519b223ced9c7a7600e1de7314"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fxtTransaction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phased"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ecBlockId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13155601693445406119"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"signatureHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0f105f6c1f38922d66afedb0d9960e4cd3314eadf47e43e37aeb39b0be1a7b11"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"property"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5898168130948130579"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version.AccountPropertyDelete"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"senderRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amountNQT"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipientRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-492G-A5YD-FUGZ-C6N2B"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11854182583844805646"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ecBlockHeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">332743</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deadline"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">19804527</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">2147483647</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"unsignedTransactionBytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"020000000a02016f312e010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270e1cb1fc408482a4000000000000000040420f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c7130500a73d57f0091692b600000000011367b14eaa80da51000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"broadcasted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transactionBytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"020000000a02016f312e010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270e1cb1fc408482a4000000000000000040420f0000000000c669a08446ebb6ef42bfa07a06a73206741811c817db417e5a9448d1d3c2ea0115bbb2da4f207d88495eaed3601fd03fb99bcd9f783fd6878ebc11cb3304ec73c7130500a73d57f0091692b600000000011367b14eaa80da51000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fullHash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"046878b10dc18c1b374eb24e0d81b73f9635ce519b223ced9c7a7600e1de7314"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Delete a previously set Account Property. POST Only.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=deleteAccountProperty</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=deleteAccountProperty&amp;chain=&lt;Chain&gt;&amp;recipient=&lt;Account&gt;&amp;property=&lt;Property&gt;&amp;secretPhrase=&lt;Phrase&gt;&amp;feeNQT=&lt;Fee&gt;&amp;...</code></p>
 
 <table><thead>
 <tr>
@@ -2348,31 +3149,41 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>chain</em></td>
+<td>number</td>
+<td>Chain ID (Ignis=2, BITSWIFT=3, AEUR=4 ...).</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>recipient</em></td>
+<td>number or RS</td>
+<td>Account ID of the recipient.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>property</em></td>
+<td>string</td>
+<td>the name of the account property.</td>
+</tr>
+<tr>
+<td><em>secretPhrase</em></td>
+<td>string</td>
+<td>Secret phrase of the account.</td>
+</tr>
+<tr>
+<td><em>feeNQT</em></td>
+<td>number</td>
+<td>Fee (in NQT) of the transaction.</td>
 </tr>
 </tbody></table>
 <h2 id='account-util-functions'>Account Util functions</h2><h3 id='rsconvert'>RsConvert</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=rsConvert"</span>
+<pre class="highlight shell tab-shell"><code>curl -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> -X POST -d <span class="s2">"account=ARDOR-HWZW-5TT6-U68F-H26L8"</span> <span class="s2">"http://localhost:27876/nxt?requestType=rsConvert"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">account</span> <span class="p">:</span> <span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"rsConvert"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -2381,10 +3192,16 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-HWZW-5TT6-U68F-H26L8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"accountLongId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-916341655915203588"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17530402417794348028"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get both the Reed-Solomon account address and the account number given an account ID.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=rsConvert</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=rsConvert&amp;account=&lt;Account&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -2394,31 +3211,21 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
-</tr>
-<tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>account</strong></td>
+<td>number or RS</td>
+<td>An account ID.</td>
 </tr>
 </tbody></table>
 <h3 id='searchaccounts'>SearchAccounts</h3>
 <blockquote>
 <p>The request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl -X POST -d <span class="s2">""</span> <span class="s2">"http://localhost:27876/nxt?requestType=searchAccounts"</span> -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
+<pre class="highlight shell tab-shell"><code>curl -X POST -d <span class="s2">"query="</span> <span class="s2">"http://localhost:27876/nxt?requestType=searchAccounts"</span> -k -H <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// The ardor-blockchain npm package is still on deployement stage</span>
 <span class="kd">var</span> <span class="nx">ardor</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ardor-blockchain'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-
+    <span class="na">query</span> <span class="p">:</span> <span class="s2">"community AND culture"</span>
 <span class="p">};</span>
 <span class="nx">ardor</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">(</span><span class="s2">"searchAccounts"</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">ardor</span><span class="p">.</span><span class="nx">logConsole</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">));</span>
@@ -2427,10 +3234,21 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 <blockquote>
 <p>The above request returns the following JSON structured response:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>Call Description</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"accountRS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARDOR-969E-APWA-MU85-8Z8AQ"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PVH Culture Foundation"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The PVH Culture Foundation is a fund to promote the artistic creation in the world of the crypotcurrencies, especialy in the Nxt community."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7719415250780655852"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"requestProcessingTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get accounts having a name or description that match a given query in reverse relevance order.</p>
 
-<p><code>POST http://localhost:27876/nxt?requestType=searchAccounts</code></p>
+<p><code>POST http://localhost:27876/nxt?requestType=searchAccounts&amp;query=&lt;Query&gt;</code></p>
 
 <table><thead>
 <tr>
@@ -2440,18 +3258,33 @@ In the example given, we do not provide secretPhrase of the sender, thus a unisg
 </tr>
 </thead><tbody>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><strong>query</strong></td>
+<td>string</td>
+<td>Full text query on the account fields name (S) and description (S) in the <a href="http://lucene.apache.org/core/2_9_4/queryparsersyntax.html#Overview">standard Lucene syntax</a></td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>firstIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
 </tr>
 <tr>
-<td>param</td>
-<td>type</td>
-<td>description</td>
+<td><em>lastIndex</em></td>
+<td>number</td>
+<td>Zero-based index to the first block to retrieve.</td>
+</tr>
+<tr>
+<td><em>adminPassword</em></td>
+<td>string</td>
+<td>Admin password, used for restricted actions &amp; in debug functions.</td>
+</tr>
+<tr>
+<td><em>requireBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be present in the blockchain during execution.</td>
+</tr>
+<tr>
+<td><em>requireLastBlock</em></td>
+<td>number</td>
+<td>Block ID of a block that must be last in the blockchain during execution.</td>
 </tr>
 </tbody></table>
