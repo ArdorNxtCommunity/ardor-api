@@ -1615,7 +1615,7 @@ ardor.sendRequest("getBlockchainTransactions", data, function (response) {
 
 Get the transactions associated with an account in reverse block timestamp order.
 
-`POST http://localhost:27876/nxt?requestType=getBlockchainTransactions&chain=<Chain>&account=<Account>`
+`POST http://localhost:27876/nxt?requestType=getBlockchainTransactions&chain=<Chain>&account=<Account>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
@@ -1643,7 +1643,7 @@ Parameter | Type | Description
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getPolls"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&account=ARDOR-HWZW-5TT6-U68F-H26L8" "http://localhost:27876/nxt?requestType=getPolls"
 ```
 
 ```javascript
@@ -1651,7 +1651,8 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8"
 };
 ardor.sendRequest("getPolls", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -1661,24 +1662,80 @@ ardor.sendRequest("getPolls", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "polls": [
+        {
+            "minRangeValue": 0,
+            "votingModel": 2,
+            "description": "Vote for BigUp compagny actoin plan",
+            "finished": true,
+            "poll": "17465897093281664390",
+            "minNumberOfOptions": 1,
+            "holding": "779342883283236213",
+            "minBalance": "100",
+            "accountRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+            "name": "BigUp Action Plan",
+            "options": [
+                "Buid Client side",
+                "Build Server side",
+                "Start Both"
+            ],
+            "finishHeight": 7854,
+            "maxNumberOfOptions": 1,
+            "minBalanceModel": 2,
+            "account": "17530402417794348028",
+            "maxRangeValue": 1,
+            "timestamp": 344422
+        },
+        {
+            "minRangeValue": 0,
+            "votingModel": 0,
+            "description": "Who should reign the world?",
+            "finished": true,
+            "poll": "13371434558082231003",
+            "minNumberOfOptions": 1,
+            "minBalance": "0",
+            "accountRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+            "name": "Presendential Election",
+            "options": [
+                "A Dictator",
+                "A Liberal",
+                "An Alien"
+            ],
+            "finishHeight": 7909,
+            "maxNumberOfOptions": 1,
+            "minBalanceModel": 0,
+            "account": "17530402417794348028",
+            "maxRangeValue": 1,
+            "timestamp": 244957
+        }
+    ],
+    "requestProcessingTime": 1
+}
 ```
 
-Call Description
+Get poll details in reverse creation order.
 
-`POST http://localhost:27876/nxt?requestType=getPolls`
+`POST http://localhost:27876/nxt?requestType=getPolls&chain=<Chain>&account=<Account>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('account', 'required', '') %>
+<%= getParameter('timestamp', 'optional', '') %>
+<%= getParameter('includeFinished', 'optional', '') %>
+<%= getParameter('finishedOnly', 'optional', '') %>
+<%= getParameter('firstIndex', 'optional', '') %>
+<%= getParameter('lastIndex', 'optional', '') %>
+<%= getParameter('adminPassword', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 ### GetVoterPhasedTransactions  
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getVoterPhasedTransactions"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&account=ARDOR-HWZW-5TT6-U68F-H26L8" "http://localhost:27876/nxt?requestType=getVoterPhasedTransactions"
 ```
 
 ```javascript
@@ -1686,7 +1743,8 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8"
 };
 ardor.sendRequest("getVoterPhasedTransactions", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -1696,26 +1754,42 @@ ardor.sendRequest("getVoterPhasedTransactions", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "requestProcessingTime": 1,
+    "transactions": []
+}
 ```
 
-Call Description
+Get pending phased transactions which include a whitelist in reverse chronological creation order. These transactions can be considered transaction approval requests.
 
-`POST http://localhost:27876/nxt?requestType=getVoterPhasedTransactions`
+`POST http://localhost:27876/nxt?requestType=getVoterPhasedTransactions&chain=<Chain>&account=<Account>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('account', 'required', '') %>
+<%= getParameter('firstIndex', 'optional', '') %>
+<%= getParameter('lastIndex', 'optional', '') %>
+<%= getParameter('adminPassword', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
 
 ## Account Funding
 
-### GetFundingMonitor
+COIN, ASSET and CURRENCY balances can be monitored.  If a balance falls below the threshold, a transaction will be submitted to transfer units from the funding account to the monitored account.  A transfer will remain pending if the number of blocks since the previous transfer transaction is less than the monitor interval.
+
+The recipient accounts are identified by the specified account property. Each account that has this property set by the funding account will be monitored for changes. The property value can be either:
+- Omitted
+- Consist of a JSON string containing one or more values in the format: {"amount":long,"threshold":long,"interval":integer}.
+
+This way you can setup a general monitor (if value is omitted) or specific monitor for each account (by specifying the json value).
+
+### StartFundingMonitor
+
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getFundingMonitor"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&holdingType=1&holding=779342883283236213&property=myTestAccount&amount=100&threshold=10&interval=15&secretPhrase=xxxxxxxxxx&feeRateNQTPerFXT=1" "http://localhost:27876/nxt?requestType=startFundingMonitor"
 ```
 
 ```javascript
@@ -1723,42 +1797,15 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
-};
-ardor.sendRequest("getFundingMonitor", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
-});
-```
-
-> The above request returns the following JSON structured response:
-
-```json
-```
-
-Call Description
-
-`POST http://localhost:27876/nxt?requestType=getFundingMonitor`
-
-Parameter | Type | Description
---------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
-
-### StartFundingMonitor   
-> The request:
-
-```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=startFundingMonitor"
-```
-
-```javascript
-// The ardor-blockchain npm package is still on deployement stage
-var ardor = require('ardor-blockchain');
-
-var data = {
-    
+    chain : "2",
+    holdingType : "1",
+    holding : "779342883283236213",
+    property : "myTestAccount",
+    amount : "100",
+    threshold : "10",
+    interval : "15",
+    secretPhrase : "xxxxxxxxxx",
+    feeRateNQTPerFXT : "1"
 };
 ardor.sendRequest("startFundingMonitor", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -1768,24 +1815,34 @@ ardor.sendRequest("startFundingMonitor", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "started": true,
+    "requestProcessingTime": 13
+}
 ```
 
-Call Description
+Starts a funding monitor that will transfer COIN, ASSET or CURRENCY from the funding account to a recipient account when the amount held by the recipient account drops below the threshold. The funding account is identified by the secret phrase. POST Only.
 
-`POST http://localhost:27876/nxt?requestType=startFundingMonitor`
+`POST http://localhost:27876/nxt?requestType=startFundingMonitor&chain=<Chain>&holdingType=<Type>&holding=<Id>&property=<Prop>&amount=<Amount>&threshold=<Threshold>&interval=<Interval>&secretPhrase=<Phrase>&feeRateNQTPerFXT=<Fee>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('holdingType', 'optional', '') %>
+<%= getParameter('holding', 'required', 'The Id of the coin, asset or currency.') %>
+<%= getParameter('property', 'optional', '') %>
+<%= getParameter('amount', 'required', '') %>
+<%= getParameter('threshold', 'optional', '') %>
+<%= getParameter('interval', 'optional', '') %>
+<%= getParameter('secretPhrase', 'optional', '') %>
+<%= getParameter('feeRateNQTPerFXT', 'optional', 'If not set, the transaction will not be broadcasted') %>
 
+### StopFundingMonitor
 
-### StopFundingMonitor  
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=stopFundingMonitor"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&holdingType=1&holding=779342883283236213&property=myTestAccount&secretPhrase=xxxxxxxxxx" "http://localhost:27876/nxt?requestType=stopFundingMonitor"
 ```
 
 ```javascript
@@ -1793,7 +1850,11 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    holdingType : "1",
+    holding : "779342883283236213",
+    property : "myTestAccount",
+    secretPhrase : "xxxxxxxxxx"
 };
 ardor.sendRequest("stopFundingMonitor", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -1803,26 +1864,32 @@ ardor.sendRequest("stopFundingMonitor", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "stopped": 1,
+    "requestProcessingTime": 1
+}
 ```
 
-Call Description
+Stop a previously started funding monitor.
 
-`POST http://localhost:27876/nxt?requestType=stopFundingMonitor`
+`POST http://localhost:27876/nxt?requestType=stopFundingMonitor&chain=<Chain>&holdingType=<Type>&holding=<Id>&property=<Prop>&account=<Account>&secretPhrase=<Phrase>&adminPassword=<Password>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('holdingType', 'optional', '') %>
+<%= getParameter('holding', 'required', 'The Id of the coin, asset or currency.') %>
+<%= getParameter('property', 'optional', 'Stops monitoring of all account with this property.') %>
+<%= getParameter('account', 'optional', 'Stops mointoring only for this account.') %>
+<%= getParameter('secretPhrase', 'optional', 'If provided, it's used to stop a single monitor by holder of the account.') %>
+<%= getParameter('adminPassword', 'optional', 'Used to stop a single monitor or all monitor') %>
 
+### GetFundingMonitor
 
-## Account Properties
-
-### GetAccountProperties
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=getAccountProperties"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&holdingType=1&holding=779342883283236213&property=myTestAccount&secretPhrase=xxxxxxxxxx&includeMonitoredAccounts=true" "http://localhost:27876/nxt?requestType=getFundingMonitor"
 ```
 
 ```javascript
@@ -1830,9 +1897,14 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    holdingType : "1",
+    holding : "779342883283236213",
+    property : "myTestAccount",
+    secretPhrase : "xxxxxxxxxx",
+    includeMonitoredAccounts : "true"
 };
-ardor.sendRequest("getAccountProperties", data, function (response) {
+ardor.sendRequest("getFundingMonitor", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -1840,24 +1912,56 @@ ardor.sendRequest("getAccountProperties", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "requestProcessingTime": 1,
+    "monitors": [
+        {
+            "holding": "779342883283236213",
+            "amount": "100",
+            "monitoredAccounts": [
+                {
+                    "amount": "100",
+                    "accountRS": "ARDOR-492G-A5YD-FUGZ-C6N2B",
+                    "threshold": "10",
+                    "interval": 15,
+                    "account": "11854182583844805646"
+                }
+            ],
+            "holdingType": 1,
+            "accountRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+            "property": "myTestAccount",
+            "threshold": "10",
+            "interval": 15,
+            "account": "17530402417794348028",
+            "feeRateNQTPerFXT": "1"
+        }
+    ]
+}
 ```
 
-Call Description
+Get a funding monitor and the monitored accounts.
 
-`POST http://localhost:27876/nxt?requestType=getAccountProperties`
+`POST http://localhost:27876/nxt?requestType=getFundingMonitor&chain=<Chain>&holdingType=<Type>&holding=<Id>&property=<Prop>&secretPhrase=<Phrase>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('holdingType', 'optional', '') %>
+<%= getParameter('holding', 'required', '') %>
+<%= getParameter('property', 'optional', '') %>
+<%= getParameter('secretPhrase', 'optional', '') %>
+<%= getParameter('adminPassword', 'optional', '') %>
+<%= getParameter('includeMonitoredAccounts', 'optional', '') %>
+<%= getParameter('account', 'required', 'Specific account') %>
 
+## Account Properties
 
 ### SetAccountProperty
+
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=setAccountProperty"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&recipient=1&property=myTestAccount&value=propValue&secretPhrase=xxxxxxxxx&feeNQT=10000000" "http://localhost:27876/nxt?requestType=setAccountProperty"
 ```
 
 ```javascript
@@ -1865,7 +1969,12 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    chain : "2",
+    recipient : "1",
+    property : "myTestAccount",
+    value : "propValue",
+    secretPhrase : "xxxxxxxxx",
+    feeNQT : "10000000"
 };
 ardor.sendRequest("setAccountProperty", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -1875,24 +1984,65 @@ ardor.sendRequest("setAccountProperty", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "minimumFeeFQT": "10000000",
+    "signatureHash": "75426ef36800e6d18d10a58698570d05e5c0ee9c70b6e682d4203ed970eef33c",
+    "transactionJSON": {
+        "senderPublicKey": "5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27",
+        "chain": 2,
+        "signature": "1dec874b9fa9bcb693fc97777c902e743ef518e237b779beb62a03f12136ec060ca042d673d64454d0b42f18f358937e57e81cd370e4ada7634f8a057cd1dbcc",
+        "feeNQT": "10000000",
+        "type": 10,
+        "fullHash": "1367b14eaa80da5141757e0fdf2f53168500c7649a9d98dd421d7fc5c8084e2e",
+        "version": 1,
+        "fxtTransaction": "0",
+        "phased": false,
+        "ecBlockId": "18026044117309167588",
+        "signatureHash": "75426ef36800e6d18d10a58698570d05e5c0ee9c70b6e682d4203ed970eef33c",
+        "attachment": {
+            "property": "testProperty",
+            "value": "testValue",
+            "version.AccountProperty": 1
+        },
+        "senderRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+        "subtype": 1,
+        "amountNQT": "0",
+        "sender": "17530402417794348028",
+        "recipientRS": "ARDOR-492G-A5YD-FUGZ-C6N2B",
+        "recipient": "11854182583844805646",
+        "ecBlockHeight": 332716,
+        "deadline": 15,
+        "timestamp": 19803191,
+        "height": 2147483647
+    },
+    "unsignedTransactionBytes": "020000000a0101372c2e010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270e1cb1fc408482a40000000000000000809698000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ac130500e497bb5d9e5f29fa00000000010c7465737450726f7065727479097465737456616c7565000000000000000000000000000000000000000000000000000000000000000000000000",
+    "broadcasted": true,
+    "requestProcessingTime": 4,
+    "transactionBytes": "020000000a0101372c2e010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270e1cb1fc408482a4000000000000000080969800000000001dec874b9fa9bcb693fc97777c902e743ef518e237b779beb62a03f12136ec060ca042d673d64454d0b42f18f358937e57e81cd370e4ada7634f8a057cd1dbccac130500e497bb5d9e5f29fa00000000010c7465737450726f7065727479097465737456616c7565000000000000000000000000000000000000000000000000000000000000000000000000",
+    "fullHash": "1367b14eaa80da5141757e0fdf2f53168500c7649a9d98dd421d7fc5c8084e2e"
+}
 ```
 
-Call Description
+Set account property. POST only.
 
-`POST http://localhost:27876/nxt?requestType=setAccountProperty`
+`POST http://localhost:27876/nxt?requestType=setAccountProperty&chain=<Chain>&recipient=<Account>&property=<Property>&value=<Value>&secretPhrase=<Phrase>&feeNQT=<Fee>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('chain', 'required', '') %>
+<%= getParameter('recipient', 'required', '') %>
+<%= getParameter('property', 'required', '') %>
+<%= getParameter('value', 'optional', '') %>
+<%= getParameter('secretPhrase', 'required', 'Of the setter account.') %
 
+Additional common parameters are given in the Create Transaction Call.
 
-### DeleteAccountProperty
+### GetAccountProperties
+
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=deleteAccountProperty"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "recipient=ARDOR-492G-A5YD-FUGZ-C6N2B" "http://localhost:27876/nxt?requestType=getAccountProperties"
 ```
 
 ```javascript
@@ -1900,7 +2050,88 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    recipient: "ARDOR-492G-A5YD-FUGZ-C6N2B"
+};
+ardor.sendRequest("getAccountProperties", data, function (response) {
+    ardor.logConsole(JSON.stringify(response));
+});
+```
+
+> The above request returns the following JSON structured response:
+
+```json
+{
+    "recipientRS": "ARDOR-492G-A5YD-FUGZ-C6N2B",
+    "recipient": "11854182583844805646",
+    "requestProcessingTime": 0,
+    "properties": [
+        {
+            "setterRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+            "property": "Birth Date",
+            "setter": "17530402417794348028",
+            "value": "01/01/1988"
+        },
+        {
+            "setterRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+            "property": "Citizenship",
+            "setter": "17530402417794348028",
+            "value": "French"
+        },
+        {
+            "setterRS": "ARDOR-492G-A5YD-FUGZ-C6N2B",
+            "property": "isBigUpAdvisor",
+            "setter": "11854182583844805646",
+            "value": "False"
+        },
+        {
+            "setterRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+            "property": "myTestAccount",
+            "setter": "17530402417794348028",
+            "value": null
+        },
+        {
+            "setterRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+            "property": "testProperty",
+            "setter": "17530402417794348028",
+            "value": "testValue"
+        }
+    ]
+}
+```
+
+Get the Account properties for a specific account or setter.
+
+`POST http://localhost:27876/nxt?requestType=getAccountProperties&recipient=<Account>&...`
+
+Parameter | Type | Description
+--------- | ---- | -----------
+<%= getParameter('recipient', 'required', '') %>
+<%= getParameter('property', 'optional', '') %>
+<%= getParameter('setter', 'optional', '') %>
+<%= getParameter('firstIndex', 'optional', '') %>
+<%= getParameter('lastIndex', 'optional', '') %>
+<%= getParameter('adminPassword', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>
+
+### DeleteAccountProperty
+
+> The request:
+
+```shell
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "chain=2&recipient=ARDOR-492G-A5YD-FUGZ-C6N2B&property=testProperty&secretPhrase=xxxxxxxxx&feeNQT=1000000" "http://localhost:27876/nxt?requestType=deleteAccountProperty"
+```
+
+```javascript
+// The ardor-blockchain npm package is still on deployement stage
+var ardor = require('ardor-blockchain');
+
+var data = {
+    chain : "2",
+    recipient : "ARDOR-492G-A5YD-FUGZ-C6N2B",
+    property : "testProperty",
+    secretPhrase : "xxxxxxxxx",
+    feeNQT : "1000000"
 };
 ardor.sendRequest("deleteAccountProperty", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -1910,27 +2141,64 @@ ardor.sendRequest("deleteAccountProperty", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "minimumFeeFQT": "1000000",
+    "signatureHash": "0f105f6c1f38922d66afedb0d9960e4cd3314eadf47e43e37aeb39b0be1a7b11",
+    "transactionJSON": {
+        "senderPublicKey": "5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27",
+        "chain": 2,
+        "signature": "c669a08446ebb6ef42bfa07a06a73206741811c817db417e5a9448d1d3c2ea0115bbb2da4f207d88495eaed3601fd03fb99bcd9f783fd6878ebc11cb3304ec73",
+        "feeNQT": "1000000",
+        "type": 10,
+        "fullHash": "046878b10dc18c1b374eb24e0d81b73f9635ce519b223ced9c7a7600e1de7314",
+        "version": 1,
+        "fxtTransaction": "0",
+        "phased": false,
+        "ecBlockId": "13155601693445406119",
+        "signatureHash": "0f105f6c1f38922d66afedb0d9960e4cd3314eadf47e43e37aeb39b0be1a7b11",
+        "attachment": {
+            "property": "5898168130948130579",
+            "version.AccountPropertyDelete": 1
+        },
+        "senderRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+        "subtype": 2,
+        "amountNQT": "0",
+        "sender": "17530402417794348028",
+        "recipientRS": "ARDOR-492G-A5YD-FUGZ-C6N2B",
+        "recipient": "11854182583844805646",
+        "ecBlockHeight": 332743,
+        "deadline": 15,
+        "timestamp": 19804527,
+        "height": 2147483647
+    },
+    "unsignedTransactionBytes": "020000000a02016f312e010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270e1cb1fc408482a4000000000000000040420f000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c7130500a73d57f0091692b600000000011367b14eaa80da51000000000000000000000000000000000000000000000000000000000000000000000000",
+    "broadcasted": true,
+    "requestProcessingTime": 3,
+    "transactionBytes": "020000000a02016f312e010f005b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c270e1cb1fc408482a4000000000000000040420f0000000000c669a08446ebb6ef42bfa07a06a73206741811c817db417e5a9448d1d3c2ea0115bbb2da4f207d88495eaed3601fd03fb99bcd9f783fd6878ebc11cb3304ec73c7130500a73d57f0091692b600000000011367b14eaa80da51000000000000000000000000000000000000000000000000000000000000000000000000",
+    "fullHash": "046878b10dc18c1b374eb24e0d81b73f9635ce519b223ced9c7a7600e1de7314"
+}
 ```
 
+Delete a previously set Account Property. POST Only.
 
-Call Description
-
-`POST http://localhost:27876/nxt?requestType=deleteAccountProperty`
+`POST http://localhost:27876/nxt?requestType=deleteAccountProperty&chain=<Chain>&recipient=<Account>&property=<Property>&secretPhrase=<Phrase>&feeNQT=<Fee>&...`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('chain', '', '') %>
+<%= getParameter('recipient', '', '') %>
+<%= getParameter('property', '', '') %>
+<%= getParameter('secretPhrase', '', '') %>
+<%= getParameter('feeNQT', '', '') %>
 
 ## Account Util functions
 
 ### RsConvert
+
 > The request:
 
 ```shell
-curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http://localhost:27876/nxt?requestType=rsConvert"
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "account=ARDOR-HWZW-5TT6-U68F-H26L8" "http://localhost:27876/nxt?requestType=rsConvert"
 ```
 
 ```javascript
@@ -1938,7 +2206,7 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    account : "ARDOR-HWZW-5TT6-U68F-H26L8"
 };
 ardor.sendRequest("rsConvert", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -1948,24 +2216,28 @@ ardor.sendRequest("rsConvert", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "accountRS": "ARDOR-HWZW-5TT6-U68F-H26L8",
+    "accountLongId": "-916341655915203588",
+    "requestProcessingTime": 0,
+    "account": "17530402417794348028"
+}
 ```
 
-Call Description
+Get both the Reed-Solomon account address and the account number given an account ID.
 
-`POST http://localhost:27876/nxt?requestType=rsConvert`
+`POST http://localhost:27876/nxt?requestType=rsConvert&account=<Account>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-
+<%= getParameter('account', 'required', '') %>
 
 ### SearchAccounts
+
 > The request:
 
 ```shell
-curl -X POST -d "" "http://localhost:27876/nxt?requestType=searchAccounts" -k -H "Content-Type: application/x-www-form-urlencoded"
+curl -X POST -d "query=" "http://localhost:27876/nxt?requestType=searchAccounts" -k -H "Content-Type: application/x-www-form-urlencoded"
 ```
 
 ```javascript
@@ -1973,7 +2245,7 @@ curl -X POST -d "" "http://localhost:27876/nxt?requestType=searchAccounts" -k -H
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    query : "community AND culture"
 };
 ardor.sendRequest("searchAccounts", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -1983,14 +2255,28 @@ ardor.sendRequest("searchAccounts", data, function (response) {
 > The above request returns the following JSON structured response:
 
 ```json
+{
+    "accounts": [
+        {
+            "accountRS": "ARDOR-969E-APWA-MU85-8Z8AQ",
+            "name": "PVH Culture Foundation",
+            "description": "The PVH Culture Foundation is a fund to promote the artistic creation in the world of the crypotcurrencies, especialy in the Nxt community.",
+            "account": "7719415250780655852"
+        }
+    ],
+    "requestProcessingTime": 39
+}
 ```
 
-Call Description
+Get accounts having a name or description that match a given query in reverse relevance order.
 
-`POST http://localhost:27876/nxt?requestType=searchAccounts`
+`POST http://localhost:27876/nxt?requestType=searchAccounts&query=<Query>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('query', 'required', '') %>
+<%= getParameter('firstIndex', 'optional', '') %>
+<%= getParameter('lastIndex', 'optional', '') %>
+<%= getParameter('adminPassword', 'optional', '') %>
+<%= getParameter('requireBlock', 'optional', '') %>
+<%= getParameter('requireLastBlock', 'optional', '') %>

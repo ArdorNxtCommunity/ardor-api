@@ -105,8 +105,8 @@
 	    "description" : ""
     },
     "finishedOnly":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to exclude not yet executed, phased transactions."
     },
     "firstIndex":{
 	    "type" : "number", 
@@ -121,15 +121,15 @@
 	    "description" : "Holding ID."
     },
     "holdingType":{
-	    "type" : "string", 
-	    "description" : "A string representing the holding type."
+	    "type" : "number", 
+	    "description" : "A number representing the holding type (0 for Coin, 1 for Asset, 2 for Currency)."
     },
     "includeAssetInfo":{
 	    "type" : "boolean", 
 	    "description" : "true if asset information is to be included."
     },
     "includeAssets":{
-	    "type" : "", 
+	    "type" : "boolean", 
 	    "description" : ""
     },
     "includeCounts":{
@@ -137,7 +137,7 @@
 	    "description" : "true if number of transfers is to be included."
     },
     "includeCurrencies":{
-	    "type" : "", 
+	    "type" : "boolean", 
 	    "description" : ""
     },
     "includeCurrencyInfo":{
@@ -145,7 +145,7 @@
         "description" : "true if several currency information properties is to be included."
     },
     "includeEffectiveBalance":{
-	    "type" : "", 
+	    "type" : "boolean", 
 	    "description" : ""
     },
     "includeExpiredPrunable":{
@@ -153,27 +153,27 @@
 	    "description" : "true' to retrieve pruned data if available."
     },
     "includeFinished":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to include completed polls."
     },
     "includeHoldingInfo":{
 	    "type" : "boolean", 
 	    "description" : "Specify TRUE to include the corresponding asset or currency info (name, decimals) with each ledger entry. The default is false."
     },
     "includeLessors":{
-	    "type" : "", 
+	    "type" : "boolean", 
 	    "description" : ""
     },
     "includeMonitoredAccounts":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "boolean", 
+	    "description" : "true to include account info of the monitored accounts."
     },
     "includePhasingResult":{
 	    "type" : "boolean", 
 	    "description" : "true to retrieve execution status of each phased transaction."
     },
     "includeTransaction":{
-	    "type" : "", 
+	    "type" : "boolean", 
 	    "description" : "Specify TRUE to include the transaction associated with the ledger entry. The default is false."
     },
     "includeTransactions":{
@@ -181,8 +181,8 @@
 	    "description" : "Specify TRUE to include the transaction associated with the ledger entry. The default is false."
     },
     "interval":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Number of blocks to wait after before funding the recipient."
     },
     "lastIndex":{
 	    "type" : "number", 
@@ -321,16 +321,16 @@
 	    "description" : ""
     },
     "property":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "string", 
+	    "description" : "the name of the account property."
     },
     "publicKey":{
 	    "type" : "string", 
 	    "description" : "Public key of the account."
     },
     "query":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "string", 
+	    "description" : "Full text query on the account fields name (S) and description (S) in the [standard Lucene syntax](http://lucene.apache.org/core/2_9_4/queryparsersyntax.html#Overview)"
     },
     "recipient":{
 	    "type" : "number or RS", 
@@ -365,8 +365,8 @@
 	    "description" : "Subtype of transactions to retrieve."
     },
     "threshold":{
-	    "type" : "", 
-	    "description" : ""
+	    "type" : "number", 
+	    "description" : "Threshold amount under which a funding transaction will be created."
     },
     "timestamp":{
 	    "type" : "number", 
