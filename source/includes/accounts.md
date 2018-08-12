@@ -1881,7 +1881,7 @@ Parameter | Type | Description
 <%= getParameter('holding', 'required', 'The Id of the coin, asset or currency.') %>
 <%= getParameter('property', 'optional', 'Stops monitoring of all account with this property.') %>
 <%= getParameter('account', 'optional', 'Stops mointoring only for this account.') %>
-<%= getParameter('secretPhrase', 'optional', 'If provided, it's used to stop a single monitor by holder of the account.') %>
+<%= getParameter('secretPhrase', 'optional', 'If provided, it\'s used to stop a single monitor by holder of the account.') %>
 <%= getParameter('adminPassword', 'optional', 'Used to stop a single monitor or all monitor') %>
 
 ### GetFundingMonitor
@@ -2033,7 +2033,7 @@ Parameter | Type | Description
 <%= getParameter('recipient', 'required', '') %>
 <%= getParameter('property', 'required', '') %>
 <%= getParameter('value', 'optional', '') %>
-<%= getParameter('secretPhrase', 'required', 'Of the setter account.') %
+<%= getParameter('secretPhrase', 'required', 'Of the setter account.') %>
 
 Additional common parameters are given in the Create Transaction Call.
 
