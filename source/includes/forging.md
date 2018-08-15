@@ -9,7 +9,7 @@ The API calls below allow you to
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "secretPhrase=INSERT PASSPHRASE HERE&period=1440&recipient=ARDOR-8MVA-XCVR-3JC9-2C7C3" "http://localhost:27876/nxt?requestType=leaseBalance"
 ```
 
 ```javascript
@@ -17,9 +17,11 @@ curl "http://localhost:27876/nxt?requestType="
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    secretPhrase=INSERT PASSPHRASE HERE,
+    period: "1440",
+    recipient: "ARDOR-8MVA-XCVR-3JC9-2C7C3",
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("leaseBalance", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -33,20 +35,23 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=leaseBalance&period=<Period>&recipient=<Recipient>`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('secretPhrase', 'required', 'The secret passphrase of the account') %>
+<%= getParameter('feeNQT', 'optional', 'Fee (in NQT) for the transaction.  Auto calculated if left blank') %>
+<%= getParameter('deadline', 'optional', 'Deadline (in minutes) for the transaction to be confirmed, 32767 minutes maximum and 1440 is the default of parent chain, 15 for child chains') %>
+<%= getParameter('period', 'required', 'The lease period (in number of blocks, 1440 minimum)') %>
+<%= getParameter('recipient', 'required', '') %>
+<%= getParameter('recipientPublicKey', 'optional, enhances security of a new account', '') %>
 
 
 ### startForging
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "secretPhrase=INSERT PASSPHRASE HERE "http://localhost:27876/nxt?requestType=startForging"
 ```
 
 ```javascript
@@ -54,9 +59,9 @@ curl "http://localhost:27876/nxt?requestType="
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    secretPhrase: "INSERT PASSPHRASE HERE",
 };
-ardor.sendRequest("", data, function (response) {
+ardor.sendRequest("startForging", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
 });
 ```
@@ -70,20 +75,18 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=startForging`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('secretPhrase', 'required', 'The secret passphrase of the account') %>
 
 
 ### stopForging
 > The request:
 
 ```shell
-curl "http://localhost:27876/nxt?requestType="
+curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "secretPhrase=INSERT PASSPHRASE HERE" "http://localhost:27876/nxt?requestType=stopForging"
 ```
 
 ```javascript
@@ -91,7 +94,7 @@ curl "http://localhost:27876/nxt?requestType="
 var ardor = require('ardor-blockchain');
 
 var data = {
-    
+    secretPhrase: "INSERT PASSPHRASE HERE",
 };
 ardor.sendRequest("", data, function (response) {
     ardor.logConsole(JSON.stringify(response));
@@ -107,13 +110,11 @@ ardor.sendRequest("", data, function (response) {
 
 Call Description
 
-`GET http://localhost:27876/nxt?requestType=`
+`POST http://localhost:27876/nxt?requestType=stopForging`
 
 Parameter | Type | Description
 --------- | ---- | -----------
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
-<%= getParameter('', '', '') %>
+<%= getParameter('secretPhrase', 'required', 'The secret passphrase of the account') %>
 
 
 ### startBundler
