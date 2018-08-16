@@ -10,14 +10,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 
@@ -47,14 +50,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 
@@ -84,14 +90,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 
@@ -122,14 +131,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 
@@ -159,14 +171,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 
@@ -196,14 +211,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 
@@ -236,14 +254,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 
@@ -273,14 +294,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 
@@ -310,14 +334,17 @@ curl -k -H "Content-Type: application/x-www-form-urlencoded" -X POST -d "" "http
 ```
 
 ```javascript
-// The ardor-blockchain npm package is still on deployement stage
 var ardor = require('ardor-blockchain');
 
-var data = {
-    
-};
-ardor.sendRequest("", data, function (response) {
-    ardor.logConsole(JSON.stringify(response));
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    var data = {
+        
+    };
+    ardor.sendRequest("", data, function (response) {
+        ardor.logConsole("Response is:" + JSON.stringify(response));
+    });
 });
 ```
 

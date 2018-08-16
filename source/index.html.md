@@ -53,6 +53,65 @@ We provide you here with some general notes when using the API, before going in 
 
 When using the API, you may encounter in many places the usage of *nxt* either in the calls or in parameters and this is due to the fact that Ardor blockchain is an evolution of the Nxt blockchain that resulted in the creation of a new blockchain because of architecture changes introducing the Parent-ChildChain designed for high scalability. Nevertheless, many parts of the Nxt code source are shared between Nxt and Ardor and when you communicate with an Ardor server (using the API calls) then you can be ensured that all your interactions are with Ardor system and not Nxt system.
 
+## Javascript API testing
+
+> testArdor.js content:
+
+```typescript
+var config = {
+    "comment": "Node JS module configuration file",
+    "url": "http://localhost:27876",
+    "secretPhrase": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "recipientPublicKey": "5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27",
+    "isTestNet": true,
+    "chain": "2",
+    "adminPassword": ""
+};
+
+// Importing the package
+ardor = require("ardor-blockchain");
+
+// Initializing the object with meta parameters
+ardor.init(config);
+
+ardor.load(function(NRS) {
+    // Request data
+    var data = {
+        account : "ARDOR-HWZW-5TT6-U68F-H26L8"
+    };
+    // Request query and response
+    	NRS.sendRequest("getAccountProperties", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
+    });
+});
+```
+
+> Api response in console:
+
+```cmd
+/usr/local/bin/node --inspect-brk=28964 testArdor.js 
+Debugger listening on ws://127.0.0.1:28964/b0cd1c8b-bbbe-4105-b43d-28b228e6ccef
+Debugger attached.
+Test finished
+testArdor.js:29
+Started
+nrs.node.bridge.js:45
+done loading server constants
+nrs.constants.js:139
+2018-08-16T06:46:32.731Z Send request getAccountPublicKey to url https://testardor.jelurida.com/nxt?requestType=getAccountPublicKey id=0
+nrs.console.js:39
+2018-08-16T06:46:32.931Z {"publicKey":"5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27","requestProcessingTime":0}
+```
+
+As stated before, you can call the Ardor API both from `shell` and `Javascript`, we provide here we a simple demonstration of how you can achieve your testing in `javascript`.
+
+1. Download the Ardor wallet from [official ardor website](https://www.ardorplatform.org/), then follow the installation instructions and please chose TestNet for your first tests
+2. Create an empty project: `mkdir test-ardor-blockchain | cd test-ardor-blockchain`
+3. Install the package for this project: `npm install --save <ArdorInstallationFolder>/html/www/js/`
+4. Create a simple js in the `test-ardor-blockchain` folder and paste the javascript code on it
+5. Start your Ardor node in order to execute the calls locally, otherwise you have to change the url in the js script to point the remote node
+6. Run you script and you will get the desired response.
+
 ## Flexible Account IDs
 
 All API requests that require an account ID accept either an account number or the corresponding Reed-Solomon address (ARDR-XXXX-XXXX-XXXX-XXXXX).
