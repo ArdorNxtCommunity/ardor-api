@@ -19,8 +19,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -59,8 +59,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -99,8 +99,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -139,8 +139,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -179,8 +179,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -223,8 +223,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -263,8 +263,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -303,8 +303,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -343,8 +343,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -383,8 +383,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -423,8 +423,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```
@@ -463,8 +463,8 @@ ardor.load(function(NRS) {
     var data = {
         
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole("Response is:" + JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole("Response is:" + JSON.stringify(response));
     });
 });
 ```

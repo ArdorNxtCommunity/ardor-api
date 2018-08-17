@@ -1,6 +1,6 @@
 # Accounts
 
-This chapter focuses on all API calls that can help you interact an account, identify its information and many other actions including: sending Ardor to an account, getting his balances, or more advanced interactions like properties and control features.
+This chapter focuses on all API calls that can help you interact with an account, identify its information and many other actions including: sending Ardor to an account, getting his balances, or more advanced interactions like properties and control features.
 
 ## Account Information
 
@@ -23,8 +23,8 @@ ardor.load(function(NRS) {
     var data = {
         publicKey: "f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"
     };
-    ardor.sendRequest("getAccountId", data, function (response) {
-        ardor.logConsole("Account id is:" + JSON.stringify(response));
+    NRS.sendRequest("getAccountId", data, function (response) {
+        NRS.logConsole("Account id is:" + JSON.stringify(response));
     });
 });
 ```
@@ -70,8 +70,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-8MVA-XCVR-3JC9-2C7C3"
     };
-    ardor.sendRequest("getAccountPublicKey", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountPublicKey", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -112,8 +112,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-XK2L-Z7NK-VNKM-AZYVT"
     };
-    ardor.sendRequest("getAccountLedger", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountLedger", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -182,8 +182,8 @@ ardor.load(function(NRS) {
     var data = {
         ledgerId : "119533"
     };
-    ardor.sendRequest("getAccountLedgerEntry", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountLedgerEntry", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -239,8 +239,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-APM5-TLV8-J3KY-6T3JG"
     };
-    ardor.sendRequest("getAccountAssetCount", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountAssetCount", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -283,8 +283,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-APM5-TLV8-J3KY-6T3JG",
         includeAssetInfo : "true"
     };
-    ardor.sendRequest("getAccountAssets", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountAssets", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -336,8 +336,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-58JH-YGLD-DG25-CRVXC"
     };
-    ardor.sendRequest("getAccountBlockCount", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountBlockCount", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -378,8 +378,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-58JH-YGLD-DG25-CRVXC"
     };
-    ardor.sendRequest("getAccountBlockIds", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountBlockIds", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -437,8 +437,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-58JH-YGLD-DG25-CRVXC"
     };
-    ardor.sendRequest("getAccountBlocks", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountBlocks", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -505,8 +505,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-VS8T-QYQS-SK9H-5BYBB"
     };
-    ardor.sendRequest("getAccountCurrencyCount", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountCurrencyCount", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -549,8 +549,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-VS8T-QYQS-SK9H-5BYBB",
         includeCurrencyInfo : "true"
     };
-    ardor.sendRequest("getAccountCurrencies", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountCurrencies", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -610,8 +610,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-VS8T-QYQS-SK9H-5BYBB"
     };
-    ardor.sendRequest("getAccountLessors", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountLessors", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -656,8 +656,8 @@ ardor.load(function(NRS) {
         chain : "2",
         account : "ARDOR-VS8T-QYQS-SK9H-5BYBB"
     };
-    ardor.sendRequest("getAccountPhasedTransactionCount", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountPhasedTransactionCount", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -700,8 +700,8 @@ ardor.load(function(NRS) {
         chain : "2",
         account : "ARDOR-VS8T-QYQS-SK9H-5BYBB"
     };
-    ardor.sendRequest("getAccountPhasedTransactions", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountPhasedTransactions", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -748,8 +748,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         account : "ARDOR-492G-A5YD-FUGZ-C6N2B"
     };
-    ardor.sendRequest("getUnconfirmedTransactionIds", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getUnconfirmedTransactionIds", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -800,8 +800,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         account : "ARDOR-492G-A5YD-FUGZ-C6N2B"
     };
-    ardor.sendRequest("getUnconfirmedTransactions", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getUnconfirmedTransactions", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -880,8 +880,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-63EF-NL2A-WWNC-6JL6N",
         includeCounts : "true"
     };
-    ardor.sendRequest(" getCurrenciesByIssuer", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest(" getCurrenciesByIssuer", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -959,8 +959,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         includeCounts : "true"
     };
-    ardor.sendRequest("getAssetsByIssuer", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAssetsByIssuer", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1035,8 +1035,8 @@ ardor.load(function(NRS) {
         chain : "2",
         account : "ARDOR-HWZW-5TT6-U68F-H26L8"
     };
-    ardor.sendRequest("getBlockchainTransactions", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getBlockchainTransactions", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1134,8 +1134,8 @@ ardor.load(function(NRS) {
         publicKey : "5b3bd8d211c2c792b75e1840ca4af4ba3aa8e5c5dc5ee5487af29766789b5c27"
 
     };
-    ardor.sendRequest("setAccountInfo", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("setAccountInfo", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1224,8 +1224,8 @@ ardor.load(function(NRS) {
         secretPhrase : "xxxxxxxxx",
         feeNQT : "10000000"
     };
-    ardor.sendRequest("setAccountProperty", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("setAccountProperty", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1303,8 +1303,8 @@ ardor.load(function(NRS) {
     var data = {
         recipient: "ARDOR-492G-A5YD-FUGZ-C6N2B"
     };
-    ardor.sendRequest("getAccountProperties", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountProperties", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1387,8 +1387,8 @@ ardor.load(function(NRS) {
         secretPhrase : "xxxxxxxxx",
         feeNQT : "1000000"
     };
-    ardor.sendRequest("deleteAccountProperty", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("deleteAccountProperty", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1467,8 +1467,8 @@ ardor.load(function(NRS) {
         chain :  "2",
         account : "ARDOR-HWZW-5TT6-U68F-H26L8"
     };
-    ardor.sendRequest("getBalance", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getBalance", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1512,8 +1512,8 @@ ardor.load(function(NRS) {
         chain :  ["1", "2", "3"],
         account : "ARDOR-HWZW-5TT6-U68F-H26L8"
     };
-    ardor.sendRequest("getBalances", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getBalances", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1572,8 +1572,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         numberOfConfirmations : "10"
     };
-    ardor.sendRequest("getGuaranteedBalance", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getGuaranteedBalance", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1614,8 +1614,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8"
     };
-    ardor.sendRequest("", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1663,8 +1663,8 @@ ardor.load(function(NRS) {
         amountNQT : "1000000000",// 1 Ignis = 10^8 NQT, here 10 Ignis
         publicKey : "f3831afb0cfbaca8e9fca6523d0b23d14aa2e6f9ac1726f12c30acd4d622bb0a"//publicKey of the sender
     };
-    ardor.sendRequest("sendMoney", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("sendMoney", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1753,8 +1753,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         asset : "779342883283236213"
     };
-    ardor.sendRequest("getAccountCurrentAskOrderIds", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountCurrentAskOrderIds", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1801,8 +1801,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         asset : "779342883283236213"
     };
-    ardor.sendRequest("getAccountCurrentAskOrders", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountCurrentAskOrders", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1849,8 +1849,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         asset : "779342883283236213"
     };
-    ardor.sendRequest("getAccountCurrentBidOrderIds", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountCurrentBidOrderIds", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1899,8 +1899,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         asset : "779342883283236213"
     };
-    ardor.sendRequest("getAccountCurrentBidOrders", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountCurrentBidOrders", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -1961,8 +1961,8 @@ ardor.load(function(NRS) {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8",
         currency : "5337417175848322445"
     };
-    ardor.sendRequest("getAccountExchangeRequests", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getAccountExchangeRequests", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -2015,8 +2015,8 @@ ardor.load(function(NRS) {
         chain : "2",
         account : "ARDOR-HWZW-5TT6-U68F-H26L8"
     };
-    ardor.sendRequest("getPolls", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getPolls", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -2111,8 +2111,8 @@ ardor.load(function(NRS) {
         chain : "2",
         account : "ARDOR-HWZW-5TT6-U68F-H26L8"
     };
-    ardor.sendRequest("getVoterPhasedTransactions", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getVoterPhasedTransactions", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -2175,8 +2175,8 @@ ardor.load(function(NRS) {
         secretPhrase : "xxxxxxxxxx",
         feeRateNQTPerFXT : "1"
     };
-    ardor.sendRequest("startFundingMonitor", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("startFundingMonitor", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -2227,8 +2227,8 @@ ardor.load(function(NRS) {
         property : "myTestAccount",
         secretPhrase : "xxxxxxxxxx"
     };
-    ardor.sendRequest("stopFundingMonitor", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("stopFundingMonitor", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -2278,8 +2278,8 @@ ardor.load(function(NRS) {
         secretPhrase : "xxxxxxxxxx",
         includeMonitoredAccounts : "true"
     };
-    ardor.sendRequest("getFundingMonitor", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("getFundingMonitor", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -2350,8 +2350,8 @@ ardor.load(function(NRS) {
     var data = {
         account : "ARDOR-HWZW-5TT6-U68F-H26L8"
     };
-    ardor.sendRequest("rsConvert", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("rsConvert", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
@@ -2392,8 +2392,8 @@ ardor.load(function(NRS) {
     var data = {
         query : "community AND culture"
     };
-    ardor.sendRequest("searchAccounts", data, function (response) {
-        ardor.logConsole(JSON.stringify(response));
+    NRS.sendRequest("searchAccounts", data, function (response) {
+        NRS.logConsole(JSON.stringify(response));
     });
 });
 ```
